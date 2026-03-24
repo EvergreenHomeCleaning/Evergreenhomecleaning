@@ -32,6 +32,65 @@ body {
   min-height: 100vh;
 }
 
+/* ── BOOKING MODAL ── */
+.bk-overlay{display:none;position:fixed;inset:0;background:rgba(10,25,18,0.72);backdrop-filter:blur(4px);z-index:1000;align-items:flex-end;justify-content:center;}
+.bk-overlay.open{display:flex;}
+.bk-sheet{background:var(--cream);width:100%;max-width:520px;max-height:92vh;border-radius:24px 24px 0 0;overflow-y:auto;animation:slideUp 0.35s cubic-bezier(0.34,1.56,0.64,1);padding-bottom:20px;}
+@keyframes slideUp{from{transform:translateY(100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.bk-header{background:var(--forest);padding:18px 20px 14px;border-radius:24px 24px 0 0;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.bk-header-title{font-family:'DM Serif Display',serif;font-size:18px;color:white;}
+.bk-header-sub{font-size:11px;color:var(--green-lt);margin-top:2px;}
+.bk-close{background:rgba(255,255,255,0.12);border:none;color:white;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bk-steps{display:flex;padding:14px 20px 0;gap:6px;}
+.bk-step-dot{height:4px;border-radius:2px;flex:1;background:#E5E7EB;transition:background 0.3s;}
+.bk-step-dot.done{background:var(--green);}
+.bk-step-dot.active{background:var(--gold);}
+.bk-body{padding:18px 20px;}
+.bk-step{display:none;}
+.bk-step.active{display:block;}
+.bk-section-label{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--gray);text-transform:uppercase;margin-bottom:10px;}
+.bk-summary-bar{background:var(--white);border:1px solid #E5E7EB;border-radius:14px;padding:11px 16px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;}
+.bk-summary-bar-label{font-size:12px;color:var(--gray);}
+.bk-summary-bar-val{font-weight:700;font-size:13px;color:var(--forest);}
+.bk-date-input{width:100%;padding:13px 16px;border:2px solid #E5E7EB;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);background:white;transition:border-color 0.2s;-webkit-appearance:none;}
+.bk-date-input:focus{outline:none;border-color:var(--green);}
+.bk-time-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:4px;}
+.bk-time-btn{border:2px solid #E5E7EB;background:white;border-radius:14px;padding:14px 8px;text-align:center;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
+.bk-time-btn:hover{border-color:var(--green-mid);}
+.bk-time-btn.on{border-color:var(--green);background:#F0F9F4;}
+.bk-time-emoji{font-size:22px;display:block;margin-bottom:4px;}
+.bk-time-name{font-size:12px;font-weight:700;color:var(--forest);}
+.bk-time-range{font-size:10px;color:var(--gray);margin-top:2px;}
+.bk-input-group{margin-bottom:13px;}
+.bk-input-group label{display:block;font-size:12px;font-weight:600;color:var(--forest);margin-bottom:6px;}
+.bk-input{width:100%;padding:13px 16px;border:2px solid #E5E7EB;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:white;transition:border-color 0.2s;}
+.bk-input:focus{outline:none;border-color:var(--green);}
+.bk-input.error{border-color:#EF4444;}
+textarea.bk-input{resize:vertical;min-height:80px;}
+.bk-price-card{background:var(--forest);border-radius:16px;padding:18px;margin:16px 0;}
+.bk-price-row{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;}
+.bk-price-row span:first-child{color:rgba(255,255,255,0.6);}
+.bk-price-row span:last-child{color:white;font-weight:600;}
+.bk-price-divider{border:none;border-top:1px solid rgba(255,255,255,0.15);margin:10px 0;}
+.bk-price-total{display:flex;justify-content:space-between;align-items:center;}
+.bk-price-total-label{font-size:15px;font-weight:700;color:white;}
+.bk-price-total-val{font-size:24px;font-weight:800;color:var(--gold-lt);}
+.bk-price-note{font-size:10px;color:rgba(255,255,255,0.4);margin-top:10px;line-height:1.5;}
+.bk-nav{display:flex;gap:10px;margin-top:6px;}
+.bk-btn-back{flex:0 0 auto;background:#F3F4F0;border:none;border-radius:50px;padding:14px 20px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:14px;color:var(--gray);cursor:pointer;}
+.bk-btn-next{flex:1;background:var(--green);border:none;border-radius:50px;padding:14px 20px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;color:white;cursor:pointer;transition:all 0.2s;}
+.bk-btn-next:hover{background:var(--green-mid);transform:translateY(-1px);}
+.bk-btn-next:disabled{background:#9CA3AF;cursor:not-allowed;transform:none;}
+.bk-success,.bk-error{display:none;padding:36px 20px;text-align:center;}
+.bk-success.active,.bk-error.active{display:block;}
+.bk-success-icon{font-size:60px;margin-bottom:16px;}
+.bk-success-title{font-family:'DM Serif Display',serif;font-size:26px;color:var(--forest);margin-bottom:10px;}
+.bk-success-sub{font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:24px;}
+.bk-success-phone{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:white;font-weight:700;font-size:15px;padding:14px 28px;border-radius:50px;text-decoration:none;margin-bottom:12px;}
+.bk-error-box{background:#FEF2F2;border:1px solid #FECACA;border-radius:14px;padding:20px;margin-bottom:20px;}
+.bk-error-title{font-weight:700;color:#DC2626;font-size:15px;margin-bottom:8px;}
+.bk-error-sub{font-size:13px;color:#7F1D1D;line-height:1.6;}
+
 /* ── TOP HEADER ── */
 .top-header {
   background: var(--forest);
@@ -149,6 +208,7 @@ body {
   content: '';
   position: absolute; inset: 0;
   background: radial-gradient(circle at 70% 50%, rgba(116,198,157,0.15) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .hero-badge {
@@ -192,6 +252,8 @@ body {
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-gold {
@@ -692,7 +754,7 @@ body {
       <div class="header-logo-sub">HOME CLEANING</div>
     </div>
   </div>
-  <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="header-cta">Book Now →</a>
+
 </header>
 
 <!-- TAB NAV -->
@@ -715,8 +777,7 @@ body {
     <h1>A <em>Cleaner Home,</em><br>Guaranteed.</h1>
     <p>Professional, fully insured home cleaning for Pierce County. We bring everything, respond in 10 minutes, and leave your home spotless.</p>
     <div class="hero-btns">
-      <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="btn-gold">📋 Book a Cleaning</a>
-      <a href="#" onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1]);return false;" class="btn-outline">🧮 Get Instant Price</a>
+      <button onclick="goToCalculator()" class="btn-outline" style="border:2px solid rgba(255,255,255,0.4);cursor:pointer;font-family:'DM Sans',sans-serif;background:transparent;color:white;font-size:15px;font-weight:700;padding:14px 32px;border-radius:50px;">🧮 Get Instant Price</button>
     </div>
   </div>
 
@@ -821,7 +882,7 @@ body {
         <div class="contact-value">(253) 237-6135</div>
       </div>
     </a>
-    <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="contact-card">
+    <a onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1])" href="javascript:void(0)" class="contact-card">
       <div class="contact-icon">📋</div>
       <div>
         <div class="contact-label">BOOK ONLINE</div>
@@ -892,7 +953,7 @@ body {
         <div class="result-price" id="rPrice">$115</div>
         <div class="result-desc" id="rDesc">Standard Clean · 1 bed / 1 bath</div>
         <div class="result-note">* Final price confirmed before booking. No hidden fees.</div>
-        <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="book-btn">📋 Book This Clean →</a>
+        <button class="book-btn" onclick="openBooking()" style="border:none;cursor:pointer;width:100%;">📅 Book Now →</button>
       </div>
     </div>
   </div>
@@ -975,7 +1036,7 @@ body {
     </div>
 
     <div style="text-align:center;margin-top:24px;">
-      <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="book-btn">📋 Join Our Happy Clients →</a>
+      <a onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1])" href="javascript:void(0)" class="book-btn">📋 Join Our Happy Clients →</a>
     </div>
   </div>
 </div>
@@ -1034,29 +1095,38 @@ body {
 
     <!-- FAQ -->
     <div style="margin-top:36px;">
-      <div class="section-title" style="font-size:22px;margin-bottom:16px;">Frequently Asked Questions</div>
+      <div class="section-title" style="font-size:22px;margin-bottom:16px;color:var(--forest);font-weight:700;">Frequently Asked Questions</div>
 
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">What's included in a standard clean? <span class="faq-arrow">▼</span></div>
+        <div class="faq-q" onclick="toggleFaq(this)">What's Included in Each Cleaning? <span class="faq-arrow">▼</span></div>
         <div class="faq-a">
-          ✓ Vacuum all floors & carpets<br>
-          ✓ Mop all hard floors<br>
-          ✓ Clean & sanitize bathrooms (toilet, sink, shower, tub)<br>
-          ✓ Clean kitchen (counters, sink, stovetop surface)<br>
-          ✓ Wipe down microwave exterior<br>
-          ✓ Wipe down all surfaces, furniture & shelves<br>
-          ✓ Clean mirrors<br>
-          ✓ Empty trash<br><br>
-          <strong>Deep Cleaning adds:</strong><br>
-          ✓ Remove soap scum & hard water stains (shower, tub, sink)<br>
-          ✓ Degrease stovetop & burners<br>
-          ✓ Clean microwave interior<br>
-          ✓ Wipe baseboards<br>
-          ✓ Vacuum & mop under furniture (where accessible)<br>
-          ✓ Wipe cabinet exteriors<br><br>
-          <strong>Move-In/Out adds:</strong><br>
-          ✓ Clean inside all cabinets & drawers<br>
-          ✓ Spot clean walls (full wall cleaning = extra charge)
+          <strong>Standard Cleaning</strong><br>
+          <em>Best for: Weekly or bi-weekly maintenance.</em><br><br>
+          ✓ Floors: Vacuuming all floors and carpets + mopping hard floors<br>
+          ✓ Bathrooms: Full cleaning and sanitization of the toilet, sink, shower, and tub<br>
+          ✓ Kitchen: Cleaning countertops, sinks, and the stovetop surface<br>
+          ✓ Dusting: Wiping down all accessible surfaces, furniture, and shelves<br>
+          ✓ Microwave: Wiping the exterior<br>
+          ✓ Mirrors: Cleaning and polishing all mirrors<br>
+          ✓ Trash: Emptying trash bins and replacing bags<br><br>
+
+          <strong>Deep Cleaning</strong><br>
+          <em>Best for: First-time visits or homes not cleaned in 4+ weeks.</em><br>
+          Includes everything in Standard, PLUS:<br><br>
+          ✓ Bathroom Deep Care: Removing soap scum and hard water stains from showers and tubs<br>
+          ✓ Kitchen Degreasing: Heavy-duty cleaning of the stovetop and burners<br>
+          ✓ Cabinets: Wiping down the exterior of all kitchen cabinets (removing grease and fingerprints)<br>
+          ✓ Microwave: Deep cleaning the interior<br>
+          ✓ Baseboards: Detailed wiping of all baseboards throughout the home<br>
+          ✓ Hard-to-reach areas: Vacuuming and mopping under accessible furniture<br><br>
+
+          <strong>Move-In / Move-Out Cleaning</strong><br>
+          <em>Best for: Empty homes.</em><br>
+          Includes everything in Deep Cleaning, PLUS:<br><br>
+          ✓ Cabinets & Drawers: Detailed cleaning inside all kitchen and bathroom cabinets and drawers<br>
+          ✓ Wall Spot Cleaning: Removing a few visible marks or fingerprints on walls<br>
+          ✓ Note: Full wall washing or excessive stains are subject to an extra charge<br>
+          ✓ Full Reset: A top-to-bottom clean of the entire empty property
         </div>
       </div>
 
@@ -1136,7 +1206,7 @@ body {
     <div style="background:var(--forest);border-radius:var(--radius);padding:24px;text-align:center;margin-top:8px;">
       <div style="font-family:'DM Serif Display',serif;font-size:20px;color:white;margin-bottom:8px;">Want results like these?</div>
       <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:18px;">Book a deep clean and see the difference for yourself.</div>
-      <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="book-btn">📋 Book a Deep Clean →</a>
+      <a onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1])" href="javascript:void(0)" class="book-btn">📋 Book a Deep Clean →</a>
     </div>
   </div>
 </div>
@@ -1157,18 +1227,38 @@ body {
           <div class="contact-value">(253) 237-6135</div>
         </div>
       </a>
-      <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="contact-card">
+      <a onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1])" href="javascript:void(0)" class="contact-card">
         <div class="contact-icon">📋</div>
         <div>
           <div class="contact-label">BOOK ONLINE</div>
           <div class="contact-value">Booking Form →</div>
         </div>
       </a>
-      <a href="https://maps.google.com/?q=Bonney+Lake+WA" target="_blank" class="contact-card">
-        <div class="contact-icon">📍</div>
+      <a href="https://www.instagram.com/evergreencleaning.wa" target="_blank" class="contact-card">
+        <div class="contact-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;border-radius:12px;width:44px;height:44px;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.337 3.608 1.312.975.975 1.25 2.242 1.312 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.337 2.633-1.312 3.608-.975.975-2.242 1.25-3.608 1.312-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.337-3.608-1.312-.975-.975-1.25-2.242-1.312-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.337-2.633 1.312-3.608.975-.975 2.242-1.25 3.608-1.312C8.416 2.175 8.796 2.163 12 2.163zm0-2.163c-3.259 0-3.667.014-4.947.072-1.616.074-3.053.49-4.193 1.63C1.72 2.842 1.304 4.279 1.23 5.895 1.172 7.175 1.158 7.583 1.158 12c0 4.417.014 4.825.072 6.105.074 1.616.49 3.053 1.63 4.193 1.14 1.14 2.577 1.556 4.193 1.63C8.333 23.986 8.741 24 12 24c3.259 0 3.667-.014 4.947-.072 1.616-.074 3.053-.49 4.193-1.63 1.14-1.14 1.556-2.577 1.63-4.193.058-1.28.072-1.688.072-6.105 0-4.417-.014-4.825-.072-6.105-.074-1.616-.49-3.053-1.63-4.193C19.053.562 17.616.146 16 .072 14.72.014 14.312 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </div>
         <div>
-          <div class="contact-label">BASED IN</div>
-          <div class="contact-value">Bonney Lake, WA 98391</div>
+          <div class="contact-label">INSTAGRAM</div>
+          <div class="contact-value">@evergreencleaning.wa</div>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/evergreencleaning.wa" target="_blank" class="contact-card">
+        <div class="contact-icon" style="background:#1877F2;display:flex;align-items:center;justify-content:center;border-radius:12px;width:44px;height:44px;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">FACEBOOK</div>
+          <div class="contact-value">evergreencleaning.wa</div>
+        </div>
+      </a>
+      <a href="https://maps.app.goo.gl/4qxdSWXkRA7g5wMfA" target="_blank" class="contact-card">
+        <div class="contact-icon" style="background:white;border:2px solid #E5E7EB;display:flex;align-items:center;justify-content:center;border-radius:12px;width:44px;height:44px;flex-shrink:0;">
+          <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">GOOGLE MAPS</div>
+          <div class="contact-value">Find us on Google →</div>
         </div>
       </a>
     </div>
@@ -1210,7 +1300,142 @@ body {
     <div style="background:var(--forest);border-radius:var(--radius);padding:24px;text-align:center;margin-top:24px;">
       <div style="font-family:'DM Serif Display',serif;font-size:20px;color:white;margin-bottom:6px;">Ready to book?</div>
       <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:18px;">Fill out our 2-minute form and we'll confirm within 10 minutes.</div>
-      <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="book-btn">📋 Book Now →</a>
+      <a onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1])" href="javascript:void(0)" class="book-btn">📋 Book Now →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- BOOKING MODAL -->
+<!-- ══════════════════════════════════════════ -->
+<div class="bk-overlay" id="bkOverlay" onclick="bkOverlayClick(event)">
+  <div class="bk-sheet" id="bkSheet">
+
+    <!-- HEADER -->
+    <div class="bk-header">
+      <div>
+        <div class="bk-header-title">📅 Book a Cleaning</div>
+        <div class="bk-header-sub" id="bkHeaderSub">Step 1 of 3 — Choose a Date</div>
+      </div>
+      <button class="bk-close" onclick="closeBooking()">✕</button>
+    </div>
+
+    <!-- PROGRESS DOTS -->
+    <div class="bk-steps">
+      <div class="bk-step-dot active" id="bkDot0"></div>
+      <div class="bk-step-dot" id="bkDot1"></div>
+      <div class="bk-step-dot" id="bkDot2"></div>
+    </div>
+
+    <div class="bk-body">
+
+      <!-- STEP 1: DATE -->
+      <div class="bk-step active" id="bkStep0">
+        <div class="bk-summary-bar">
+          <span class="bk-summary-bar-label">Selected service</span>
+          <span class="bk-summary-bar-val" id="bkSummaryService">Standard · 1 bed / 1 bath</span>
+        </div>
+        <div class="bk-section-label">SELECT DATE</div>
+        <input type="date" class="bk-date-input" id="bkDate" onchange="bkDateChanged()">
+        <div style="height:18px;"></div>
+        <div class="bk-nav">
+          <button class="bk-btn-next" id="bkNextDate" onclick="bkGoStep(1)" disabled>Next: Choose Time →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: TIME -->
+      <div class="bk-step" id="bkStep1">
+        <div class="bk-summary-bar">
+          <span class="bk-summary-bar-label">Date selected</span>
+          <span class="bk-summary-bar-val" id="bkSummaryDate">—</span>
+        </div>
+        <div class="bk-section-label">CHOOSE ARRIVAL WINDOW</div>
+        <div class="bk-time-grid">
+          <button class="bk-time-btn" id="bkT0" onclick="bkPickTime(0)">
+            <span class="bk-time-emoji">🌅</span>
+            <div class="bk-time-name">Morning</div>
+            <div class="bk-time-range">8–11 AM</div>
+          </button>
+          <button class="bk-time-btn" id="bkT1" onclick="bkPickTime(1)">
+            <span class="bk-time-emoji">☀️</span>
+            <div class="bk-time-name">Midday</div>
+            <div class="bk-time-range">11 AM–2 PM</div>
+          </button>
+          <button class="bk-time-btn" id="bkT2" onclick="bkPickTime(2)">
+            <span class="bk-time-emoji">🌤️</span>
+            <div class="bk-time-name">Afternoon</div>
+            <div class="bk-time-range">2–7 PM</div>
+          </button>
+        </div>
+        <div style="height:18px;"></div>
+        <div class="bk-nav">
+          <button class="bk-btn-back" onclick="bkGoStep(0)">← Back</button>
+          <button class="bk-btn-next" id="bkNextTime" onclick="bkGoStep(2)" disabled>Next: Your Info →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: CONTACT + CONFIRM -->
+      <div class="bk-step" id="bkStep2">
+        <div class="bk-section-label">YOUR CONTACT INFO</div>
+        <div class="bk-input-group">
+          <label>Full Name *</label>
+          <input type="text" class="bk-input" id="bkName" placeholder="Jane Smith" oninput="bkValidateStep2()">
+        </div>
+        <div class="bk-input-group">
+          <label>Phone Number *</label>
+          <input type="tel" class="bk-input" id="bkPhone" placeholder="(253) 555-0000" oninput="bkValidateStep2()">
+        </div>
+        <div class="bk-input-group">
+          <label>Service Address *</label>
+          <input type="text" class="bk-input" id="bkAddress" placeholder="123 Main St, Bonney Lake WA" oninput="bkValidateStep2()">
+        </div>
+        <div class="bk-input-group">
+          <label>Special Instructions <span style="font-weight:400;color:var(--gray);">(optional)</span></label>
+          <textarea class="bk-input" id="bkNotes" placeholder="Gate code, pets, areas to focus on..."></textarea>
+        </div>
+
+        <!-- PRICE SUMMARY -->
+        <div class="bk-price-card" id="bkPriceCard">
+          <div class="bk-price-row"><span>Service</span><span id="bkPcService">—</span></div>
+          <div class="bk-price-row"><span>Date & Time</span><span id="bkPcDateTime">—</span></div>
+          <div class="bk-price-row" id="bkPcRecurringRow" style="display:none;"><span>Recurring Discount</span><span id="bkPcRecurring">—</span></div>
+          <div class="bk-price-row" id="bkPcAddonsRow" style="display:none;"><span>Add-ons</span><span id="bkPcAddons">—</span></div>
+          <hr class="bk-price-divider">
+          <div class="bk-price-total">
+            <span class="bk-price-total-label">TOTAL ESTIMATE</span>
+            <span class="bk-price-total-val" id="bkPcTotal">$0</span>
+          </div>
+          <div class="bk-price-note">⚠️ Price is for standard home condition. Heavily soiled homes may require an additional charge. Final price confirmed before service.</div>
+        </div>
+
+        <div class="bk-nav">
+          <button class="bk-btn-back" onclick="bkGoStep(1)">← Back</button>
+          <button class="bk-btn-next" id="bkSubmitBtn" onclick="bkSubmit()" disabled>📤 Confirm Booking</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="bk-success" id="bkSuccess">
+        <div class="bk-success-icon">✅</div>
+        <div class="bk-success-title">Booking Submitted!</div>
+        <div class="bk-success-sub">Oleh will confirm your appointment within <strong>1–2 hours</strong> via phone or text. We can't wait to make your home shine! 🏡✨</div>
+        <a href="tel:+12532376135" class="bk-success-phone">📞 (253) 237-6135</a>
+        <div style="font-size:12px;color:var(--gray);margin-top:8px;">Questions? Call or text anytime.</div>
+        <div style="height:20px;"></div>
+        <button class="bk-btn-back" style="width:100%;" onclick="closeBooking()">Close</button>
+      </div>
+
+      <!-- ERROR -->
+      <div class="bk-error" id="bkError">
+        <div class="bk-error-box">
+          <div class="bk-error-title">⚠️ Booking Not Sent</div>
+          <div class="bk-error-sub">Something went wrong sending your request. Please contact us directly — we're ready to help!</div>
+        </div>
+        <a href="tel:+12532376135" class="bk-success-phone" style="background:var(--green);">📞 Call (253) 237-6135</a>
+        <div style="height:12px;"></div>
+        <button class="bk-btn-back" style="width:100%;margin-top:8px;" onclick="bkGoStep(2)">← Try Again</button>
+      </div>
+
     </div>
   </div>
 </div>
@@ -1221,7 +1446,7 @@ body {
     <strong>Evergreen Home Cleaning</strong>
     ⚡ 10-min response · 5.0 ★ Google
   </div>
-  <a href="https://forms.gle/wbdwqML45MrtaEkx6" target="_blank" class="bottom-book-btn">Book Now →</a>
+  <a onclick="showTab('calculator',document.querySelectorAll('.tab-btn')[1])" href="javascript:void(0)" class="bottom-book-btn">Book Now →</a>
 </div>
 
 <script>
@@ -1323,6 +1548,270 @@ function calcP() {
   document.getElementById('rDesc').textContent=SN[cSvc]+' · '+cBed+' bed / '+cBath+' bath'+(addons>0?' + add-ons ($'+addons+')':'');
 }
 updateAddons(); calcP();
+
+function goToCalculator() {
+  document.querySelectorAll('.tab-content').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-calculator').classList.add('active');
+  document.querySelectorAll('.tab-btn')[1].classList.add('active');
+  window.scrollTo(0,0);
+}
+
+const BK_TOKEN = '8517872518:AAFfPK2TcwmOQqVeGR-1tmXT3YvmNzEyqPE';
+const BK_CHAT  = '389164149';
+
+const BK_TIME_LABELS  = ['Morning (8–11 AM)', 'Midday (11 AM–2 PM)', 'Afternoon (2–7 PM)'];
+const BK_SVC_NAMES    = {standard:'Standard Clean', deep:'Deep Clean', moveout:'Move-In/Out', airbnb:'Airbnb Turnover'};
+const BK_RECURRING    = {none:{label:'One-time',disc:0}, weekly:{label:'Weekly',disc:0.15}, biweekly:{label:'Biweekly',disc:0.10}, monthly:{label:'Monthly',disc:0.05}};
+
+let bkCurStep   = 0;
+let bkSelDate   = '';
+let bkSelTime   = -1;   // 0/1/2
+let bkSending   = false;
+
+// ── Open / Close ────────────────────────────────────────────
+function openBooking() {
+  const overlay = document.getElementById('bkOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  bkReset();
+  bkRefreshSummary();
+}
+function closeBooking() {
+  document.getElementById('bkOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function bkOverlayClick(e) {
+  if (e.target === document.getElementById('bkOverlay')) closeBooking();
+}
+function bkReset() {
+  bkCurStep = 0;
+  bkSelDate = '';
+  bkSelTime = -1;
+  document.getElementById('bkDate').value = '';
+  document.getElementById('bkName').value = '';
+  document.getElementById('bkPhone').value = '';
+  document.getElementById('bkAddress').value = '';
+  document.getElementById('bkNotes').value = '';
+  [0,1,2].forEach(i => document.getElementById('bkT'+i).classList.remove('on'));
+  document.getElementById('bkNextDate').disabled = true;
+  document.getElementById('bkNextTime').disabled = true;
+  document.getElementById('bkSubmitBtn').disabled = true;
+  document.getElementById('bkSuccess').classList.remove('active');
+  document.getElementById('bkError').classList.remove('active');
+  bkShowStep(0);
+  // Set min date to tomorrow
+  const tom = new Date(); tom.setDate(tom.getDate()+1);
+  document.getElementById('bkDate').min = tom.toISOString().split('T')[0];
+}
+
+// ── Step navigation ─────────────────────────────────────────
+function bkShowStep(n) {
+  [0,1,2].forEach(i => {
+    document.getElementById('bkStep'+i).classList.toggle('active', i===n);
+    const dot = document.getElementById('bkDot'+i);
+    dot.classList.remove('done','active');
+    if (i < n)  dot.classList.add('done');
+    if (i === n) dot.classList.add('active');
+  });
+  const subs = ['Step 1 of 3 — Choose a Date','Step 2 of 3 — Choose a Time','Step 3 of 3 — Your Details'];
+  document.getElementById('bkHeaderSub').textContent = subs[n] || '';
+  bkCurStep = n;
+  document.getElementById('bkSheet').scrollTop = 0;
+}
+function bkGoStep(n) {
+  if (n === 2) bkFillPriceSummary();
+  bkShowStep(n);
+}
+
+// ── Date ────────────────────────────────────────────────────
+function bkDateChanged() {
+  bkSelDate = document.getElementById('bkDate').value;
+  document.getElementById('bkNextDate').disabled = !bkSelDate;
+  if (bkSelDate) {
+    const d = new Date(bkSelDate + 'T12:00:00');
+    document.getElementById('bkSummaryDate').textContent =
+      d.toLocaleDateString('en-US', {weekday:'short',month:'short',day:'numeric'});
+  }
+}
+
+// ── Time ────────────────────────────────────────────────────
+function bkPickTime(n) {
+  bkSelTime = n;
+  [0,1,2].forEach(i => document.getElementById('bkT'+i).classList.toggle('on', i===n));
+  document.getElementById('bkNextTime').disabled = false;
+}
+
+// ── Refresh summary bar (step 1) ────────────────────────────
+function bkRefreshSummary() {
+  const svc  = BK_SVC_NAMES[cSvc] || 'Standard Clean';
+  const desc = `${svc} · ${cBed} bed / ${cBath} bath`;
+  const el = document.getElementById('bkSummaryService');
+  if (el) el.textContent = desc;
+}
+
+// ── Price summary (step 3) ──────────────────────────────────
+function bkGetAddons() {
+  const addons = [];
+  const addonMap = {45:'Laundry',35:null,15:null,25:'Baseboards',60:'Basement'};
+  const addonNameMap = {
+    '🧺 Laundry':'+$45',
+    '❄️ Inside Fridge':'+$35',
+    '🔥 Inside Oven':'+$35',
+    '🐾 Pet Home':'+$15',
+    '🧹 Baseboards':'+$25',
+    '🗄️ Inside Cabinets':'+$45',
+    '🪟 Windows 1-5':'+$15',
+    '🏚️ Basement':'+$60'
+  };
+  let total = 0;
+  document.querySelectorAll('.addon-item input:checked').forEach(cb => {
+    if (!cb.disabled) {
+      const label = cb.parentElement.querySelector('span:first-of-type');
+      const price = cb.parentElement.querySelector('.addon-price');
+      const n = label ? label.textContent.trim() : '';
+      const v = parseInt(cb.value);
+      total += v;
+      addons.push({name: n, val: v});
+    }
+  });
+  return {list: addons, total};
+}
+
+function bkGetRecurring() {
+  // read the recurring selector if present
+  const sel = document.getElementById('recurringSelect') || document.querySelector('[name="recurring"]');
+  if (!sel) return {label:'One-time', disc:0, key:'none'};
+  const k = sel.value || 'none';
+  return {...(BK_RECURRING[k]||{label:'One-time',disc:0}), key: k};
+}
+
+function bkFillPriceSummary() {
+  const svc = BK_SVC_NAMES[cSvc];
+  const dateStr = bkSelDate ? new Date(bkSelDate+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}) : '—';
+  const timeStr = bkSelTime >= 0 ? BK_TIME_LABELS[bkSelTime] : '—';
+
+  // base price
+  const bk = Math.min(cBath, Math.max(...Object.keys(P[cSvc][cBed]||{1:0}).map(Number)));
+  const base = (P[cSvc][cBed]||{})[bk]||0;
+
+  // addons
+  const {list: addonList, total: addonTotal} = bkGetAddons();
+
+  // recurring
+  const rec = bkGetRecurring();
+  const discAmt = cSvc === 'standard' ? Math.round(base * rec.disc) : 0;
+  const subtotal = base - discAmt + addonTotal;
+
+  document.getElementById('bkPcService').textContent   = `${svc} · ${cBed}bd/${cBath}ba`;
+  document.getElementById('bkPcDateTime').textContent  = `${dateStr} · ${timeStr}`;
+  document.getElementById('bkPcTotal').textContent     = '$' + subtotal;
+
+  // recurring row
+  if (discAmt > 0) {
+    document.getElementById('bkPcRecurringRow').style.display = 'flex';
+    document.getElementById('bkPcRecurring').textContent = `${rec.label} (−$${discAmt})`;
+  } else {
+    document.getElementById('bkPcRecurringRow').style.display = 'none';
+  }
+
+  // addons row
+  if (addonTotal > 0) {
+    document.getElementById('bkPcAddonsRow').style.display = 'flex';
+    document.getElementById('bkPcAddons').textContent = '+$' + addonTotal + ' (' + addonList.map(a=>a.name.split(' ').slice(1).join(' ')).join(', ') + ')';
+  } else {
+    document.getElementById('bkPcAddonsRow').style.display = 'none';
+  }
+}
+
+// ── Validate step 3 ─────────────────────────────────────────
+function bkValidateStep2() {
+  const ok = document.getElementById('bkName').value.trim()
+          && document.getElementById('bkPhone').value.trim()
+          && document.getElementById('bkAddress').value.trim();
+  document.getElementById('bkSubmitBtn').disabled = !ok;
+}
+
+// ── Build Telegram message ──────────────────────────────────
+function bkBuildMessage() {
+  const name    = document.getElementById('bkName').value.trim();
+  const phone   = document.getElementById('bkPhone').value.trim();
+  const address = document.getElementById('bkAddress').value.trim();
+  const notes   = document.getElementById('bkNotes').value.trim();
+
+  const svc   = BK_SVC_NAMES[cSvc];
+  const dateD = bkSelDate ? new Date(bkSelDate+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}) : '—';
+  const timeS = bkSelTime >= 0 ? BK_TIME_LABELS[bkSelTime] : '—';
+
+  const bk    = Math.min(cBath, Math.max(...Object.keys(P[cSvc][cBed]||{1:0}).map(Number)));
+  const base  = (P[cSvc][cBed]||{})[bk]||0;
+
+  const {list: addonList, total: addonTotal} = bkGetAddons();
+  const rec   = bkGetRecurring();
+  const discAmt = cSvc === 'standard' ? Math.round(base * rec.disc) : 0;
+  const total = base - discAmt + addonTotal;
+
+  const addonText = addonList.length
+    ? addonList.map(a => `  • ${a.name.split(' ').slice(1).join(' ')} (+$${a.val})`).join('\n')
+    : '  None';
+
+  const recurringText = rec.key !== 'none' && cSvc === 'standard'
+    ? `🔄 Recurring: ${rec.label} (−$${discAmt})\n`
+    : '';
+
+  return `🏠 NEW BOOKING FROM WEBSITE\n\n` +
+    `👤 ${name}\n` +
+    `📞 ${phone}\n` +
+    `📍 ${address}\n\n` +
+    `🧹 Service: ${svc}\n` +
+    `🏡 ${cBed} Bed / ${cBath} Bath\n` +
+    `📅 Date: ${dateD}\n` +
+    `⏰ Time: ${timeS}\n` +
+    `${recurringText}` +
+    `\n➕ Add-ons:\n${addonText}\n\n` +
+    `💰 Base: $${base}\n` +
+    (discAmt > 0 ? `🔖 Discount: −$${discAmt}\n` : '') +
+    (addonTotal > 0 ? `📦 Add-ons: +$${addonTotal}\n` : '') +
+    `💵 TOTAL: $${total}\n` +
+    (notes ? `\n📝 Notes: ${notes}` : '');
+}
+
+// ── Submit ───────────────────────────────────────────────────
+async function bkSubmit() {
+  if (bkSending) return;
+  bkSending = true;
+  const btn = document.getElementById('bkSubmitBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Sending...';
+
+  const text = bkBuildMessage();
+
+  try {
+    const resp = await fetch(`https://api.telegram.org/bot${BK_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({chat_id: BK_CHAT, text, parse_mode: 'HTML'})
+    });
+    const data = await resp.json();
+    if (data.ok) {
+      // Hide all steps, show success
+      [0,1,2].forEach(i => document.getElementById('bkStep'+i).classList.remove('active'));
+      document.getElementById('bkSuccess').classList.add('active');
+      document.getElementById('bkHeaderSub').textContent = '🎉 You\'re all set!';
+    } else {
+      throw new Error(data.description || 'Telegram error');
+    }
+  } catch (err) {
+    console.error('Booking error:', err);
+    [0,1,2].forEach(i => document.getElementById('bkStep'+i).classList.remove('active'));
+    document.getElementById('bkError').classList.add('active');
+    document.getElementById('bkHeaderSub').textContent = '⚠️ Submission failed';
+  } finally {
+    bkSending = false;
+    btn.disabled = false;
+    btn.textContent = '📤 Confirm Booking';
+  }
+}
 </script>
 </body>
 </html>
