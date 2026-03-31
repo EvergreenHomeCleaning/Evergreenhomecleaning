@@ -12,6 +12,19 @@
 body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
+/* BANNER */
+.top-banner{position:fixed;top:0;left:0;right:0;z-index:110;background:linear-gradient(90deg,#1a3a2a,#2d5e3f,#c9a54e,#2d5e3f,#1a3a2a);background-size:200% 100%;animation:bannerShimmer 4s ease infinite;color:var(--white);text-align:center;padding:11px 40px 11px 16px;font-size:.85rem;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;overflow:hidden}
+.top-banner::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:bannerGlint 3s ease-in-out infinite}
+@keyframes bannerShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes bannerGlint{0%{left:-100%}100%{left:200%}}
+.top-banner-text{position:relative;z-index:2;text-shadow:0 1px 3px rgba(0,0,0,.2)}
+.top-banner-text .gold{color:#f0e2b8}
+.top-banner-close{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;color:rgba(255,255,255,.8);font-size:.9rem;cursor:pointer;padding:2px 7px;border-radius:50%;z-index:3;transition:all .2s}
+.top-banner-close:hover{background:rgba(255,255,255,.3);color:var(--white)}
+.banner-visible nav{top:40px}
+.banner-visible .mobile-nav{top:112px}
+.banner-visible .hero{padding-top:180px}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.05);transition:all .3s}
 nav.scrolled{box-shadow:var(--shadow-sm)}
@@ -34,7 +47,8 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23fff' fill-opacity='.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
 .hero-content{position:relative;z-index:2}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:500;margin-bottom:24px;animation:fadeInUp .8s ease forwards}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:500;margin-bottom:24px;animation:fadeInUp .8s ease forwards;transition:all .3s;cursor:pointer}
+.hero-badge:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.3)}
 .hero-badge .stars{color:var(--gold)}
 .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.15;margin-bottom:20px;animation:fadeInUp .8s ease .15s forwards;opacity:0}
 .hero h1 span{color:var(--green-accent)}
@@ -233,6 +247,22 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .footer-links{display:flex;gap:24px}.footer-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s}.footer-links a:hover{color:var(--white)}
 .footer-bottom{text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:.8rem}
 
+/* REFERRAL */
+.referral{padding:80px 0;background:linear-gradient(135deg,#f0faf3,#e8f5ec)}
+.referral-box{max-width:700px;margin:0 auto;text-align:center}
+.referral-icon{font-size:3rem;margin-bottom:16px}
+.referral-box h2{color:var(--green-dark);margin-bottom:12px}
+.referral-box>p{color:var(--text-mid);font-size:1rem;margin-bottom:32px}
+.referral-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.referral-card{background:var(--white);border-radius:var(--radius);padding:24px;text-align:center;border:2px solid var(--green-accent);box-shadow:var(--shadow-sm)}
+.referral-card-pct{font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--green-dark);line-height:1}
+.referral-card-label{font-size:.85rem;color:var(--text-mid);margin-top:8px;font-weight:500}
+.referral-steps{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.referral-step{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--text-mid);font-weight:500}
+.referral-step-num{width:28px;height:28px;border-radius:50%;background:var(--green-dark);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}
+.referral-note{font-size:.82rem;color:var(--text-light);font-style:italic}
+@media(max-width:480px){.referral-cards{grid-template-columns:1fr}}
+
 /* SOCIAL/CONNECT */
 .connect{padding:80px 0;background:var(--cream)}
 .connect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:0 auto}
@@ -301,7 +331,13 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .mobile-nav.open{display:flex}.mobile-nav a{text-decoration:none;color:var(--text-dark);font-size:1rem;font-weight:500;padding:8px 0}
 </style>
 </head>
-<body>
+<body class="banner-visible">
+
+<!-- TOP BANNER -->
+<div class="top-banner" id="topBanner" onclick="goTo('referral')">
+  <span class="top-banner-text">🎁 Refer a friend — get <span class="gold">10% off</span> your next cleaning!</span>
+  <button class="top-banner-close" onclick="event.stopPropagation();closeBanner()">✕</button>
+</div>
 
 <nav id="nav"><div class="nav-inner">
   <a href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="nav-logo"><div class="nav-logo-icon"><img src="data:image/png;base64,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" alt="Evergreen logo"></div><span class="nav-logo-text">Evergreen</span></a>
@@ -312,7 +348,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 
 <section class="hero"><div class="container hero-content"><div class="hero-grid">
   <div>
-    <div class="hero-badge"><span class="stars">★★★★★</span> 5.0 on Google · 10 Reviews</div>
+    <a href="https://maps.app.goo.gl/awjPQ2TWEaHpqpjx5?g_st=ic" target="_blank" class="hero-badge" style="text-decoration:none;color:inherit"><span class="stars">★★★★★</span> 5.0 on Google · 10 Reviews →</a>
     <h1>A Spotless Home, <span>Every Time</span></h1>
     <p class="hero-desc">Professional residential cleaning in Bonney Lake & surrounding areas. Licensed, insured, and personally handled by the owner.</p>
     <div class="hero-btns"><a href="javascript:void(0)" onclick="goTo('calculator')" class="btn-primary">Get Instant Quote</a><a href="tel:+12532376135" class="btn-secondary">📞 Call Now</a></div>
@@ -557,6 +593,31 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   </div>
 </div></section>
 
+<!-- REFERRAL -->
+<section class="referral" id="referral"><div class="container">
+  <div class="referral-box fade-in">
+    <div class="referral-icon">🎁</div>
+    <h2>Referral Program</h2>
+    <p>Love our service? Share it with friends and family — you both save!</p>
+    <div class="referral-cards">
+      <div class="referral-card">
+        <div class="referral-card-pct">10%</div>
+        <div class="referral-card-label">Discount for <strong>you</strong><br>after your friend's cleaning is completed</div>
+      </div>
+      <div class="referral-card">
+        <div class="referral-card-pct">5%</div>
+        <div class="referral-card-label">Discount for <strong>your friend</strong><br>on their first cleaning</div>
+      </div>
+    </div>
+    <div class="referral-steps">
+      <div class="referral-step"><span class="referral-step-num">1</span>Refer a friend</div>
+      <div class="referral-step"><span class="referral-step-num">2</span>They book & we clean their home</div>
+      <div class="referral-step"><span class="referral-step-num">3</span>You get 10% off your next cleaning!</div>
+    </div>
+    <div class="referral-note">Just mention who referred you when booking. No codes needed.</div>
+  </div>
+</div></section>
+
 <!-- CONNECT -->
 <section class="connect" id="connect"><div class="container">
   <div class="section-header fade-in"><div class="section-tag">Find Us</div><h2>Connect With Us</h2><p>We respond within 10 minutes</p></div>
@@ -633,6 +694,7 @@ async function submitBooking(){const nm=document.getElementById('bookName').valu
 
 function showTable(id,b){document.querySelectorAll('.pricing-tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');document.getElementById('table-main').style.display=id==='main'?'':'none';document.getElementById('table-airbnb').style.display=id==='airbnb'?'':'none';document.getElementById('table-recurring').style.display=id==='recurring'?'':'none'}
 
+function closeBanner(){document.getElementById('topBanner').style.display='none';document.body.classList.remove('banner-visible')}
 function toggleService(el){el.classList.toggle('open')}
 function toggleFaq(el){const wasOpen=el.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)el.classList.add('open')}
 function copyPhone(){navigator.clipboard.writeText('(253) 237-6135').then(()=>{showToast('📞 Phone number copied!')}).catch(()=>{showToast('📞 (253) 237-6135')})}
