@@ -247,6 +247,24 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .footer-links{display:flex;gap:24px}.footer-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:color .2s}.footer-links a:hover{color:var(--white)}
 .footer-bottom{text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:.8rem}
 
+/* TERMS */
+.terms-wrap{margin-bottom:20px}
+.terms-check{display:flex;align-items:flex-start;gap:10px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.terms-checkbox{width:22px;height:22px;border:2px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;transition:all .2s;font-size:.7rem;color:transparent}
+.terms-check.active .terms-checkbox{background:var(--green-accent);border-color:var(--green-accent);color:var(--white)}
+.terms-text{font-size:.82rem;color:var(--text-mid);line-height:1.5}
+.terms-text a{color:var(--green-dark);font-weight:600;text-decoration:underline}
+.terms-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:250;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.terms-modal.open{display:flex}
+.terms-content{background:var(--white);border-radius:var(--radius);padding:32px 24px;max-width:600px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow-lg);position:relative}
+.terms-content h3{font-size:1.3rem;color:var(--green-dark);margin-bottom:16px}
+.terms-content h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.9rem;color:var(--green-dark);margin:20px 0 8px}
+.terms-content p{font-size:.82rem;color:var(--text-mid);line-height:1.7;margin-bottom:8px}
+.terms-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-light)}
+.terms-close:hover{color:var(--text-dark)}
+.terms-accept-btn{width:100%;padding:14px;border:none;border-radius:50px;background:var(--green-dark);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;margin-top:20px;transition:all .3s}
+.terms-accept-btn:hover{background:var(--green-mid)}
+
 /* REFERRAL */
 .referral{padding:80px 0;background:linear-gradient(135deg,#f0faf3,#e8f5ec)}
 .referral-box{max-width:700px;margin:0 auto;text-align:center}
@@ -376,7 +394,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   <div class="services-grid">
     <div class="service-card fade-in" onclick="toggleService(this)">
       <div class="service-card-top">
-        <div><span class="service-emoji">✨</span><h3>Standard Clean</h3><p>Regular maintenance cleaning — kitchens, bathrooms, floors, dusting.</p><div class="service-price">$115+ <span>starting</span></div></div>
+        <div><span class="service-emoji">✨</span><h3>Standard Clean</h3><p>Regular maintenance cleaning — kitchens, bathrooms, floors, dusting.</p><div class="service-price">$120+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
@@ -393,7 +411,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <div class="service-card fade-in" onclick="toggleService(this)">
       <span class="service-tag">Popular</span>
       <div class="service-card-top">
-        <div><span class="service-emoji">🧹</span><h3>Deep Clean</h3><p>Top-to-bottom including baseboards. Perfect for seasonal refresh.</p><div class="service-price">$165+ <span>starting</span></div></div>
+        <div><span class="service-emoji">🧹</span><h3>Deep Clean</h3><p>Top-to-bottom including baseboards. Perfect for seasonal refresh.</p><div class="service-price">$175+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
@@ -409,7 +427,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
       <div class="service-card-top">
-        <div><span class="service-emoji">📦</span><h3>Move-In / Move-Out</h3><p>Baseboards and interior cabinets included by default.</p><div class="service-price">$199+ <span>starting</span></div></div>
+        <div><span class="service-emoji">📦</span><h3>Move-In / Move-Out</h3><p>Baseboards and interior cabinets included by default.</p><div class="service-price">$210+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
@@ -422,15 +440,16 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
       <div class="service-card-top">
-        <div><span class="service-emoji">🏠</span><h3>Airbnb Turnover</h3><p>Quick turnaround between guests. Keep your ratings high.</p><div class="service-price" style="color:var(--green-accent);font-size:1.1rem">Contact for Quote</div></div>
+        <div><span class="service-emoji">🏠</span><h3>Airbnb Turnover</h3><p>Quick turnaround between guests. Keep your ratings high.</p><div class="service-price">$90+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
-        <div class="service-check"><span class="service-check-icon">✓</span>Same scope as Standard Clean</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Kitchen, bathrooms, bedrooms, common areas, floors</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Trash removal and restocking host supplies</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Optimized for fast guest turnaround</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Bed making and linen change (if linens provided)</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Restocking essentials check</div>
-        <div class="service-details-note">💡 Pricing depends on property size and frequency. Call or text (253) 237-6135 for a custom quote.</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Laundry add-on: linens, towels, wash/dry, make beds ($25–$65 by bed count)</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Oven & fridge interior cleaning available (+$35 each)</div>
+        <div class="service-details-note">💡 No recurring discounts. Laundry priced by bed count: 1 bed $25, 2 beds $35, 3 beds $45, 4 beds $55, 5+ beds $65.</div>
       </div></div>
     </div>
   </div>
@@ -496,10 +515,11 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           <button class="calc-service-btn active" data-service="standard" onclick="setService(this)">✨ Standard</button>
           <button class="calc-service-btn" data-service="deep" onclick="setService(this)">🧹 Deep Clean</button>
           <button class="calc-service-btn" data-service="moveout" onclick="setService(this)">📦 Move-Out</button>
+          <button class="calc-service-btn" data-service="airbnb" onclick="setService(this)">🏠 Airbnb</button>
         </div>
       </div>
       <div class="calc-field"><label class="calc-label">Home Size</label>
-        <select class="calc-select" id="calcSize" onchange="recalc()">
+        <select class="calc-select" id="calcSize" onchange="updateAddons();recalc()">
           <option value="1-1">1 Bed / 1 Bath</option><option value="1-2">1 Bed / 2 Bath</option>
           <option value="2-1">2 Bed / 1 Bath</option><option value="2-2" selected>2 Bed / 2 Bath</option><option value="2-3">2 Bed / 3 Bath</option>
           <option value="3-1">3 Bed / 1 Bath</option><option value="3-2">3 Bed / 2 Bath</option><option value="3-3">3 Bed / 3 Bath</option><option value="3-4">3 Bed / 4 Bath</option>
@@ -527,17 +547,36 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="fridge" data-price="35"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🧊 Fridge</span><span class="calc-addon-price">+$35</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="oven" data-price="35"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🔥 Oven</span><span class="calc-addon-price">+$35</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="laundry" data-price="45"><span class="calc-addon-check">✓</span><span class="calc-addon-text">👕 Laundry</span><span class="calc-addon-price">+$45</span></label>
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="pet" data-price="15"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🐾 Pet Fee</span><span class="calc-addon-price">+$15</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="pet" data-price="20"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🐾 Pet Fee</span><span class="calc-addon-price">+$20</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="basement" data-price="60"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🏚️ Basement</span><span class="calc-addon-price">+$60</span></label>
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="baseboard" data-price="25"><span class="calc-addon-check">✓</span><span class="calc-addon-text">📏 Baseboards</span><span class="calc-addon-price">+$25</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="baseboard" data-price="30"><span class="calc-addon-check">✓</span><span class="calc-addon-text">📏 Baseboards</span><span class="calc-addon-price">+$30</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="cabinet" data-price="45"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🗄️ Cabinets</span><span class="calc-addon-price">+$45</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="windows" data-price="15"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🪟 Windows</span><span class="calc-addon-price">+$15</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="blinds" data-price="20"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🫧 Blinds</span><span class="calc-addon-price">+$20</span></label>
+        </div>
+        <div id="windowsQty" style="display:none;margin-top:8px">
+          <select class="calc-select" id="windowsSelect" onchange="updateWindowsPrice()">
+            <option value="15">1–5 windows ($15)</option>
+            <option value="30">6–10 windows ($30)</option>
+            <option value="45">11–15 windows ($45)</option>
+            <option value="60">16–20 windows ($60)</option>
+            <option value="75">21+ windows ($75)</option>
+          </select>
+        </div>
+        <div id="blindsQty" style="display:none;margin-top:8px">
+          <select class="calc-select" id="blindsSelect" onchange="updateBlindsPrice()">
+            <option value="20">1–5 blinds ($20)</option>
+            <option value="35">6–10 blinds ($35)</option>
+            <option value="50">11–15 blinds ($50)</option>
+            <option value="65">16–20 blinds ($65)</option>
+            <option value="80">21+ blinds ($80)</option>
+          </select>
         </div>
       </div>
     </div>
     <div class="calc-summary fade-in">
       <div class="calc-summary-title">Your Quote</div>
-      <div class="calc-price-display"><div class="calc-total-price" id="totalPrice">$160</div><div class="calc-price-note" id="priceNote">One-time cleaning</div></div>
+      <div class="calc-price-display"><div class="calc-total-price" id="totalPrice">$165</div><div class="calc-price-note" id="priceNote">One-time cleaning</div></div>
       <div class="calc-savings" id="savingsBox"></div>
       <div class="calc-breakdown" id="breakdown"></div>
       <button class="calc-book-btn" onclick="openBooking()">Book This Cleaning →</button>
@@ -660,6 +699,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       </div>
       <div class="modal-field"><label>Address *</label><input type="text" id="bookAddress" placeholder="123 Main St, Bonney Lake, WA"></div>
       <div class="modal-field"><label>Notes</label><textarea id="bookNotes" placeholder="Special requests, access instructions..."></textarea></div>
+      <div class="terms-wrap">
+        <div class="terms-check" id="termsCheck" onclick="toggleTerms()">
+          <div class="terms-checkbox">✓</div>
+          <div class="terms-text">I have read and agree to the <a href="javascript:void(0)" onclick="event.stopPropagation();openTerms()">Terms & Conditions</a></div>
+        </div>
+      </div>
       <button class="modal-submit" id="submitBtn" onclick="submitBooking()">Confirm Booking Request</button>
     </div>
     <div class="modal-success" id="bookingSuccess">
@@ -670,9 +715,90 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   </div>
 </div>
 
+<!-- TERMS MODAL -->
+<div class="terms-modal" id="termsModal">
+  <div class="terms-content">
+    <button class="terms-close" onclick="closeTerms()">✕</button>
+    <h3>Terms & Conditions</h3>
+    <p><em>Evergreen Home Cleaning LLC — Effective April 2026</em></p>
+
+    <h4>1. Services Provided</h4>
+    <p>Evergreen Home Cleaning LLC provides residential cleaning services in Pierce County and South King County, WA. Service types include Standard, Deep, Move-Out, and Airbnb Turnover cleaning. Add-on services are available at additional cost.</p>
+
+    <h4>2. Booking & Scheduling</h4>
+    <p>Services are booked by mutual agreement. A booking is confirmed once written confirmation is received. We reserve the right to reschedule or decline service.</p>
+
+    <h4>3. Pricing & Payment</h4>
+    <p>Payment is due immediately upon completion. For recurring clients, within 24 hours. Late fee: $15/day. Recurring discounts (Standard only): Weekly −15%, Biweekly −10%, Monthly −5%.</p>
+
+    <h4>4. Cancellation & No-Access Policy</h4>
+    <p>24-hour notice required. Same-day cancellation: $40 fee. No access on arrival: full service price charged.</p>
+
+    <h4>5. Property Condition & Surcharges</h4>
+    <p>Heavy condition surcharge of 25% may apply if property is significantly worse than described.</p>
+
+    <h4>6. Client Responsibilities</h4>
+    <p>Provide safe access, secure pets, disclose hazards, and declare fragile/high-value items prior to service.</p>
+
+    <h4>7. Damage & Liability</h4>
+    <p>Company is licensed and insured. Damage must be reported within 24 hours. Pre-existing damage not covered. Undeclared fragile items not covered. Total liability limited to service price.</p>
+
+    <h4>8. Service Acceptance</h4>
+    <p>Client is asked to walk through upon completion. Once team departs, service is considered accepted. No claims after departure.</p>
+
+    <h4>9. Recurring Service</h4>
+    <p>Either party may modify/cancel with 48 hours' notice. Skipping 2+ cleanings may forfeit recurring discount.</p>
+
+    <h4>10. Property Access & Keys</h4>
+    <p>Keys/codes used solely for cleaning purposes and kept confidential.</p>
+
+    <h4>11. Photography & Marketing</h4>
+    <p>Company may take before/after photos for marketing. No personal info included. Notify us in writing to opt out.</p>
+
+    <h4>12. Privacy</h4>
+    <p>Personal info used only for scheduling. Not sold or shared with third parties.</p>
+
+    <h4>13. Non-Solicitation</h4>
+    <p>Client agrees not to hire Company employees directly for 12 months after last service. Violation: $2,000 penalty.</p>
+
+    <h4>14. Surveillance Devices</h4>
+    <p>Client must disclose cameras/recording devices. Recordings may not be publicly distributed without written consent.</p>
+
+    <h4>15. Unsafe Conditions</h4>
+    <p>Company may refuse service without penalty if hazardous conditions are found. Travel costs may apply.</p>
+
+    <h4>16. Parking</h4>
+    <p>Client provides free accessible parking. Parking tickets/towing due to inadequate arrangements are Client's responsibility.</p>
+
+    <h4>17. Time Estimates</h4>
+    <p>Time estimates are approximate. Actual time may vary.</p>
+
+    <h4>18. Personal Belongings</h4>
+    <p>Company not responsible for valuables left on open surfaces. Secure all valuables before service.</p>
+
+    <h4>19. Right to Refuse Service</h4>
+    <p>Company may refuse or discontinue service at any time without obligation to provide a reason.</p>
+
+    <h4>20. Force Majeure</h4>
+    <p>Company not liable for delays due to severe weather, natural disasters, or emergencies.</p>
+
+    <h4>21. Governing Law</h4>
+    <p>Governed by Washington State law. Disputes resolved in Pierce County courts.</p>
+
+    <h4>22. Amendments</h4>
+    <p>Terms may be updated at any time. Continued use constitutes acceptance.</p>
+
+    <h4>23. Contact</h4>
+    <p>Evergreen Home Cleaning LLC · (253) 237-6135 · evergreenhomecleaning.org · Bonney Lake, WA</p>
+
+    <button class="terms-accept-btn" onclick="acceptTerms()">I Accept — Close</button>
+  </div>
+</div>
+
 <script>
-const P={standard:{'1-1':115,'1-2':135,'2-1':140,'2-2':160,'2-3':180,'3-1':170,'3-2':190,'3-3':210,'3-4':230,'4-12':220,'4-3':240,'4-4':260,'4-5':280,'5-12':250,'5-3':270,'5-4':290,'5-5':310,'6-13':290,'6-4':310,'6-5':330},deep:{'1-1':165,'1-2':185,'2-1':185,'2-2':205,'2-3':230,'3-1':220,'3-2':245,'3-3':270,'3-4':295,'4-12':275,'4-3':300,'4-4':325,'4-5':350,'5-12':305,'5-3':330,'5-4':355,'5-5':380,'6-13':345,'6-4':370,'6-5':395},moveout:{'1-1':199,'1-2':219,'2-1':219,'2-2':239,'2-3':259,'3-1':249,'3-2':269,'3-3':289,'3-4':309,'4-12':289,'4-3':309,'4-4':329,'4-5':349,'5-12':329,'5-3':349,'5-4':369,'5-5':389,'6-13':369,'6-4':389,'6-5':409},airbnb:{'1-1':99,'1-2':115,'2-1':120,'2-2':135,'2-3':155,'3-1':145,'3-2':160,'3-3':175,'3-4':190,'4-12':185,'4-3':200,'4-4':215,'4-5':230,'5-12':210,'5-3':225,'5-4':240,'5-5':255,'6-13':240,'6-4':255,'6-5':270}};
-const R={weekly:{'1-1':98,'1-2':115,'2-1':119,'2-2':136,'2-3':153,'3-1':144,'3-2':162,'3-3':178,'3-4':196,'4-12':187,'4-3':204,'4-4':221,'4-5':238,'5-12':212,'5-3':230,'5-4':246,'5-5':264,'6-13':246,'6-4':264,'6-5':280},biweekly:{'1-1':104,'1-2':122,'2-1':126,'2-2':144,'2-3':162,'3-1':153,'3-2':171,'3-3':189,'3-4':207,'4-12':198,'4-3':216,'4-4':234,'4-5':252,'5-12':225,'5-3':243,'5-4':261,'5-5':279,'6-13':261,'6-4':279,'6-5':297},monthly:{'1-1':109,'1-2':128,'2-1':133,'2-2':152,'2-3':171,'3-1':162,'3-2':180,'3-3':200,'3-4':218,'4-12':209,'4-3':228,'4-4':247,'4-5':266,'5-12':238,'5-3':256,'5-4':276,'5-5':294,'6-13':276,'6-4':294,'6-5':314}};
+const P={standard:{'1-1':120,'1-2':140,'2-1':145,'2-2':165,'2-3':190,'3-1':180,'3-2':200,'3-3':225,'3-4':245,'4-12':235,'4-3':260,'4-4':280,'4-5':300,'5-12':270,'5-3':295,'5-4':315,'5-5':335,'6-13':315,'6-4':335,'6-5':355},deep:{'1-1':175,'1-2':195,'2-1':195,'2-2':215,'2-3':245,'3-1':235,'3-2':260,'3-3':290,'3-4':315,'4-12':295,'4-3':325,'4-4':350,'4-5':375,'5-12':330,'5-3':360,'5-4':385,'5-5':410,'6-13':375,'6-4':400,'6-5':425},moveout:{'1-1':210,'1-2':230,'2-1':230,'2-2':250,'2-3':275,'3-1':265,'3-2':285,'3-3':310,'3-4':330,'4-12':310,'4-3':335,'4-4':355,'4-5':375,'5-12':355,'5-3':380,'5-4':400,'5-5':420,'6-13':400,'6-4':420,'6-5':440},airbnb:{'1-1':90,'1-2':100,'2-1':105,'2-2':115,'2-3':140,'3-1':130,'3-2':145,'3-3':160,'3-4':175,'4-12':170,'4-3':185,'4-4':200,'4-5':210,'5-12':195,'5-3':210,'5-4':225,'5-5':235,'6-13':225,'6-4':235,'6-5':250}};
+const AIRBNB_LAUNDRY={'1-1':25,'1-2':25,'2-1':35,'2-2':35,'2-3':35,'3-1':45,'3-2':45,'3-3':45,'3-4':45,'4-12':55,'4-3':55,'4-4':55,'4-5':55,'5-12':65,'5-3':65,'5-4':65,'5-5':65,'6-13':65,'6-4':65,'6-5':65};
+const R={weekly:{'1-1':102,'1-2':119,'2-1':123,'2-2':140,'2-3':162,'3-1':153,'3-2':170,'3-3':191,'3-4':208,'4-12':200,'4-3':221,'4-4':238,'4-5':255,'5-12':230,'5-3':251,'5-4':268,'5-5':285,'6-13':268,'6-4':285,'6-5':302},biweekly:{'1-1':108,'1-2':126,'2-1':131,'2-2':149,'2-3':171,'3-1':162,'3-2':180,'3-3':203,'3-4':221,'4-12':212,'4-3':234,'4-4':252,'4-5':270,'5-12':243,'5-3':266,'5-4':284,'5-5':302,'6-13':284,'6-4':302,'6-5':320},monthly:{'1-1':114,'1-2':133,'2-1':138,'2-2':157,'2-3':181,'3-1':171,'3-2':190,'3-3':214,'3-4':233,'4-12':223,'4-3':247,'4-4':266,'4-5':285,'5-12':257,'5-3':280,'5-4':299,'5-5':318,'6-13':299,'6-4':318,'6-5':337}};
 const SN={standard:'Standard Clean',deep:'Deep Clean',moveout:'Move-Out Clean',airbnb:'Airbnb Turnover'};
 const FN={onetime:'One-time',weekly:'Weekly',biweekly:'Bi-weekly',monthly:'Monthly'};
 const SL={'1-1':'1B/1Ba','1-2':'1B/2Ba','2-1':'2B/1Ba','2-2':'2B/2Ba','2-3':'2B/3Ba','3-1':'3B/1Ba','3-2':'3B/2Ba','3-3':'3B/3Ba','3-4':'3B/4Ba','4-12':'4B/1-2Ba','4-3':'4B/3Ba','4-4':'4B/4Ba','4-5':'4B/5Ba','5-12':'5B/1-2Ba','5-3':'5B/3Ba','5-4':'5B/4Ba','5-5':'5B/5Ba','6-13':'6B/1-3Ba','6-4':'6B/4Ba','6-5':'6B/5Ba'};
@@ -682,18 +808,34 @@ function toggleCondition(){heavyCondition=!heavyCondition;document.getElementByI
 
 function setService(b){document.querySelectorAll('.calc-service-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');cS=b.dataset.service;const f=document.getElementById('freqField');if(cS!=='standard'){f.style.display='none';cF='onetime';document.querySelectorAll('.calc-freq-btn').forEach(x=>x.classList.remove('active'));document.querySelector('[data-freq="onetime"]').classList.add('active')}else{f.style.display=''}updateAddons();recalc()}
 function setFreq(b){document.querySelectorAll('.calc-freq-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');cF=b.dataset.freq;recalc()}
-function toggleAddon(el){setTimeout(()=>{el.classList.toggle('active',el.querySelector('input').checked);recalc()},10)}
-function updateAddons(){const bb=document.querySelector('[data-addon="baseboard"]'),cb=document.querySelector('[data-addon="cabinet"]');if(bb){const p=bb.closest('.calc-addon-item');if(cS==='deep'||cS==='moveout'){p.style.opacity='.4';p.style.pointerEvents='none';bb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}}if(cb){const p=cb.closest('.calc-addon-item');if(cS==='moveout'){p.style.opacity='.4';p.style.pointerEvents='none';cb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}}}
+function toggleAddon(el){setTimeout(()=>{el.classList.toggle('active',el.querySelector('input').checked);const blindsInput=el.querySelector('[data-addon="blinds"]');if(blindsInput){document.getElementById('blindsQty').style.display=blindsInput.checked?'block':'none'}const windowsInput=el.querySelector('[data-addon="windows"]');if(windowsInput){document.getElementById('windowsQty').style.display=windowsInput.checked?'block':'none'}recalc()},10)}
+function updateBlindsPrice(){const sel=document.getElementById('blindsSelect');const price=sel.value;const blindsInput=document.querySelector('[data-addon="blinds"]');blindsInput.dataset.price=price;blindsInput.closest('.calc-addon-item').querySelector('.calc-addon-price').textContent='+$'+price;recalc()}
+function updateWindowsPrice(){const sel=document.getElementById('windowsSelect');const price=sel.value;const windowsInput=document.querySelector('[data-addon="windows"]');windowsInput.dataset.price=price;windowsInput.closest('.calc-addon-item').querySelector('.calc-addon-price').textContent='+$'+price;recalc()}
+function updateAddons(){const bb=document.querySelector('[data-addon="baseboard"]'),cb=document.querySelector('[data-addon="cabinet"]'),bm=document.querySelector('[data-addon="basement"]'),wn=document.querySelector('[data-addon="windows"]'),pt=document.querySelector('[data-addon="pet"]'),ly=document.querySelector('[data-addon="laundry"]'),bl=document.querySelector('[data-addon="blinds"]');
+// Baseboard
+if(bb){const p=bb.closest('.calc-addon-item');if(cS==='deep'||cS==='moveout'||cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';bb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}}
+// Cabinet
+if(cb){const p=cb.closest('.calc-addon-item');if(cS==='moveout'||cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';cb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}}
+// Basement, windows, pet - hide for airbnb
+[bm,wn,pt,bl].forEach(el=>{if(el){const p=el.closest('.calc-addon-item');if(cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';el.checked=false;p.classList.remove('active');if(el===bl)document.getElementById('blindsQty').style.display='none';if(el===wn)document.getElementById('windowsQty').style.display='none'}else{p.style.opacity='1';p.style.pointerEvents=''}}});
+// Laundry - update price for airbnb
+if(ly){const p=ly.closest('.calc-addon-item'),pr=p.querySelector('.calc-addon-price');if(cS==='airbnb'){const sz=document.getElementById('calcSize').value;const lp=AIRBNB_LAUNDRY[sz]||45;ly.dataset.price=lp;pr.textContent='+$'+lp}else{ly.dataset.price=45;pr.textContent='+$45'}}}
 function recalc(){const sz=document.getElementById('calcSize').value;let bp,dp=null,sv=0;if(cS==='standard'&&cF!=='onetime'){bp=P.standard[sz];dp=R[cF][sz];sv=bp-dp}else{bp=P[cS][sz]}let db=dp||bp;let heavySurcharge=0;if(heavyCondition){heavySurcharge=Math.round(db*0.25);db+=heavySurcharge}let at=0;const al=[];document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{const p=+i.dataset.price;const n=i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim();at+=p;al.push({n,p})});const t=db+at;document.getElementById('totalPrice').textContent='$'+t;let noteText=cF==='onetime'?'One-time cleaning':FN[cF]+' cleaning';if(heavyCondition)noteText+=' · Heavy';document.getElementById('priceNote').textContent=noteText;const sb=document.getElementById('savingsBox');if(sv>0){sb.style.display='block';sb.textContent='You save $'+sv+' per cleaning!'}else{sb.style.display='none'}let h=`<div class="calc-line"><span class="calc-line-label">${SN[cS]} · ${SL[sz]}</span><span class="calc-line-value">$${bp}</span></div>`;if(sv>0)h+=`<div class="calc-line"><span class="calc-line-label">${FN[cF]} discount</span><span class="calc-line-value calc-line-discount">−$${sv}</span></div>`;if(heavyCondition)h+=`<div class="calc-line"><span class="calc-line-label">⚠️ Heavy Condition +25%</span><span class="calc-line-value" style="color:#e67e22">+$${heavySurcharge}</span></div>`;if(cS==='deep')h+=`<div class="calc-line"><span class="calc-line-label">📏 Baseboards</span><span class="calc-line-value" style="color:var(--green-accent)">Included</span></div>`;if(cS==='moveout')h+=`<div class="calc-line"><span class="calc-line-label">📏 Baseboards + 🗄️ Cabinets</span><span class="calc-line-value" style="color:var(--green-accent)">Included</span></div>`;al.forEach(a=>{h+=`<div class="calc-line"><span class="calc-line-label">${a.n}</span><span class="calc-line-value">+$${a.p}</span></div>`});if(at>0||sv>0||heavyCondition)h+=`<div class="calc-line" style="border-top:1px solid rgba(255,255,255,.15);padding-top:12px;margin-top:4px"><span class="calc-line-label" style="font-weight:700;opacity:1">Total</span><span class="calc-line-value" style="font-size:1.1rem">$${t}</span></div>`;document.getElementById('breakdown').innerHTML=h}
 
-function openBooking(){const sz=document.getElementById('calcSize').value,tot=document.getElementById('totalPrice').textContent;let s=`<div class="modal-summary-line"><span>${SN[cS]}</span><span>${SL[sz]}</span></div><div class="modal-summary-line"><span>Frequency</span><span>${FN[cF]}</span></div>`;if(heavyCondition)s+=`<div class="modal-summary-line"><span>⚠️ Heavy Condition</span><span>+25%</span></div>`;document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{s+=`<div class="modal-summary-line"><span>${i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim()}</span><span>+$${i.dataset.price}</span></div>`});s+=`<div class="modal-summary-line modal-summary-total"><span>Estimated Total</span><span>${tot}</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();tm.setDate(tm.getDate()+1);document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
+function openBooking(){const sz=document.getElementById('calcSize').value,tot=document.getElementById('totalPrice').textContent;let s=`<div class="modal-summary-line"><span>${SN[cS]}</span><span>${SL[sz]}</span></div><div class="modal-summary-line"><span>Frequency</span><span>${FN[cF]}</span></div>`;if(heavyCondition)s+=`<div class="modal-summary-line"><span>⚠️ Heavy Condition</span><span>+25%</span></div>`;document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{s+=`<div class="modal-summary-line"><span>${i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim()}</span><span>+$${i.dataset.price}</span></div>`});s+=`<div class="modal-summary-line modal-summary-total"><span>Estimated Total</span><span>${tot}</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();tm.setDate(tm.getDate()+1);document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBooking()});
 
-async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim();if(!nm||!ph||!dt||!ad){alert('Please fill in Name, Phone, Date, and Address.');return}const sz=document.getElementById('calcSize').value,tot=document.getElementById('totalPrice').textContent;let ao=[];document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>ao.push(i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim()));let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n📋 Service: ${SN[cS]}\n🏠 Size: ${SL[sz]}\n🔄 Frequency: ${FN[cF]}\n💰 Quote: ${tot}\n`;if(heavyCondition)m+=`⚠️ Heavy Condition: +25%\n`;if(ao.length)m+=`➕ Add-ons: ${ao.join(', ')}\n`;m+=`\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
+async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim();if(!nm||!ph||!dt||!ad){alert('Please fill in Name, Phone, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}const sz=document.getElementById('calcSize').value,tot=document.getElementById('totalPrice').textContent;let ao=[];document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>ao.push(i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim()));let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n📋 Service: ${SN[cS]}\n🏠 Size: ${SL[sz]}\n🔄 Frequency: ${FN[cF]}\n💰 Quote: ${tot}\n`;if(heavyCondition)m+=`⚠️ Heavy Condition: +25%\n`;if(ao.length)m+=`➕ Add-ons: ${ao.join(', ')}\n`;m+=`\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
 
 function showTable(id,b){document.querySelectorAll('.pricing-tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');document.getElementById('table-main').style.display=id==='main'?'':'none';document.getElementById('table-airbnb').style.display=id==='airbnb'?'':'none';document.getElementById('table-recurring').style.display=id==='recurring'?'':'none'}
 
+let termsAccepted=false;
+function toggleTerms(){termsAccepted=!termsAccepted;document.getElementById('termsCheck').classList.toggle('active',termsAccepted)}
+function openTerms(){document.getElementById('termsModal').classList.add('open')}
+function closeTerms(){document.getElementById('termsModal').classList.remove('open')}
+function acceptTerms(){termsAccepted=true;document.getElementById('termsCheck').classList.add('active');closeTerms()}
+document.getElementById('termsModal').addEventListener('click',function(e){if(e.target===this)closeTerms()});
 function closeBanner(){document.getElementById('topBanner').style.display='none';document.body.classList.remove('banner-visible')}
 function toggleService(el){el.classList.toggle('open')}
 function toggleFaq(el){const wasOpen=el.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)el.classList.add('open')}
