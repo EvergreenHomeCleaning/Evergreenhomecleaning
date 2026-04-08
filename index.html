@@ -281,8 +281,61 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .referral-note{font-size:.82rem;color:var(--text-light);font-style:italic}
 @media(max-width:480px){.referral-cards{grid-template-columns:1fr}}
 
-/* SOCIAL/CONNECT */
+/* SERVICE - NOT INCLUDED */
+.service-not-included{margin-top:16px;border-left:3px solid #e74c3c;background:#fff5f5;border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 16px}
+.sni-title{font-weight:700;font-size:.82rem;color:#c0392b;margin-bottom:8px}
+.sni-item{font-size:.82rem;color:#7a3a3a;padding:4px 0;padding-left:12px;position:relative;line-height:1.5}
+.sni-item::before{content:'·';position:absolute;left:0;color:#e74c3c;font-weight:700}
+
+/* SERVICE - INFO BOX */
+.service-info-box{margin-top:14px;background:#eff8ff;border-left:3px solid #3498db;border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:12px 16px;font-size:.82rem;color:#1a5276;line-height:1.6}
+
+/* CALC WARNING BANNER */
+.calc-warning-banner{background:#fffbeb;border:1px solid #f6d860;border-left:4px solid #f0b429;border-radius:var(--radius-sm);padding:14px 16px;font-size:.85rem;color:#7d5a00;line-height:1.6;margin-bottom:20px;font-weight:500}
+
+/* INFO SECTIONS */
+.info-section{padding:80px 0;background:var(--white)}
+.info-section-alt{background:var(--cream)}
+.info-section-inner{max-width:780px;margin:0 auto;text-align:center}
+.info-section-icon{font-size:2.8rem;margin-bottom:16px}
+.info-section h2{font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--green-dark);margin-bottom:16px}
+.info-section-desc{color:var(--text-mid);font-size:1rem;line-height:1.7;max-width:640px;margin:0 auto 24px}
+.info-highlight{background:#fff9e6;border:1px solid #f0cc4e;border-left:4px solid #e6b800;border-radius:var(--radius-sm);padding:16px 20px;font-size:.9rem;color:#7a5c00;line-height:1.6;text-align:left;font-weight:500}
+.info-note{margin-top:20px;background:var(--green-pale);border-radius:var(--radius-sm);padding:12px 16px;font-size:.85rem;color:var(--green-dark);font-weight:500;text-align:left}
+
+/* CHECKLIST GRID */
+.checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:24px 0;text-align:left}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;background:var(--white);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius-sm);padding:12px 14px;font-size:.88rem;color:var(--text-mid);line-height:1.5}
+.checklist-icon{color:var(--green-accent);font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:600px){.checklist-grid{grid-template-columns:1fr}}
+
+/* FEES GRID */
+.fees-grid{display:grid;gap:10px;margin-top:24px;text-align:left;max-width:600px;margin-left:auto;margin-right:auto}
+.fee-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;border-radius:var(--radius-sm);flex-wrap:wrap}
+.fee-ok{background:#f0faf4;border:1px solid #b2dfcb}
+.fee-warn{background:#fffbeb;border:1px solid #f6d860}
+.fee-orange{background:#fff5eb;border:1px solid #f5c07a}
+.fee-red{background:#fff5f5;border:1px solid #f5b7b1}
+.fee-label{font-size:.9rem;color:var(--text-dark);font-weight:500}
+.fee-amount{font-weight:700;font-size:.95rem;white-space:nowrap}
+.fee-free{color:#27ae60}
+@media(max-width:480px){.fee-row{flex-direction:column;gap:4px}.fee-amount{align-self:flex-start}}
+
+
 .connect{padding:80px 0;background:var(--cream)}
+/* PAYMENT NOTES */
+.calc-payment-note{text-align:center;margin-top:12px;font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.5}
+.calc-payment-note span{display:block;color:rgba(255,255,255,.35);font-size:.72rem;margin-top:2px}
+.modal-payment-note{text-align:center;margin-top:10px;font-size:.78rem;color:var(--text-light);padding:8px;background:var(--warm);border-radius:var(--radius-sm)}
+
+/* MODAL PREPARE CHECKLIST */
+.modal-prepare{background:#f0faf4;border:1px solid #b2dfcb;border-radius:var(--radius-sm);padding:16px;margin-bottom:20px}
+.modal-prepare-title{font-weight:700;font-size:.85rem;color:var(--green-dark);margin-bottom:10px}
+.modal-prepare-list{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.modal-prepare-item{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;color:var(--text-mid);line-height:1.4}
+.modal-prepare-item span{color:var(--green-accent);font-weight:700;flex-shrink:0}
+.modal-prepare-note{font-size:.78rem;color:#b7791f;background:#fffbeb;border-radius:4px;padding:8px 10px;font-weight:500}
+
 .connect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:0 auto}
 .connect-card{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid rgba(0,0,0,.05);border-radius:var(--radius);padding:20px;text-decoration:none;color:var(--text-dark);transition:all .3s}
 .connect-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--green-accent)}
@@ -366,7 +419,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 
 <section class="hero"><div class="container hero-content"><div class="hero-grid">
   <div>
-    <a href="https://maps.app.goo.gl/awjPQ2TWEaHpqpjx5?g_st=ic" target="_blank" class="hero-badge" style="text-decoration:none;color:inherit"><span class="stars">★★★★★</span> 5.0 on Google · 10 Reviews →</a>
+    
     <h1>A Spotless Home, <span>Every Time</span></h1>
     <p class="hero-desc">Professional residential cleaning in Bonney Lake & surrounding areas. Licensed, insured, and personally handled by the owner.</p>
     <div class="hero-btns"><a href="javascript:void(0)" onclick="goTo('calculator')" class="btn-primary">Get Instant Quote</a><a href="tel:+12532376135" class="btn-secondary">📞 Call Now</a></div>
@@ -406,12 +459,24 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="service-check"><span class="service-check-icon">✓</span>Cleaning and polishing all mirrors</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Emptying trash bins and replacing bags</div>
         <div class="service-details-note">💡 Best for weekly or bi-weekly maintenance</div>
+        <div class="service-not-included">
+          <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
+          <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
+          <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Window cleaning (available as add-on)</div>
+          <div class="sni-item">Baseboard wiping (available as add-on)</div>
+          <div class="sni-item">Laundry, dishes, or organizing</div>
+          <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+        </div>
+        <div class="service-info-box">💡 First time cleaning? Homes that haven't been professionally cleaned in 4+ weeks usually need 2–3 regular visits to reach an ideal state. This is normal — we recommend booking Deep Clean for your first visit.</div>
       </div></div>
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
       <span class="service-tag">Popular</span>
       <div class="service-card-top">
-        <div><span class="service-emoji">🧹</span><h3>Deep Clean</h3><p>Top-to-bottom including baseboards. Perfect for seasonal refresh.</p><div class="service-price">$175+ <span>starting</span></div></div>
+        <div><span class="service-emoji">🧹</span><h3>Deep Clean</h3><p>Top-to-bottom seasonal refresh. Includes full kitchen & bathroom deep work.</p><div class="service-price">$175+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
@@ -420,14 +485,25 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="service-check"><span class="service-check-icon">✓</span>Heavy-duty cleaning of stovetop and burners</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Wiping exterior of all kitchen cabinets</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Deep cleaning the microwave interior</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Detailed baseboard wiping throughout the home</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Vacuuming and mopping under accessible furniture</div>
         <div class="service-details-note">💡 Best for first-time visits or homes not cleaned in 4+ weeks</div>
+        <div class="service-not-included">
+          <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
+          <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
+          <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Window cleaning (available as add-on)</div>
+          <div class="sni-item">Baseboard wiping (available as add-on)</div>
+          <div class="sni-item">Laundry, dishes, or organizing</div>
+          <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+        </div>
+        <div class="service-info-box">💡 First time cleaning? Homes that haven't been professionally cleaned in 4+ weeks usually need 2–3 regular visits to reach an ideal state. This is normal — we recommend booking Deep Clean for your first visit.</div>
       </div></div>
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
       <div class="service-card-top">
-        <div><span class="service-emoji">📦</span><h3>Move-In / Move-Out</h3><p>Baseboards and interior cabinets included by default.</p><div class="service-price">$210+ <span>starting</span></div></div>
+        <div><span class="service-emoji">📦</span><h3>Move-In / Move-Out</h3><p>Interior cabinets included by default. Full empty-property reset.</p><div class="service-price">$210+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
@@ -436,6 +512,16 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="service-check"><span class="service-check-icon">✓</span>Wall spot cleaning — removing visible marks and fingerprints</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Full top-to-bottom reset of the entire empty property</div>
         <div class="service-details-note">💡 Best for empty homes. Full wall washing or excessive stains may be extra.</div>
+        <div class="service-not-included">
+          <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
+          <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
+          <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Window cleaning (available as add-on)</div>
+          <div class="sni-item">Laundry, dishes, or organizing</div>
+          <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+        </div>
       </div></div>
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
@@ -450,6 +536,17 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="service-check"><span class="service-check-icon">✓</span>Laundry add-on: linens, towels, wash/dry, make beds ($25–$65 by bed count)</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Oven & fridge interior cleaning available (+$35 each)</div>
         <div class="service-details-note">💡 No recurring discounts. Laundry priced by bed count: 1 bed $25, 2 beds $35, 3 beds $45, 4 beds $55, 5+ beds $65.</div>
+        <div class="service-not-included">
+          <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
+          <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
+          <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Window cleaning (available as add-on)</div>
+          <div class="sni-item">Baseboard wiping (available as add-on)</div>
+          <div class="sni-item">Laundry, dishes, or organizing</div>
+          <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+        </div>
       </div></div>
     </div>
   </div>
@@ -536,6 +633,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           <button class="calc-freq-btn" data-freq="monthly" onclick="setFreq(this)">Monthly<span class="disc">Save 5%</span></button>
         </div>
       </div>
+      <div id="calcWarningBanner" class="calc-warning-banner" style="display:none">⚠️ Heavily cluttered home? If your home has many personal items on floors, surfaces, or in bathrooms, please add the Heavy Condition option below. Otherwise we cannot clean those blocked areas, and this will not count as missed work.</div>
       <div class="calc-field"><label class="calc-label">Home Condition</label>
         <div class="calc-condition" id="conditionToggle" onclick="toggleCondition()">
           <div class="calc-condition-left"><div><div class="calc-condition-label">⚠️ Heavy Condition</div><div class="calc-condition-desc">Extra dirty, not cleaned in months, heavy buildup</div></div></div>
@@ -549,18 +647,18 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="laundry" data-price="45"><span class="calc-addon-check">✓</span><span class="calc-addon-text">👕 Laundry</span><span class="calc-addon-price">+$45</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="pet" data-price="20"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🐾 Pet Fee</span><span class="calc-addon-price">+$20</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="basement" data-price="60"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🏚️ Basement</span><span class="calc-addon-price">+$60</span></label>
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="baseboard" data-price="30"><span class="calc-addon-check">✓</span><span class="calc-addon-text">📏 Baseboards</span><span class="calc-addon-price">+$30</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="baseboard" data-price="35"><span class="calc-addon-check">✓</span><span class="calc-addon-text">📏 Baseboards</span><span class="calc-addon-price" id="baseboardPrice">+$35</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="cabinet" data-price="45"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🗄️ Cabinets</span><span class="calc-addon-price">+$45</span></label>
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="windows" data-price="15"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🪟 Windows</span><span class="calc-addon-price">+$15</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="windows" data-price="20"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🪟 Windows</span><span class="calc-addon-price">+$20</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="blinds" data-price="20"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🫧 Blinds</span><span class="calc-addon-price">+$20</span></label>
         </div>
         <div id="windowsQty" style="display:none;margin-top:8px">
           <select class="calc-select" id="windowsSelect" onchange="updateWindowsPrice()">
-            <option value="15">1–5 windows ($15)</option>
-            <option value="30">6–10 windows ($30)</option>
-            <option value="45">11–15 windows ($45)</option>
-            <option value="60">16–20 windows ($60)</option>
-            <option value="75">21+ windows ($75)</option>
+            <option value="20">1–5 windows ($20)</option>
+            <option value="35">6–10 windows ($35)</option>
+            <option value="50">11–15 windows ($50)</option>
+            <option value="65">16–20 windows ($65)</option>
+            <option value="80">21+ windows ($80)</option>
           </select>
         </div>
         <div id="blindsQty" style="display:none;margin-top:8px">
@@ -581,6 +679,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       <div class="calc-breakdown" id="breakdown"></div>
       <button class="calc-book-btn" onclick="openBooking()">Book This Cleaning →</button>
       <div class="calc-phone"><a href="tel:+12532376135">or call (253) 237-6135</a></div>
+      <div class="calc-payment-note">💳 Cash · Zelle · Debit Card only<br><span>No credit cards accepted</span></div>
     </div>
   </div>
 </div></section>
@@ -598,25 +697,71 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 <section class="faq" id="faq"><div class="container">
   <div class="section-header fade-in"><div class="section-tag">FAQ</div><h2>Frequently Asked Questions</h2><p>Everything you need to know before booking</p></div>
   <div class="faq-list">
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your quality guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We stand behind every cleaning we perform. Before our team leaves your home, we always perform a <strong>final walkthrough with you</strong>. This is your opportunity to point out any concerns — we will address them on the spot at no extra cost. <strong>Important:</strong> once our team has left the property and the walkthrough has been completed, we cannot return for free re-cleans. All concerns must be raised during the walkthrough.</div></div></div>
+
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Standard Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for weekly or bi-weekly maintenance.</strong> Includes vacuuming all floors and carpets, mopping hard floors, full bathroom cleaning and sanitization (toilet, sink, shower, tub), kitchen countertops and sink cleaning, stovetop surface, dusting all accessible surfaces and furniture, wiping microwave exterior, cleaning and polishing all mirrors, and emptying trash bins with bag replacement.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Deep Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for first-time visits or homes not cleaned in 4+ weeks.</strong> Includes everything in Standard, PLUS: bathroom deep care (removing soap scum and hard water stains), kitchen degreasing (heavy-duty stovetop and burner cleaning), wiping exterior of all kitchen cabinets, deep cleaning the microwave interior, detailed baseboard wiping throughout the home, and vacuuming/mopping under accessible furniture.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Deep Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for first-time visits or homes not cleaned in 4+ weeks.</strong> Includes everything in Standard, PLUS: bathroom deep care (removing soap scum and hard water stains), kitchen degreasing (heavy-duty stovetop and burner cleaning), wiping exterior of all kitchen cabinets, deep cleaning the microwave interior, and vacuuming/mopping under accessible furniture. Note: baseboard wiping is available as a paid add-on.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Move-In / Move-Out Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for empty homes.</strong> Includes everything in Deep Cleaning, PLUS: detailed cleaning inside all kitchen and bathroom cabinets and drawers, wall spot cleaning (removing visible marks and fingerprints), and a full top-to-bottom reset of the entire empty property. Note: full wall washing or excessive stains may be subject to an extra charge.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Move-In / Move-Out Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for empty homes.</strong> Includes everything in Deep Cleaning, PLUS: detailed cleaning inside all kitchen and bathroom cabinets and drawers (included by default), wall spot cleaning (removing visible marks and fingerprints), and a full top-to-bottom reset of the entire empty property. Note: baseboard wiping is available as a paid add-on. Full wall washing or excessive stains may be subject to an extra charge.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do you bring your own supplies and equipment?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes! We bring all cleaning supplies and professional equipment. If you have specific products you prefer us to use, just let us know and we're happy to accommodate.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Are you licensed and insured?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Absolutely. Evergreen Home Cleaning is a fully licensed LLC in Washington state and carries liability insurance. Your home and belongings are protected while we work.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Who will be cleaning my home?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">The owner, Oleh, personally handles every cleaning. No random crews or subcontractors — just one dedicated professional who knows your home and delivers consistent quality every visit.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Who will be cleaning my home?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">The owner personally handles every cleaning. No random crews or subcontractors — just one dedicated professional who knows your home and delivers consistent quality every visit.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What areas do you serve?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We're based in Bonney Lake, WA and serve the greater Pierce County and South King County areas, including Puyallup, Lake Tapps, Sumner, Auburn, Federal Way, Covington, Maple Valley, and surrounding communities.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your cancellation policy?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We require 24-hour notice for cancellations at no charge. Same-day cancellations incur a $40 fee. If we arrive and cannot access the home, the full service price applies.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your cancellation policy?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We require at least 24 hours notice for cancellations or rescheduling — this is always free. <strong>Late cancellations (less than 24 hours):</strong> $50 fee. <strong>Same-day cancellations:</strong> 50% of the booking total. <strong>No-show or lockout</strong> (we arrive and cannot access the home): 100% of the booking total.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How do recurring discounts work?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Recurring discounts apply to Standard Cleaning only: <strong>Weekly saves 15%</strong>, <strong>Bi-weekly saves 10%</strong>, and <strong>Monthly saves 5%</strong>. The discount is applied automatically to every visit. Use our price calculator above to see exact pricing for your home size.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>When is payment due?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Payment is due immediately after the service is completed. For recurring clients, payment is due within 24 hours. A $15/day late fee applies after that. We accept all major payment methods.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>When is payment due?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Payment is due immediately after the service is completed. For recurring clients, payment is due within 24 hours. We accept <strong>Cash, Zelle, or Debit Card</strong>. Please note: <strong>we do not accept credit cards.</strong></div></div></div>
+  </div>
+</div></section>
+
+<!-- QUALITY GUARANTEE -->
+<section class="info-section" id="guarantee"><div class="container">
+  <div class="info-section-inner fade-in">
+    <div class="info-section-icon">✅</div>
+    <h2>Our Quality Guarantee</h2>
+    <p class="info-section-desc">We stand behind every cleaning we perform. Before our team leaves your home, we always perform a final walkthrough with you. This is your opportunity to point out any concerns — we will address them on the spot at no extra cost.</p>
+    <div class="info-highlight">⚠️ Important: Once our team has left the property and the walkthrough has been completed, we cannot return for free re-cleans. All concerns must be raised during the walkthrough.</div>
+  </div>
+</div></section>
+
+<!-- BEFORE WE ARRIVE -->
+<section class="info-section info-section-alt" id="beforearrive"><div class="container">
+  <div class="info-section-inner fade-in">
+    <div class="info-section-icon">📋</div>
+    <h2>Before We Arrive</h2>
+    <p class="info-section-desc">A little preparation helps us do a better job — and ensures every area gets the attention it deserves.</p>
+    <div class="checklist-grid">
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Clear personal items from floors and surfaces you want cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Put away food, dishes, and laundry</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Isolate pets in a separate room</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Provide parking within 100 feet of the entrance</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Ensure access to running water and electricity</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Remove fragile or valuable items from shelves we will be wiping</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Make sure the home is accessible at the scheduled time</div>
+    </div>
+    <div class="info-note">📌 Note: Areas blocked by personal items cannot be cleaned and will not count as missed work.</div>
+  </div>
+</div></section>
+
+<!-- CANCELLATION & FEES -->
+<section class="info-section" id="cancellation"><div class="container">
+  <div class="info-section-inner fade-in">
+    <div class="info-section-icon">📅</div>
+    <h2>Cancellation & Fees</h2>
+    <p class="info-section-desc">We require at least 24 hours notice for cancellations or rescheduling to avoid fees.</p>
+    <div class="fees-grid">
+      <div class="fee-row fee-ok"><div class="fee-label">✅ Reschedule (24+ hours notice)</div><div class="fee-amount fee-free">Free</div></div>
+      <div class="fee-row fee-warn"><div class="fee-label">⚠️ Late Cancellation (less than 24 hours)</div><div class="fee-amount">$50 fee</div></div>
+      <div class="fee-row fee-orange"><div class="fee-label">🔴 Same-Day Cancellation</div><div class="fee-amount">50% of booking total</div></div>
+      <div class="fee-row fee-red"><div class="fee-label">❌ No-Show / Lockout</div><div class="fee-amount">100% of booking total</div></div>
+    </div>
   </div>
 </div></section>
 
@@ -690,6 +835,19 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       <h3>Book Your Cleaning</h3>
       <p class="modal-sub">Fill in your details — we'll confirm within 1 hour</p>
       <div class="modal-summary" id="modalSummary"></div>
+      <div class="modal-prepare">
+        <div class="modal-prepare-title">📋 Before We Arrive — Please Prepare:</div>
+        <div class="modal-prepare-list">
+          <div class="modal-prepare-item"><span>✓</span>Clear personal items from floors and surfaces you want cleaned</div>
+          <div class="modal-prepare-item"><span>✓</span>Put away food, dishes, and laundry</div>
+          <div class="modal-prepare-item"><span>✓</span>Isolate pets in a separate room</div>
+          <div class="modal-prepare-item"><span>✓</span>Provide parking within 100 feet of the entrance</div>
+          <div class="modal-prepare-item"><span>✓</span>Ensure access to running water and electricity</div>
+          <div class="modal-prepare-item"><span>✓</span>Remove fragile or valuable items from shelves we will be wiping</div>
+          <div class="modal-prepare-item"><span>✓</span>Make sure the home is accessible at the scheduled time</div>
+        </div>
+        <div class="modal-prepare-note">⚠️ Areas blocked by personal items cannot be cleaned and will not count as missed work.</div>
+      </div>
       <div class="modal-field"><label>Full Name *</label><input type="text" id="bookName" placeholder="John Smith"></div>
       <div class="modal-field"><label>Phone *</label><input type="tel" id="bookPhone" placeholder="(253) 555-0123"></div>
       <div class="modal-field"><label>Email</label><input type="email" id="bookEmail" placeholder="john@email.com"></div>
@@ -706,11 +864,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         </div>
       </div>
       <button class="modal-submit" id="submitBtn" onclick="submitBooking()">Confirm Booking Request</button>
+      <div class="modal-payment-note">💳 We accept Cash, Zelle, or Debit Card only. No credit cards.</div>
     </div>
     <div class="modal-success" id="bookingSuccess">
       <div class="modal-success-icon">✅</div>
       <h4>Booking Request Sent!</h4>
-      <p>Thank you! Oleh will confirm your appointment within 1 hour.<br>You can also call <a href="tel:+12532376135" style="color:var(--green-dark);font-weight:600">(253) 237-6135</a>.</p>
+      <p>Thank you! We will confirm your appointment within 1 hour.<br>You can also call <a href="tel:+12532376135" style="color:var(--green-dark);font-weight:600">(253) 237-6135</a>.</p>
     </div>
   </div>
 </div>
@@ -724,7 +883,12 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <p>These Terms and Conditions ("Agreement") govern all residential cleaning services provided by Evergreen Home Cleaning LLC ("Company," "we," "us") to you ("Client," "you"). By booking, scheduling, or receiving our services—whether by phone, text, email, website form, messaging app, or any other communication method—you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
 
     <h4>1. Services Provided</h4>
-    <p>Evergreen Home Cleaning LLC provides residential cleaning services in Pierce County and South King County, Washington. Our service types include: Standard Cleaning, Deep Cleaning, and Move-Out/Move-In Cleaning.</p>
+    <p>Evergreen Home Cleaning LLC provides residential cleaning services in Pierce County and South King County, Washington. Our service types include:</p>
+    <p><strong>Standard Cleaning</strong> — Regular maintenance cleaning. Includes vacuuming and mopping all floors, full bathroom sanitization (toilet, sink, shower, tub), kitchen countertops and stovetop surface, dusting all accessible surfaces and furniture, wiping microwave exterior, cleaning mirrors, and emptying trash bins.</p>
+    <p><strong>Deep Cleaning</strong> — Everything in Standard, plus: removing soap scum and hard water stains, heavy-duty stovetop and burner cleaning, wiping exterior of all kitchen cabinets, deep cleaning microwave interior, and vacuuming/mopping under accessible furniture. Note: baseboard wiping is not included by default and is available as a paid add-on.</p>
+    <p><strong>Move-In / Move-Out Cleaning</strong> — Everything in Deep Cleaning, plus: detailed cleaning inside all kitchen and bathroom cabinets and drawers, wall spot cleaning (visible marks and fingerprints), and a full top-to-bottom reset of the empty property. Interior cabinet cleaning is included by default. Baseboard wiping is available as a paid add-on. Full wall washing or excessive stains may be subject to additional charges.</p>
+    <p><strong>Airbnb / Short-Term Rental Turnover</strong> — Optimized cleaning between guest stays. Includes kitchen, bathrooms, bedrooms, common areas, and floors. Laundry (linens and towels) is available as a paid add-on, priced by bed count.</p>
+    <p>The following are <strong>not included</strong> in any service type unless explicitly added as a paid add-on: moving personal belongings or boxes, cleaning surfaces or floors blocked by personal items, removing heavy set-in stains from walls/doors/carpets, window cleaning, baseboard wiping, laundry, dishes, organizing, cleaning under or behind heavy furniture, and exterior areas (garage, patio, balcony).</p>
 
     <h4>2. Add-On Services</h4>
     <p>Additional services such as oven cleaning, refrigerator cleaning, laundry, interior window washing, baseboard detailing, interior cabinet cleaning, and basement cleaning are available at additional cost. All add-on pricing will be quoted prior to service.</p>
@@ -736,7 +900,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <p>The Client must disclose the following prior to the first service: (a) the true and accurate condition of the property; (b) the number and type of pets on the premises; (c) any ongoing construction, renovation, or repair work; (d) the presence of any recording devices inside the property; (e) any hazardous materials, chemicals, or unsafe conditions; (f) any special instructions regarding fragile, high-value, or sentimental items. Failure to disclose may result in additional charges, service refusal, or release of the Company from any related liability.</p>
 
     <h4>5. Pricing & Payment Terms</h4>
-    <p>Payment is due immediately upon completion of service. For recurring clients, payment is due within 24 hours of service completion. Accepted payment methods: Cash, Zelle, or Card.</p>
+    <p>Payment is due immediately upon completion of service. For recurring clients, payment is due within 24 hours of service completion. Accepted payment methods: Cash, Zelle, or Debit Card. <strong>We do not accept credit cards.</strong></p>
 
     <h4>6. Card on File & Deposits</h4>
     <p>The Company reserves the right to require a credit or debit card on file or a deposit prior to service. Any outstanding fees, penalties, surcharges, or unpaid balances authorized under this Agreement may be charged to the card on file. The Client authorizes such charges by providing their payment information.</p>
@@ -763,7 +927,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <p>The Client agrees not to initiate a credit card chargeback or bank dispute before allowing the Company a reasonable opportunity to resolve the issue through a re-clean. Any fraudulent, bad-faith, or premature disputes will incur a $50.00 administrative fee in addition to the original service cost.</p>
 
     <h4>14. Cancellation Policy</h4>
-    <p>Cancellations must be communicated at least 24 hours before the scheduled appointment. A $40.00 cancellation fee applies to any cancellation made with less than 24 hours' notice.</p>
+    <p>Cancellations and rescheduling require at least 24 hours advance notice and are always free of charge. The following fees apply: (a) <strong>Late Cancellation</strong> (less than 24 hours notice): a flat $50.00 fee will be charged; (b) <strong>Same-Day Cancellation</strong>: 50% of the total booking price will be charged; (c) <strong>No-Show / Lockout</strong> (team arrives and cannot access the property for any reason attributable to the Client): 100% of the total booking price will be charged.</p>
 
     <h4>15. Lockout & No-Access Policy</h4>
     <p>If the cleaning team arrives and cannot access the property due to any reason attributable to the Client (no key, wrong code, locked gate, unresponsive Client), the Full Service Price (or a minimum $50.00 fee, whichever is greater) will be charged.</p>
@@ -856,25 +1020,27 @@ const R={weekly:{'1-1':102,'1-2':119,'2-1':123,'2-2':140,'2-3':162,'3-1':153,'3-
 const SN={standard:'Standard Clean',deep:'Deep Clean',moveout:'Move-Out Clean',airbnb:'Airbnb Turnover'};
 const FN={onetime:'One-time',weekly:'Weekly',biweekly:'Bi-weekly',monthly:'Monthly'};
 const SL={'1-1':'1B/1Ba','1-2':'1B/2Ba','2-1':'2B/1Ba','2-2':'2B/2Ba','2-3':'2B/3Ba','3-1':'3B/1Ba','3-2':'3B/2Ba','3-3':'3B/3Ba','3-4':'3B/4Ba','4-12':'4B/1-2Ba','4-3':'4B/3Ba','4-4':'4B/4Ba','4-5':'4B/5Ba','5-12':'5B/1-2Ba','5-3':'5B/3Ba','5-4':'5B/4Ba','5-5':'5B/5Ba','6-13':'6B/1-3Ba','6-4':'6B/4Ba','6-5':'6B/5Ba'};
+const BASEBOARD_PRICE={'1-1':35,'1-2':40,'2-1':45,'2-2':50,'2-3':55,'3-1':55,'3-2':60,'3-3':65,'3-4':70,'4-12':70,'4-3':80,'4-4':85,'4-5':90,'5-12':90,'5-3':95,'5-4':100,'5-5':105,'6-13':110,'6-4':115,'6-5':120};
 let cS='standard',cF='onetime',heavyCondition=false;
 
 function toggleCondition(){heavyCondition=!heavyCondition;document.getElementById('conditionToggle').classList.toggle('active',heavyCondition);recalc()}
 
-function setService(b){document.querySelectorAll('.calc-service-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');cS=b.dataset.service;const f=document.getElementById('freqField');if(cS!=='standard'){f.style.display='none';cF='onetime';document.querySelectorAll('.calc-freq-btn').forEach(x=>x.classList.remove('active'));document.querySelector('[data-freq="onetime"]').classList.add('active')}else{f.style.display=''}updateAddons();recalc()}
+function setService(b){document.querySelectorAll('.calc-service-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');cS=b.dataset.service;const f=document.getElementById('freqField');if(cS!=='standard'){f.style.display='none';cF='onetime';document.querySelectorAll('.calc-freq-btn').forEach(x=>x.classList.remove('active'));document.querySelector('[data-freq="onetime"]').classList.add('active')}else{f.style.display=''}const wb=document.getElementById('calcWarningBanner');if(wb){wb.style.display=(cS==='standard'||cS==='deep')?'block':'none'}updateAddons();recalc()}
 function setFreq(b){document.querySelectorAll('.calc-freq-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');cF=b.dataset.freq;recalc()}
 function toggleAddon(el){setTimeout(()=>{el.classList.toggle('active',el.querySelector('input').checked);const blindsInput=el.querySelector('[data-addon="blinds"]');if(blindsInput){document.getElementById('blindsQty').style.display=blindsInput.checked?'block':'none'}const windowsInput=el.querySelector('[data-addon="windows"]');if(windowsInput){document.getElementById('windowsQty').style.display=windowsInput.checked?'block':'none'}recalc()},10)}
 function updateBlindsPrice(){const sel=document.getElementById('blindsSelect');const price=sel.value;const blindsInput=document.querySelector('[data-addon="blinds"]');blindsInput.dataset.price=price;blindsInput.closest('.calc-addon-item').querySelector('.calc-addon-price').textContent='+$'+price;recalc()}
 function updateWindowsPrice(){const sel=document.getElementById('windowsSelect');const price=sel.value;const windowsInput=document.querySelector('[data-addon="windows"]');windowsInput.dataset.price=price;windowsInput.closest('.calc-addon-item').querySelector('.calc-addon-price').textContent='+$'+price;recalc()}
-function updateAddons(){const bb=document.querySelector('[data-addon="baseboard"]'),cb=document.querySelector('[data-addon="cabinet"]'),bm=document.querySelector('[data-addon="basement"]'),wn=document.querySelector('[data-addon="windows"]'),pt=document.querySelector('[data-addon="pet"]'),ly=document.querySelector('[data-addon="laundry"]'),bl=document.querySelector('[data-addon="blinds"]');
-// Baseboard
-if(bb){const p=bb.closest('.calc-addon-item');if(cS==='deep'||cS==='moveout'||cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';bb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}}
+function updateBaseboardPrice(){const sz=document.getElementById('calcSize').value;const bb=document.querySelector('[data-addon="baseboard"]');if(bb){const price=BASEBOARD_PRICE[sz]||35;bb.dataset.price=price;const priceEl=bb.closest('.calc-addon-item').querySelector('.calc-addon-price');if(priceEl)priceEl.textContent='+$'+price}}
+function updateAddons(){const sz=document.getElementById('calcSize').value;const bb=document.querySelector('[data-addon="baseboard"]'),cb=document.querySelector('[data-addon="cabinet"]'),bm=document.querySelector('[data-addon="basement"]'),wn=document.querySelector('[data-addon="windows"]'),pt=document.querySelector('[data-addon="pet"]'),ly=document.querySelector('[data-addon="laundry"]'),bl=document.querySelector('[data-addon="blinds"]');
+// Baseboard - available for standard/deep/moveout, disabled for airbnb
+if(bb){const p=bb.closest('.calc-addon-item');if(cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';bb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}updateBaseboardPrice()}
 // Cabinet
 if(cb){const p=cb.closest('.calc-addon-item');if(cS==='moveout'||cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';cb.checked=false;p.classList.remove('active')}else{p.style.opacity='1';p.style.pointerEvents=''}}
 // Basement, windows, pet - hide for airbnb
 [bm,wn,pt,bl].forEach(el=>{if(el){const p=el.closest('.calc-addon-item');if(cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';el.checked=false;p.classList.remove('active');if(el===bl)document.getElementById('blindsQty').style.display='none';if(el===wn)document.getElementById('windowsQty').style.display='none'}else{p.style.opacity='1';p.style.pointerEvents=''}}});
 // Laundry - update price for airbnb
-if(ly){const p=ly.closest('.calc-addon-item'),pr=p.querySelector('.calc-addon-price');if(cS==='airbnb'){const sz=document.getElementById('calcSize').value;const lp=AIRBNB_LAUNDRY[sz]||45;ly.dataset.price=lp;pr.textContent='+$'+lp}else{ly.dataset.price=45;pr.textContent='+$45'}}}
-function recalc(){const sz=document.getElementById('calcSize').value;let bp,dp=null,sv=0;if(cS==='standard'&&cF!=='onetime'){bp=P.standard[sz];dp=R[cF][sz];sv=bp-dp}else{bp=P[cS][sz]}let db=dp||bp;let heavySurcharge=0;if(heavyCondition){heavySurcharge=Math.round(db*0.25);db+=heavySurcharge}let at=0;const al=[];document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{const p=+i.dataset.price;const n=i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim();at+=p;al.push({n,p})});const t=db+at;document.getElementById('totalPrice').textContent='$'+t;let noteText=cF==='onetime'?'One-time cleaning':FN[cF]+' cleaning';if(heavyCondition)noteText+=' · Heavy';document.getElementById('priceNote').textContent=noteText;const sb=document.getElementById('savingsBox');if(sv>0){sb.style.display='block';sb.textContent='You save $'+sv+' per cleaning!'}else{sb.style.display='none'}let h=`<div class="calc-line"><span class="calc-line-label">${SN[cS]} · ${SL[sz]}</span><span class="calc-line-value">$${bp}</span></div>`;if(sv>0)h+=`<div class="calc-line"><span class="calc-line-label">${FN[cF]} discount</span><span class="calc-line-value calc-line-discount">−$${sv}</span></div>`;if(heavyCondition)h+=`<div class="calc-line"><span class="calc-line-label">⚠️ Heavy Condition +25%</span><span class="calc-line-value" style="color:#e67e22">+$${heavySurcharge}</span></div>`;if(cS==='deep')h+=`<div class="calc-line"><span class="calc-line-label">📏 Baseboards</span><span class="calc-line-value" style="color:var(--green-accent)">Included</span></div>`;if(cS==='moveout')h+=`<div class="calc-line"><span class="calc-line-label">📏 Baseboards + 🗄️ Cabinets</span><span class="calc-line-value" style="color:var(--green-accent)">Included</span></div>`;al.forEach(a=>{h+=`<div class="calc-line"><span class="calc-line-label">${a.n}</span><span class="calc-line-value">+$${a.p}</span></div>`});if(at>0||sv>0||heavyCondition)h+=`<div class="calc-line" style="border-top:1px solid rgba(255,255,255,.15);padding-top:12px;margin-top:4px"><span class="calc-line-label" style="font-weight:700;opacity:1">Total</span><span class="calc-line-value" style="font-size:1.1rem">$${t}</span></div>`;document.getElementById('breakdown').innerHTML=h}
+if(ly){const p=ly.closest('.calc-addon-item'),pr=p.querySelector('.calc-addon-price');if(cS==='airbnb'){const lp=AIRBNB_LAUNDRY[sz]||45;ly.dataset.price=lp;pr.textContent='+$'+lp}else{ly.dataset.price=45;pr.textContent='+$45'}}}
+function recalc(){const sz=document.getElementById('calcSize').value;let bp,dp=null,sv=0;if(cS==='standard'&&cF!=='onetime'){bp=P.standard[sz];dp=R[cF][sz];sv=bp-dp}else{bp=P[cS][sz]}let db=dp||bp;let heavySurcharge=0;if(heavyCondition){heavySurcharge=Math.round(db*0.25);db+=heavySurcharge}let at=0;const al=[];document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{const p=+i.dataset.price;const n=i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim();at+=p;al.push({n,p})});const t=db+at;document.getElementById('totalPrice').textContent='$'+t;let noteText=cF==='onetime'?'One-time cleaning':FN[cF]+' cleaning';if(heavyCondition)noteText+=' · Heavy';document.getElementById('priceNote').textContent=noteText;const sb=document.getElementById('savingsBox');if(sv>0){sb.style.display='block';sb.textContent='You save $'+sv+' per cleaning!'}else{sb.style.display='none'}let h=`<div class="calc-line"><span class="calc-line-label">${SN[cS]} · ${SL[sz]}</span><span class="calc-line-value">$${bp}</span></div>`;if(sv>0)h+=`<div class="calc-line"><span class="calc-line-label">${FN[cF]} discount</span><span class="calc-line-value calc-line-discount">−$${sv}</span></div>`;if(heavyCondition)h+=`<div class="calc-line"><span class="calc-line-label">⚠️ Heavy Condition +25%</span><span class="calc-line-value" style="color:#e67e22">+$${heavySurcharge}</span></div>`;if(cS==='moveout')h+=`<div class="calc-line"><span class="calc-line-label">🗄️ Interior Cabinets</span><span class="calc-line-value" style="color:var(--green-accent)">Included</span></div>`;al.forEach(a=>{h+=`<div class="calc-line"><span class="calc-line-label">${a.n}</span><span class="calc-line-value">+$${a.p}</span></div>`});if(at>0||sv>0||heavyCondition)h+=`<div class="calc-line" style="border-top:1px solid rgba(255,255,255,.15);padding-top:12px;margin-top:4px"><span class="calc-line-label" style="font-weight:700;opacity:1">Total</span><span class="calc-line-value" style="font-size:1.1rem">$${t}</span></div>`;document.getElementById('breakdown').innerHTML=h}
 
 function openBooking(){const sz=document.getElementById('calcSize').value,tot=document.getElementById('totalPrice').textContent;let s=`<div class="modal-summary-line"><span>${SN[cS]}</span><span>${SL[sz]}</span></div><div class="modal-summary-line"><span>Frequency</span><span>${FN[cF]}</span></div>`;if(heavyCondition)s+=`<div class="modal-summary-line"><span>⚠️ Heavy Condition</span><span>+25%</span></div>`;document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{s+=`<div class="modal-summary-line"><span>${i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim()}</span><span>+$${i.dataset.price}</span></div>`});s+=`<div class="modal-summary-line modal-summary-total"><span>Estimated Total</span><span>${tot}</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();tm.setDate(tm.getDate()+1);document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow=''}
