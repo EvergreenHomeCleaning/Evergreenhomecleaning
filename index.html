@@ -526,26 +526,34 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
       <div class="service-card-top">
-        <div><span class="service-emoji">🏠</span><h3>Airbnb Turnover</h3><p>Quick turnaround between guests. Keep your ratings high.</p><div class="service-price">$90+ <span>starting</span></div></div>
+        <div><span class="service-emoji">🏠</span><h3>Airbnb Turnover</h3><p>Quick turnaround between guests. Keep your ratings high.</p><div class="service-price">$85+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
-        <div class="service-check"><span class="service-check-icon">✓</span>Kitchen, bathrooms, bedrooms, common areas, floors</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Trash removal and restocking host supplies</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Full cleaning of all rooms, bathrooms, kitchen & common areas</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Trash removal to outdoor bins & restocking host supplies</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Linen exchange — fresh set made up, used linens taken for laundering</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Dishes loaded into dishwasher</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Oven & fridge interior wipe-down</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Windows wiped of fingerprints & smudges</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Spot cleaning of baseboards</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Before & after photos sent after every turnover</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Optimized for fast guest turnaround</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Laundry add-on: linens, towels, wash/dry, make beds ($25–$65 by bed count)</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Oven & fridge interior cleaning available (+$35 each)</div>
-        <div class="service-details-note">💡 No recurring discounts. Laundry priced by bed count: 1 bed $25, 2 beds $35, 3 beds $45, 4 beds $55, 5+ beds $65.</div>
-        <div class="service-not-included">
+        <div class="service-details-note">💡 Host must have a minimum of 2 linen sets per bed. We pick up used linens and return them clean on the next visit.</div>
+        <div class="service-details-note" style="margin-top:8px;background:#fff8ec;color:#8a6d1b;">
+          <strong>➕ Add-ons:</strong> Deep oven clean (heavily soiled) +$40 · Deep fridge clean (heavily soiled) +$40 · Extra laundry load on-site +$30/load · Large junk removal from $30 · Exterior areas (garage, patio, balcony) — price on request
+        </div>
+        <div class="service-details-note" style="margin-top:8px;background:#fdebd0;color:#b7791f;">
+          <strong>⚠️ Surcharge:</strong> Heavy condition (after party, extreme mess, etc.) — from +20% depending on condition
+        </div>
+        <div class="service-details-note" style="margin-top:8px;background:#e8f5ec;color:#1a3a2a;">
+          <strong>🏷️ Discount:</strong> Guests stayed 2 nights or less — <strong>−7%</strong>
+        </div>
+        <div class="service-not-included" style="margin-top:16px;">
           <div class="sni-title">❌ What's NOT Included</div>
-          <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
-          <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
           <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
-          <div class="sni-item">Window cleaning (available as add-on)</div>
-          <div class="sni-item">Baseboard wiping (available as add-on)</div>
-          <div class="sni-item">Laundry, dishes, or organizing</div>
           <div class="sni-item">Cleaning under or behind heavy furniture</div>
-          <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+          <div class="sni-item">Restocking host supplies (we arrange, but host provides)</div>
         </div>
       </div></div>
     </div>
@@ -642,9 +650,9 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       </div>
       <div class="calc-field"><label class="calc-label">Add-On Services</label>
         <div class="calc-addons-grid">
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="fridge" data-price="35"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🧊 Fridge</span><span class="calc-addon-price">+$35</span></label>
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="oven" data-price="35"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🔥 Oven</span><span class="calc-addon-price">+$35</span></label>
-          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="laundry" data-price="45"><span class="calc-addon-check">✓</span><span class="calc-addon-text">👕 Laundry</span><span class="calc-addon-price">+$45</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="fridge" data-price="40"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🧊 Fridge</span><span class="calc-addon-price">+$40</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="oven" data-price="40"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🔥 Oven</span><span class="calc-addon-price">+$40</span></label>
+          <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="laundry" data-price="30"><span class="calc-addon-check">✓</span><span class="calc-addon-text">👕 Laundry</span><span class="calc-addon-price">+$30</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="pet" data-price="20"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🐾 Pet Fee</span><span class="calc-addon-price">+$20</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="basement" data-price="60"><span class="calc-addon-check">✓</span><span class="calc-addon-text">🏚️ Basement</span><span class="calc-addon-price">+$60</span></label>
           <label class="calc-addon-item" onclick="toggleAddon(this)"><input type="checkbox" data-addon="baseboard" data-price="35"><span class="calc-addon-check">✓</span><span class="calc-addon-text">📏 Baseboards</span><span class="calc-addon-price" id="baseboardPrice">+$35</span></label>
@@ -887,7 +895,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <p><strong>Standard Cleaning</strong> — Regular maintenance cleaning. Includes vacuuming and mopping all floors, full bathroom sanitization (toilet, sink, shower, tub), kitchen countertops and stovetop surface, dusting all accessible surfaces and furniture, wiping microwave exterior, cleaning mirrors, and emptying trash bins.</p>
     <p><strong>Deep Cleaning</strong> — Everything in Standard, plus: removing soap scum and hard water stains, heavy-duty stovetop and burner cleaning, wiping exterior of all kitchen cabinets, deep cleaning microwave interior, and vacuuming/mopping under accessible furniture. Note: baseboard wiping is not included by default and is available as a paid add-on.</p>
     <p><strong>Move-In / Move-Out Cleaning</strong> — Everything in Deep Cleaning, plus: detailed cleaning inside all kitchen and bathroom cabinets and drawers, wall spot cleaning (visible marks and fingerprints), and a full top-to-bottom reset of the empty property. Interior cabinet cleaning is included by default. Baseboard wiping is available as a paid add-on. Full wall washing or excessive stains may be subject to additional charges.</p>
-    <p><strong>Airbnb / Short-Term Rental Turnover</strong> — Optimized cleaning between guest stays. Includes kitchen, bathrooms, bedrooms, common areas, and floors. Laundry (linens and towels) is available as a paid add-on, priced by bed count.</p>
+    <p><strong>Airbnb / Short-Term Rental Turnover</strong> — Optimized cleaning between guest stays. Includes full room cleaning, linen exchange, dishwasher loading, window smudge removal, spot baseboard cleaning, oven & fridge wipe-down, and trash removal to outdoor bins. Starting from $85.</p>
     <p>The following are <strong>not included</strong> in any service type unless explicitly added as a paid add-on: moving personal belongings or boxes, cleaning surfaces or floors blocked by personal items, removing heavy set-in stains from walls/doors/carpets, window cleaning, baseboard wiping, laundry, dishes, organizing, cleaning under or behind heavy furniture, and exterior areas (garage, patio, balcony).</p>
 
     <h4>2. Add-On Services</h4>
@@ -1014,8 +1022,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 </div>
 
 <script>
-const P={standard:{'1-1':120,'1-2':140,'2-1':145,'2-2':165,'2-3':190,'3-1':180,'3-2':200,'3-3':225,'3-4':245,'4-12':235,'4-3':260,'4-4':280,'4-5':300,'5-12':270,'5-3':295,'5-4':315,'5-5':335,'6-13':315,'6-4':335,'6-5':355},deep:{'1-1':175,'1-2':195,'2-1':195,'2-2':215,'2-3':245,'3-1':235,'3-2':260,'3-3':290,'3-4':315,'4-12':295,'4-3':325,'4-4':350,'4-5':375,'5-12':330,'5-3':360,'5-4':385,'5-5':410,'6-13':375,'6-4':400,'6-5':425},moveout:{'1-1':210,'1-2':230,'2-1':230,'2-2':250,'2-3':275,'3-1':265,'3-2':285,'3-3':310,'3-4':330,'4-12':310,'4-3':335,'4-4':355,'4-5':375,'5-12':355,'5-3':380,'5-4':400,'5-5':420,'6-13':400,'6-4':420,'6-5':440},airbnb:{'1-1':90,'1-2':100,'2-1':105,'2-2':115,'2-3':140,'3-1':130,'3-2':145,'3-3':160,'3-4':175,'4-12':170,'4-3':185,'4-4':200,'4-5':210,'5-12':195,'5-3':210,'5-4':225,'5-5':235,'6-13':225,'6-4':235,'6-5':250}};
-const AIRBNB_LAUNDRY={'1-1':25,'1-2':25,'2-1':35,'2-2':35,'2-3':35,'3-1':45,'3-2':45,'3-3':45,'3-4':45,'4-12':55,'4-3':55,'4-4':55,'4-5':55,'5-12':65,'5-3':65,'5-4':65,'5-5':65,'6-13':65,'6-4':65,'6-5':65};
+const P={standard:{'1-1':120,'1-2':140,'2-1':145,'2-2':165,'2-3':190,'3-1':180,'3-2':200,'3-3':225,'3-4':245,'4-12':235,'4-3':260,'4-4':280,'4-5':300,'5-12':270,'5-3':295,'5-4':315,'5-5':335,'6-13':315,'6-4':335,'6-5':355},deep:{'1-1':175,'1-2':195,'2-1':195,'2-2':215,'2-3':245,'3-1':235,'3-2':260,'3-3':290,'3-4':315,'4-12':295,'4-3':325,'4-4':350,'4-5':375,'5-12':330,'5-3':360,'5-4':385,'5-5':410,'6-13':375,'6-4':400,'6-5':425},moveout:{'1-1':210,'1-2':230,'2-1':230,'2-2':250,'2-3':275,'3-1':265,'3-2':285,'3-3':310,'3-4':330,'4-12':310,'4-3':335,'4-4':355,'4-5':375,'5-12':355,'5-3':380,'5-4':400,'5-5':420,'6-13':400,'6-4':420,'6-5':440},airbnb:{'1-1':85,'1-2':100,'2-1':105,'2-2':120,'2-3':135,'3-1':125,'3-2':140,'3-3':155,'3-4':170,'4-12':160,'4-3':175,'4-4':190,'4-5':205,'5-12':185,'5-3':200,'5-4':215,'5-5':230,'6-13':225,'6-4':240,'6-5':255}};
+const AIRBNB_LAUNDRY={'1-1':30,'1-2':30,'2-1':30,'2-2':30,'2-3':30,'3-1':30,'3-2':30,'3-3':30,'3-4':30,'4-12':30,'4-3':30,'4-4':30,'4-5':30,'5-12':30,'5-3':30,'5-4':30,'5-5':30,'6-13':30,'6-4':30,'6-5':30};
 const R={weekly:{'1-1':102,'1-2':119,'2-1':123,'2-2':140,'2-3':162,'3-1':153,'3-2':170,'3-3':191,'3-4':208,'4-12':200,'4-3':221,'4-4':238,'4-5':255,'5-12':230,'5-3':251,'5-4':268,'5-5':285,'6-13':268,'6-4':285,'6-5':302},biweekly:{'1-1':108,'1-2':126,'2-1':131,'2-2':149,'2-3':171,'3-1':162,'3-2':180,'3-3':203,'3-4':221,'4-12':212,'4-3':234,'4-4':252,'4-5':270,'5-12':243,'5-3':266,'5-4':284,'5-5':302,'6-13':284,'6-4':302,'6-5':320},monthly:{'1-1':114,'1-2':133,'2-1':138,'2-2':157,'2-3':181,'3-1':171,'3-2':190,'3-3':214,'3-4':233,'4-12':223,'4-3':247,'4-4':266,'4-5':285,'5-12':257,'5-3':280,'5-4':299,'5-5':318,'6-13':299,'6-4':318,'6-5':337}};
 const SN={standard:'Standard Clean',deep:'Deep Clean',moveout:'Move-Out Clean',airbnb:'Airbnb Turnover'};
 const FN={onetime:'One-time',weekly:'Weekly',biweekly:'Bi-weekly',monthly:'Monthly'};
@@ -1039,7 +1047,7 @@ if(cb){const p=cb.closest('.calc-addon-item');if(cS==='moveout'||cS==='airbnb'){
 // Basement, windows, pet - hide for airbnb
 [bm,wn,pt,bl].forEach(el=>{if(el){const p=el.closest('.calc-addon-item');if(cS==='airbnb'){p.style.opacity='.4';p.style.pointerEvents='none';el.checked=false;p.classList.remove('active');if(el===bl)document.getElementById('blindsQty').style.display='none';if(el===wn)document.getElementById('windowsQty').style.display='none'}else{p.style.opacity='1';p.style.pointerEvents=''}}});
 // Laundry - update price for airbnb
-if(ly){const p=ly.closest('.calc-addon-item'),pr=p.querySelector('.calc-addon-price');if(cS==='airbnb'){const lp=AIRBNB_LAUNDRY[sz]||45;ly.dataset.price=lp;pr.textContent='+$'+lp}else{ly.dataset.price=45;pr.textContent='+$45'}}}
+if(ly){const p=ly.closest('.calc-addon-item'),pr=p.querySelector('.calc-addon-price');if(cS==='airbnb'){const lp=AIRBNB_LAUNDRY[sz]||30;ly.dataset.price=lp;pr.textContent='+$'+lp}else{ly.dataset.price=30;pr.textContent='+$30'}}}
 function recalc(){const sz=document.getElementById('calcSize').value;let bp,dp=null,sv=0;if(cS==='standard'&&cF!=='onetime'){bp=P.standard[sz];dp=R[cF][sz];sv=bp-dp}else{bp=P[cS][sz]}let db=dp||bp;let heavySurcharge=0;if(heavyCondition){heavySurcharge=Math.round(db*0.25);db+=heavySurcharge}let at=0;const al=[];document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{const p=+i.dataset.price;const n=i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim();at+=p;al.push({n,p})});const t=db+at;document.getElementById('totalPrice').textContent='$'+t;let noteText=cF==='onetime'?'One-time cleaning':FN[cF]+' cleaning';if(heavyCondition)noteText+=' · Heavy';document.getElementById('priceNote').textContent=noteText;const sb=document.getElementById('savingsBox');if(sv>0){sb.style.display='block';sb.textContent='You save $'+sv+' per cleaning!'}else{sb.style.display='none'}let h=`<div class="calc-line"><span class="calc-line-label">${SN[cS]} · ${SL[sz]}</span><span class="calc-line-value">$${bp}</span></div>`;if(sv>0)h+=`<div class="calc-line"><span class="calc-line-label">${FN[cF]} discount</span><span class="calc-line-value calc-line-discount">−$${sv}</span></div>`;if(heavyCondition)h+=`<div class="calc-line"><span class="calc-line-label">⚠️ Heavy Condition +25%</span><span class="calc-line-value" style="color:#e67e22">+$${heavySurcharge}</span></div>`;if(cS==='moveout')h+=`<div class="calc-line"><span class="calc-line-label">🗄️ Interior Cabinets</span><span class="calc-line-value" style="color:var(--green-accent)">Included</span></div>`;al.forEach(a=>{h+=`<div class="calc-line"><span class="calc-line-label">${a.n}</span><span class="calc-line-value">+$${a.p}</span></div>`});if(at>0||sv>0||heavyCondition)h+=`<div class="calc-line" style="border-top:1px solid rgba(255,255,255,.15);padding-top:12px;margin-top:4px"><span class="calc-line-label" style="font-weight:700;opacity:1">Total</span><span class="calc-line-value" style="font-size:1.1rem">$${t}</span></div>`;document.getElementById('breakdown').innerHTML=h}
 
 function openBooking(){const sz=document.getElementById('calcSize').value,tot=document.getElementById('totalPrice').textContent;let s=`<div class="modal-summary-line"><span>${SN[cS]}</span><span>${SL[sz]}</span></div><div class="modal-summary-line"><span>Frequency</span><span>${FN[cF]}</span></div>`;if(heavyCondition)s+=`<div class="modal-summary-line"><span>⚠️ Heavy Condition</span><span>+25%</span></div>`;document.querySelectorAll('.calc-addon-item input:checked').forEach(i=>{s+=`<div class="modal-summary-line"><span>${i.closest('.calc-addon-item').querySelector('.calc-addon-text').textContent.trim()}</span><span>+$${i.dataset.price}</span></div>`});s+=`<div class="modal-summary-line modal-summary-total"><span>Estimated Total</span><span>${tot}</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();tm.setDate(tm.getDate()+1);document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
