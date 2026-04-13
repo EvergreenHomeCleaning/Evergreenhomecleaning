@@ -95,8 +95,8 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .service-card-arrow svg{width:16px;height:16px;transition:transform .3s}
 .service-card.open .service-card-arrow{background:var(--green-dark)}
 .service-card.open .service-card-arrow svg{transform:rotate(180deg);stroke:white}
-.service-details{max-height:0;overflow:hidden;transition:max-height .5s ease}
-.service-card.open .service-details{max-height:800px}
+.service-details{max-height:0;overflow:hidden;transition:max-height .7s ease}
+.service-card.open .service-details{max-height:3000px}
 .service-details-inner{padding-top:20px;border-top:1px solid rgba(0,0,0,.06);margin-top:20px}
 .service-check{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:.88rem;color:var(--text-mid);line-height:1.5}
 .service-check-icon{color:var(--green-accent);font-weight:700;flex-shrink:0;margin-top:1px}
@@ -286,6 +286,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .sni-title{font-weight:700;font-size:.82rem;color:#c0392b;margin-bottom:8px}
 .sni-item{font-size:.82rem;color:#7a3a3a;padding:4px 0;padding-left:12px;position:relative;line-height:1.5}
 .sni-item::before{content:'·';position:absolute;left:0;color:#e74c3c;font-weight:700}
+.sni-list{column-count:2;column-gap:12px}
+@media(max-width:600px){.sni-list{column-count:1}}
 
 /* SERVICE - INFO BOX */
 .service-info-box{margin-top:14px;background:#eff8ff;border-left:3px solid #3498db;border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:12px 16px;font-size:.82rem;color:#1a5276;line-height:1.6}
@@ -358,8 +360,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .faq-q h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.95rem;color:var(--text-dark);flex:1}
 .faq-icon{width:28px;height:28px;border-radius:50%;background:var(--green-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;font-size:.85rem;color:var(--green-dark)}
 .faq-item.open .faq-icon{background:var(--green-dark);color:var(--white);transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.faq-item.open .faq-a{max-height:600px}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .7s ease}
+.faq-item.open .faq-a{max-height:3000px}
 .faq-a-inner{padding:0 24px 20px;font-size:.9rem;color:var(--text-mid);line-height:1.7}
 .faq-a-inner strong{color:var(--text-dark)}
 
@@ -447,36 +449,46 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   <div class="services-grid">
     <div class="service-card fade-in" onclick="toggleService(this)">
       <div class="service-card-top">
-        <div><span class="service-emoji">✨</span><h3>Standard Clean</h3><p>Regular maintenance cleaning — kitchens, bathrooms, floors, dusting.</p><div class="service-price">$120+ <span>starting</span></div></div>
+        <div><span class="service-emoji">✨</span><h3>Standard Clean</h3><p>Підтримуюче прибирання для будинків, які регулярно прибираються. Підходить якщо вдома прибирали протягом останніх 4 тижнів.</p><div class="service-price">$120+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
-        <div class="service-check"><span class="service-check-icon">✓</span>Vacuuming all floors and carpets + mopping hard floors</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Vacuuming all floors and carpets + mopping hard floors (including under accessible furniture)</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Full cleaning and sanitization of toilet, sink, shower, and tub</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Kitchen countertops, sinks, and stovetop surface</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Dusting all accessible surfaces, furniture, and shelves</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Wiping microwave exterior</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Cleaning and polishing all mirrors</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Emptying trash bins and replacing bags</div>
-        <div class="service-details-note">💡 Best for weekly or bi-weekly maintenance</div>
+        <div class="service-details-note">💡 Best for homes cleaned within the last 4 weeks. We maintain cleanliness — not restore it.</div>
         <div class="service-not-included">
           <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-list">
           <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
           <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
           <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Any wall washing (walls are not cleaned)</div>
           <div class="sni-item">Window cleaning (available as add-on)</div>
           <div class="sni-item">Baseboard wiping (available as add-on)</div>
+          <div class="sni-item">Oven interior cleaning (available as add-on)</div>
+          <div class="sni-item">Refrigerator interior cleaning (available as add-on)</div>
           <div class="sni-item">Laundry, dishes, or organizing</div>
           <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Ventilation grilles, light switches, door handles (Deep Clean only)</div>
+          <div class="sni-item">Mold removal</div>
+          <div class="sni-item">Biological contamination</div>
           <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+          <div class="sni-item" style="font-style:italic;column-span:all;margin-top:4px;">Any services or areas not listed under "What's Included" are considered not part of this service.</div>
+          </div>
         </div>
+        <div class="service-info-box" style="border-left:3px solid #e67e22;background:#fff8f0;">⚠️ Before starting, we do a quick walkthrough of the home. If the condition does not match Standard Clean level (heavy soiling, clutter, grease, buildup) — we notify you immediately. Depending on the condition, a Heavy Condition surcharge (+25%) or upgrade to Deep Clean may apply. Work begins only after your confirmation.</div>
         <div class="service-info-box">💡 First time cleaning? Homes that haven't been professionally cleaned in 4+ weeks usually need 2–3 regular visits to reach an ideal state. This is normal — we recommend booking Deep Clean for your first visit.</div>
       </div></div>
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
       <span class="service-tag">Popular</span>
       <div class="service-card-top">
-        <div><span class="service-emoji">🧹</span><h3>Deep Clean</h3><p>Top-to-bottom seasonal refresh. Includes full kitchen & bathroom deep work.</p><div class="service-price">$175+ <span>starting</span></div></div>
+        <div><span class="service-emoji">🧹</span><h3>Deep Clean</h3><p>Повне відновлення чистоти з нуля. Рекомендовано для першого візиту або якщо вдома не прибирали 4+ тижні.</p><div class="service-price">$175+ <span>starting</span></div></div>
         <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#1a3a2a" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
       <div class="service-details"><div class="service-details-inner">
@@ -485,19 +497,32 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="service-check"><span class="service-check-icon">✓</span>Heavy-duty cleaning of stovetop and burners</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Wiping exterior of all kitchen cabinets</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Deep cleaning the microwave interior</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Vacuuming and mopping under accessible furniture</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Detailed cleaning of faucets and fixtures</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Wiping ventilation grilles</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Wiping light switches and outlets</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Wiping door handles</div>
         <div class="service-details-note">💡 Best for first-time visits or homes not cleaned in 4+ weeks</div>
         <div class="service-not-included">
           <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-list">
           <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
           <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
           <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Any wall washing (walls are not cleaned in this service)</div>
           <div class="sni-item">Window cleaning (available as add-on)</div>
           <div class="sni-item">Baseboard wiping (available as add-on)</div>
+          <div class="sni-item">Oven interior cleaning (available as add-on)</div>
+          <div class="sni-item">Refrigerator interior cleaning (available as add-on)</div>
           <div class="sni-item">Laundry, dishes, or organizing</div>
           <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Mold removal</div>
+          <div class="sni-item">Biological contamination</div>
+          <div class="sni-item">Post-renovation cleaning (construction dust, paint)</div>
           <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+          <div class="sni-item" style="font-style:italic;column-span:all;margin-top:4px;">Any services or areas not listed under "What's Included" are considered not part of this service.</div>
+          </div>
         </div>
+        <div class="service-info-box" style="border-left:3px solid #e67e22;background:#fff8f0;">⚠️ Before starting, we do a quick walkthrough of the home. If the condition is significantly worse than expected (extreme soiling, clutter, heavy buildup) — we notify you immediately. A Heavy Condition surcharge (+25%) may apply, or service may need to be split into multiple visits. Work begins only after your confirmation.</div>
         <div class="service-info-box">💡 First time cleaning? Homes that haven't been professionally cleaned in 4+ weeks usually need 2–3 regular visits to reach an ideal state. This is normal — we recommend booking Deep Clean for your first visit.</div>
       </div></div>
     </div>
@@ -509,19 +534,31 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       <div class="service-details"><div class="service-details-inner">
         <div class="service-check"><span class="service-check-icon">✓</span>Everything in Deep Clean, PLUS:</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Detailed cleaning inside all kitchen and bathroom cabinets and drawers</div>
-        <div class="service-check"><span class="service-check-icon">✓</span>Wall spot cleaning — removing visible marks and fingerprints</div>
+        <div class="service-check"><span class="service-check-icon">✓</span>Wiping walls to remove dust + spot cleaning visible marks and fingerprints</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Full top-to-bottom reset of the entire empty property</div>
         <div class="service-details-note">💡 Best for empty homes. Full wall washing or excessive stains may be extra.</div>
         <div class="service-not-included">
           <div class="sni-title">❌ What's NOT Included</div>
+          <div class="sni-list">
           <div class="sni-item">Moving personal belongings, clothing, toys, or boxes</div>
           <div class="sni-item">Cleaning floors or surfaces blocked by personal items</div>
           <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
+          <div class="sni-item">Full wall washing (spot cleaning only — full wash available as add-on)</div>
           <div class="sni-item">Window cleaning (available as add-on)</div>
+          <div class="sni-item">Oven interior cleaning (available as add-on)</div>
+          <div class="sni-item">Refrigerator interior cleaning (available as add-on)</div>
           <div class="sni-item">Laundry, dishes, or organizing</div>
           <div class="sni-item">Cleaning under or behind heavy furniture</div>
+          <div class="sni-item">Mold removal</div>
+          <div class="sni-item">Biological contamination</div>
+          <div class="sni-item">Post-renovation cleaning (construction dust, paint)</div>
+          <div class="sni-item">Hauling away trash or furniture</div>
           <div class="sni-item">Exterior areas (garage, patio, balcony)</div>
+          <div class="sni-item">We are not responsible for surfaces or areas inaccessible due to personal belongings left by the client.</div>
+          <div class="sni-item" style="font-style:italic;column-span:all;margin-top:4px;">Any services or areas not listed under "What's Included" are considered not part of this service.</div>
+          </div>
         </div>
+        <div class="service-info-box" style="border-left:3px solid #e67e22;background:#fff8f0;">⚠️ This service is designed for fully empty properties. Before starting, we do a quick walkthrough. If personal belongings, furniture, or trash remain and interfere with cleaning — a clutter surcharge of +25% applies. We are not responsible for areas that could not be accessed due to remaining items. Work begins only after your confirmation.</div>
       </div></div>
     </div>
     <div class="service-card fade-in" onclick="toggleService(this)">
@@ -707,25 +744,119 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   <div class="faq-list">
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your quality guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We stand behind every cleaning we perform. Before our team leaves your home, we always perform a <strong>final walkthrough with you</strong>. This is your opportunity to point out any concerns — we will address them on the spot at no extra cost. <strong>Important:</strong> once our team has left the property and the walkthrough has been completed, we cannot return for free re-cleans. All concerns must be raised during the walkthrough.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Standard Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for weekly or bi-weekly maintenance.</strong> Includes vacuuming all floors and carpets, mopping hard floors, full bathroom cleaning and sanitization (toilet, sink, shower, tub), kitchen countertops and sink cleaning, stovetop surface, dusting all accessible surfaces and furniture, wiping microwave exterior, cleaning and polishing all mirrors, and emptying trash bins with bag replacement.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Standard Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">
+      <strong>Best for homes cleaned within the last 4 weeks. We maintain cleanliness — not restore it.</strong>
+      <p style="margin:10px 0 6px;font-weight:600;color:#1a3a2a;">✅ What's Included:</p>
+      <ul style="margin:0 0 12px;padding-left:18px;font-size:.9rem;line-height:1.8;">
+        <li>Vacuuming all floors and carpets + mopping hard floors (including under accessible furniture)</li>
+        <li>Full cleaning and sanitization of toilet, sink, shower, and tub</li>
+        <li>Kitchen countertops, sinks, and stovetop surface</li>
+        <li>Dusting all accessible surfaces, furniture, and shelves</li>
+        <li>Wiping microwave exterior</li>
+        <li>Cleaning and polishing all mirrors</li>
+        <li>Emptying trash bins and replacing bags</li>
+      </ul>
+      <p style="margin:0 0 6px;font-weight:600;color:#c0392b;">❌ What's NOT Included:</p>
+      <div style="column-count:2;column-gap:12px;font-size:.82rem;color:#7a3a3a;line-height:1.7;">
+        <div>· Moving personal belongings, clothing, toys, or boxes</div>
+        <div>· Cleaning floors or surfaces blocked by personal items</div>
+        <div>· Removing heavy set-in stains from walls, doors, or carpets</div>
+        <div>· Any wall washing (walls are not cleaned)</div>
+        <div>· Window cleaning (available as add-on)</div>
+        <div>· Baseboard wiping (available as add-on)</div>
+        <div>· Oven interior cleaning (available as add-on)</div>
+        <div>· Refrigerator interior cleaning (available as add-on)</div>
+        <div>· Laundry, dishes, or organizing</div>
+        <div>· Cleaning under or behind heavy furniture</div>
+        <div>· Ventilation grilles, light switches, door handles (Deep Clean only)</div>
+        <div>· Mold removal</div>
+        <div>· Biological contamination</div>
+        <div>· Exterior areas (garage, patio, balcony)</div>
+      </div>
+      <p style="margin-top:10px;font-size:.78rem;font-style:italic;color:#999;">Any services or areas not listed under "What's Included" are considered not part of this service.</p>
+    </div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Deep Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for first-time visits or homes not cleaned in 4+ weeks.</strong> Includes everything in Standard, PLUS: bathroom deep care (removing soap scum and hard water stains), kitchen degreasing (heavy-duty stovetop and burner cleaning), wiping exterior of all kitchen cabinets, deep cleaning the microwave interior, and vacuuming/mopping under accessible furniture. Note: baseboard wiping is available as a paid add-on.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Deep Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">
+      <strong>Best for first-time visits or homes not cleaned in 4+ weeks. Full restoration of cleanliness.</strong>
+      <p style="margin:10px 0 6px;font-weight:600;color:#1a3a2a;">✅ What's Included (everything in Standard, PLUS):</p>
+      <ul style="margin:0 0 12px;padding-left:18px;font-size:.9rem;line-height:1.8;">
+        <li>Removing soap scum and hard water stains from showers and tubs</li>
+        <li>Heavy-duty cleaning of stovetop and burners</li>
+        <li>Wiping exterior of all kitchen cabinets</li>
+        <li>Deep cleaning the microwave interior</li>
+        <li>Detailed cleaning of faucets and fixtures</li>
+        <li>Wiping ventilation grilles</li>
+        <li>Wiping light switches and outlets</li>
+        <li>Wiping door handles</li>
+      </ul>
+      <p style="margin:0 0 6px;font-weight:600;color:#c0392b;">❌ What's NOT Included:</p>
+      <div style="column-count:2;column-gap:12px;font-size:.82rem;color:#7a3a3a;line-height:1.7;">
+        <div>· Moving personal belongings, clothing, toys, or boxes</div>
+        <div>· Cleaning floors or surfaces blocked by personal items</div>
+        <div>· Removing heavy set-in stains from walls, doors, or carpets</div>
+        <div>· Any wall washing (walls are not cleaned)</div>
+        <div>· Window cleaning (available as add-on)</div>
+        <div>· Baseboard wiping (available as add-on)</div>
+        <div>· Oven interior cleaning (available as add-on)</div>
+        <div>· Refrigerator interior cleaning (available as add-on)</div>
+        <div>· Laundry, dishes, or organizing</div>
+        <div>· Cleaning under or behind heavy furniture</div>
+        <div>· Mold removal</div>
+        <div>· Biological contamination</div>
+        <div>· Post-renovation cleaning (construction dust, paint)</div>
+        <div>· Exterior areas (garage, patio, balcony)</div>
+      </div>
+      <p style="margin-top:10px;font-size:.78rem;font-style:italic;color:#999;">Any services or areas not listed under "What's Included" are considered not part of this service.</p>
+    </div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Move-In / Move-Out Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner"><strong>Best for empty homes.</strong> Includes everything in Deep Cleaning, PLUS: detailed cleaning inside all kitchen and bathroom cabinets and drawers (included by default), wall spot cleaning (removing visible marks and fingerprints), and a full top-to-bottom reset of the entire empty property. Note: baseboard wiping is available as a paid add-on. Full wall washing or excessive stains may be subject to an extra charge.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's included in a Move-In / Move-Out Cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">
+      <strong>Best for fully empty homes. Complete top-to-bottom reset.</strong>
+      <p style="margin:10px 0 6px;font-weight:600;color:#1a3a2a;">✅ What's Included (everything in Deep Clean, PLUS):</p>
+      <ul style="margin:0 0 12px;padding-left:18px;font-size:.9rem;line-height:1.8;">
+        <li>Detailed cleaning inside all kitchen and bathroom cabinets and drawers</li>
+        <li>Wiping walls to remove dust + spot cleaning visible marks and fingerprints</li>
+        <li>Full top-to-bottom reset of the entire empty property</li>
+      </ul>
+      <p style="margin:0 0 6px;font-weight:600;color:#c0392b;">❌ What's NOT Included:</p>
+      <div style="column-count:2;column-gap:12px;font-size:.82rem;color:#7a3a3a;line-height:1.7;">
+        <div>· Moving personal belongings, clothing, toys, or boxes</div>
+        <div>· Cleaning floors or surfaces blocked by personal items</div>
+        <div>· Removing heavy set-in stains from walls, doors, or carpets</div>
+        <div>· Full wall washing (spot cleaning only — full wash as add-on)</div>
+        <div>· Window cleaning (available as add-on)</div>
+        <div>· Oven interior cleaning (available as add-on)</div>
+        <div>· Refrigerator interior cleaning (available as add-on)</div>
+        <div>· Laundry, dishes, or organizing</div>
+        <div>· Cleaning under or behind heavy furniture</div>
+        <div>· Mold removal</div>
+        <div>· Biological contamination</div>
+        <div>· Post-renovation cleaning (construction dust, paint)</div>
+        <div>· Hauling away trash or furniture</div>
+        <div>· Exterior areas (garage, patio, balcony)</div>
+        <div>· We are not responsible for areas inaccessible due to remaining belongings</div>
+      </div>
+      <p style="margin-top:10px;font-size:.78rem;font-style:italic;color:#999;">Any services or areas not listed under "What's Included" are considered not part of this service.</p>
+    </div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do you bring your own supplies and equipment?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes! We bring all cleaning supplies and professional equipment. If you have specific products you prefer us to use, just let us know and we're happy to accommodate.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do you bring your own supplies and equipment?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes! We bring all cleaning supplies and professional equipment. The only thing we ask clients to provide is <strong>trash bags for bin replacement</strong>. If you have specific products you'd prefer us to use, just let us know in advance.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Are you licensed and insured?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Absolutely. Evergreen Home Cleaning is a fully licensed LLC in Washington state and carries liability insurance. Your home and belongings are protected while we work.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Who will be cleaning my home?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">The owner personally handles every cleaning. No random crews or subcontractors — just one dedicated professional who knows your home and delivers consistent quality every visit.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Who will be cleaning my home?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">A team of 2–3 people led by the owner personally. No random crews or subcontractors — just a trusted, consistent team that delivers quality every visit.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What areas do you serve?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We're based in Bonney Lake, WA and serve the greater Pierce County and South King County areas, including Puyallup, Lake Tapps, Sumner, Auburn, Federal Way, Covington, Maple Valley, and surrounding communities.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your cancellation policy?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We require at least 24 hours notice for cancellations or rescheduling — this is always free. <strong>Late cancellations (less than 24 hours):</strong> $50 fee. <strong>Same-day cancellations:</strong> 50% of the booking total. <strong>No-show or lockout</strong> (we arrive and cannot access the home): 100% of the booking total.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your cancellation policy?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Cancellations with <strong>24+ hours notice</strong> are always free. <strong>Late cancellation (less than 24 hours):</strong> $50 fee. <strong>Same-day cancellation:</strong> 50% of the booking total. <strong>No-show, lockout, or client refusal upon team arrival:</strong> 100% of the booking total.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How do recurring discounts work?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Recurring discounts apply to Standard Cleaning only: <strong>Weekly saves 15%</strong>, <strong>Bi-weekly saves 10%</strong>, and <strong>Monthly saves 5%</strong>. The discount is applied automatically to every visit. Use our price calculator above to see exact pricing for your home size.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>When is payment due?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Payment is due immediately after the service is completed. For recurring clients, payment is due within 24 hours. We accept <strong>Cash, Zelle, or Debit Card</strong>. Please note: <strong>we do not accept credit cards.</strong></div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>When is payment due?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Payment is due <strong>before cleaning begins</strong> — after the team arrives and completes the walkthrough of your home. For recurring clients, payment is due within 24 hours after the service. We accept <strong>Cash, Zelle, or Debit Card</strong>. Please note: <strong>we do not accept credit cards.</strong></div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do I need to be home during the cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">No, it's not required. Many clients simply leave a key or door code. The important thing is that we have access to the home. If access is not possible on the day of cleaning, or if the client refuses entry after the team has arrived — a <strong>100% cancellation fee</strong> applies.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do you clean homes with pets?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes! We love animals. We do ask that pets be placed in a separate room or outside the cleaning area during the visit — for their safety and our efficiency. A <strong>Pet Add-on (+$20)</strong> is available and includes extra attention to pet hair and odor.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How do I prepare for a cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">To help us do our best work, please: pick up personal items, clothing, and toys from the floor; ensure access to all rooms; prepare payment (Cash, Zelle, or Debit); have trash bags available for bin replacement; and if you have pets — place them in a separate area.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What if something gets damaged during the cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We are insured and take responsibility for damage caused by our work. Any damage must be reported <strong>within 24 hours</strong> of the cleaning — claims submitted after that cannot be considered. Items that were already damaged or unstable before our arrival are not our responsibility.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What's the difference between Standard and Deep Clean?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Standard is maintenance cleaning for homes that have been cleaned within the last 4 weeks. Deep is a full restoration — with detailed cleaning of the stovetop and burners, microwave interior, faucets, light switches, ventilation grilles, and cabinet exteriors. If you're unsure, choose Deep — especially for a first visit.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How far in advance should I book?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We recommend booking <strong>2–3 days in advance</strong>. For urgent requests, reach out directly and we'll do our best to find a time that works.</div></div></div>
   </div>
 </div></section>
 
@@ -1067,6 +1198,7 @@ document.getElementById('termsModal').addEventListener('click',function(e){if(e.
 function closeBanner(){document.getElementById('topBanner').style.display='none';document.body.classList.remove('banner-visible')}
 function toggleService(el){el.classList.toggle('open')}
 function toggleFaq(el){const wasOpen=el.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)el.classList.add('open')}
+function toggleSni(btn){const container=btn.closest('.service-not-included');const hidden=container.querySelectorAll('.sni-hidden');const isOpen=btn.dataset.open==='1';hidden.forEach(el=>{el.style.display=isOpen?'none':''});btn.textContent=isOpen?'▼ Show more':'▲ Show less';btn.dataset.open=isOpen?'':'1'}
 function copyPhone(){navigator.clipboard.writeText('(253) 237-6135').then(()=>{showToast('📞 Phone number copied!')}).catch(()=>{showToast('📞 (253) 237-6135')})}
 function showToast(msg){let t=document.getElementById('toast');if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:#1a3a2a;color:#fff;padding:14px 28px;border-radius:50px;font-size:.9rem;font-weight:600;z-index:999;opacity:0;transition:all .3s;pointer-events:none;box-shadow:0 8px 32px rgba(0,0,0,.2)';document.body.appendChild(t)}t.textContent=msg;t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(20px)'},2500)}
 function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
