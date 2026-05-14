@@ -627,21 +627,11 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="service-check"><span class="service-check-icon">✓</span>Spot cleaning of baseboards</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Before & after photos sent after every turnover</div>
         <div class="service-check"><span class="service-check-icon">✓</span>Optimized for fast guest turnaround</div>
-        <div class="service-details-note">💡 Host must have a minimum of 2 linen sets per bed. We pick up used linens and return them clean on the next visit.</div>
-        <div class="service-details-note" style="margin-top:8px;background:#fff8ec;color:#8a6d1b;">
-          <strong>➕ Add-ons:</strong> Deep oven clean (heavily soiled) +$40 · Deep fridge clean (heavily soiled) +$40 · Extra laundry load on-site +$30/load · Large junk removal from $30 · Exterior areas (garage, patio, balcony) — price on request
-        </div>
-        <div class="service-details-note" style="margin-top:8px;background:#fdebd0;color:#b7791f;">
-          <strong>⚠️ Surcharge:</strong> Heavy condition (after party, extreme mess, etc.) — from +20% depending on condition
-        </div>
-        <div class="service-details-note" style="margin-top:8px;background:#e8f5ec;color:#1a3a2a;">
-          <strong>🏷️ Discount:</strong> Guests stayed 2 nights or less — <strong>−7%</strong>
-        </div>
-        <div class="service-not-included" style="margin-top:16px;">
-          <div class="sni-title">❌ What's NOT Included</div>
-          <div class="sni-item">Removing heavy set-in stains from walls, doors, or carpets</div>
-          <div class="sni-item">Cleaning under or behind heavy furniture</div>
-          <div class="sni-item">Restocking host supplies (we arrange, but host provides)</div>
+        <div class="service-details-note" style="margin-top:16px;background:#e8f5ec;border-left:3px solid #4eca6a;color:#1a3a2a;font-size:.92rem;line-height:1.8;">
+          <strong>📋 Pricing is custom for each property.</strong><br>
+          For a quote and all the details — text or call us directly:<br><br>
+          <a href="sms:+12532376135" style="display:inline-block;color:#0d2818;font-weight:700;font-size:.95rem;background:#4eca6a;padding:8px 18px;border-radius:50px;text-decoration:none;margin-right:8px;">💬 Text Us</a>
+          <a href="tel:+12532376135" style="display:inline-block;color:#1a3a2a;font-weight:700;font-size:.95rem;background:transparent;border:2px solid #1a3a2a;padding:6px 18px;border-radius:50px;text-decoration:none;">(253) 237-6135</a>
         </div>
       </div></div>
     </div>
@@ -708,7 +698,6 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           <button class="calc-service-btn active" data-service="standard" onclick="setService(this)">✨ Standard</button>
           <button class="calc-service-btn" data-service="deep" onclick="setService(this)">🧹 Deep Clean</button>
           <button class="calc-service-btn" data-service="moveout" onclick="setService(this)">📦 Move-Out</button>
-          <button class="calc-service-btn" data-service="airbnb" onclick="setService(this)">🏠 Airbnb</button>
         </div>
       </div>
       <div class="calc-field"><label class="calc-label">Home Size</label>
@@ -1234,7 +1223,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 <script>
 const P={standard:{'1-1':125,'1-2':145,'2-1':155,'2-2':165,'2-3':189,'3-1':199,'3-2':209,'3-3':219,'3-4':235,'4-12':219,'4-3':245,'4-4':255,'4-5':279,'5-12':265,'5-3':289,'5-4':299,'5-5':325,'6-13':309,'6-4':335,'6-5':349},deep:{'1-1':185,'1-2':215,'2-1':225,'2-2':249,'2-3':289,'3-1':299,'3-2':325,'3-3':389,'3-4':429,'4-12':389,'4-3':429,'4-4':469,'4-5':519,'5-12':469,'5-3':519,'5-4':559,'5-5':599,'6-13':559,'6-4':599,'6-5':639},moveout:{'1-1':235,'1-2':265,'2-1':275,'2-2':299,'2-3':329,'3-1':339,'3-2':369,'3-3':430,'3-4':475,'4-12':430,'4-3':475,'4-4':520,'4-5':565,'5-12':520,'5-3':565,'5-4':610,'5-5':655,'6-13':610,'6-4':655,'6-5':700},airbnb:{'1-1':85,'1-2':100,'2-1':105,'2-2':120,'2-3':135,'3-1':125,'3-2':140,'3-3':155,'3-4':170,'4-12':160,'4-3':175,'4-4':190,'4-5':205,'5-12':185,'5-3':200,'5-4':215,'5-5':230,'6-13':225,'6-4':240,'6-5':255}};
 const AIRBNB_LAUNDRY={'1-1':30,'1-2':30,'2-1':30,'2-2':30,'2-3':30,'3-1':30,'3-2':30,'3-3':30,'3-4':30,'4-12':30,'4-3':30,'4-4':30,'4-5':30,'5-12':30,'5-3':30,'5-4':30,'5-5':30,'6-13':30,'6-4':30,'6-5':30};
-const R={weekly:{'1-1':102,'1-2':119,'2-1':123,'2-2':140,'2-3':162,'3-1':153,'3-2':170,'3-3':191,'3-4':208,'4-12':200,'4-3':221,'4-4':238,'4-5':255,'5-12':230,'5-3':251,'5-4':268,'5-5':285,'6-13':268,'6-4':285,'6-5':302},biweekly:{'1-1':108,'1-2':126,'2-1':131,'2-2':149,'2-3':171,'3-1':162,'3-2':180,'3-3':203,'3-4':221,'4-12':212,'4-3':234,'4-4':252,'4-5':270,'5-12':243,'5-3':266,'5-4':284,'5-5':302,'6-13':284,'6-4':302,'6-5':320},monthly:{'1-1':114,'1-2':133,'2-1':138,'2-2':157,'2-3':181,'3-1':171,'3-2':190,'3-3':214,'3-4':233,'4-12':223,'4-3':247,'4-4':266,'4-5':285,'5-12':257,'5-3':280,'5-4':299,'5-5':318,'6-13':299,'6-4':318,'6-5':337}};
+const R={weekly:{'1-1':106,'1-2':123,'2-1':132,'2-2':140,'2-3':161,'3-1':169,'3-2':178,'3-3':186,'3-4':200,'4-12':186,'4-3':208,'4-4':217,'4-5':237,'5-12':225,'5-3':246,'5-4':254,'5-5':276,'6-13':263,'6-4':285,'6-5':297},biweekly:{'1-1':113,'1-2':131,'2-1':140,'2-2':149,'2-3':170,'3-1':179,'3-2':188,'3-3':197,'3-4':212,'4-12':197,'4-3':221,'4-4':230,'4-5':251,'5-12':239,'5-3':260,'5-4':269,'5-5':293,'6-13':278,'6-4':302,'6-5':314},monthly:{'1-1':119,'1-2':138,'2-1':147,'2-2':157,'2-3':180,'3-1':189,'3-2':199,'3-3':208,'3-4':223,'4-12':208,'4-3':233,'4-4':242,'4-5':265,'5-12':252,'5-3':275,'5-4':284,'5-5':309,'6-13':294,'6-4':318,'6-5':332}};
 const SN={standard:'Standard Clean',deep:'Deep Clean',moveout:'Move-Out Clean',airbnb:'Airbnb Turnover'};
 const FN={onetime:'One-time',weekly:'Weekly',biweekly:'Bi-weekly',monthly:'Monthly'};
 const SL={'1-1':'1B/1Ba','1-2':'1B/2Ba','2-1':'2B/1Ba','2-2':'2B/2Ba','2-3':'2B/3Ba','3-1':'3B/1Ba','3-2':'3B/2Ba','3-3':'3B/3Ba','3-4':'3B/4Ba','4-12':'4B/1-2Ba','4-3':'4B/3Ba','4-4':'4B/4Ba','4-5':'4B/5Ba','5-12':'5B/1-2Ba','5-3':'5B/3Ba','5-4':'5B/4Ba','5-5':'5B/5Ba','6-13':'6B/1-3Ba','6-4':'6B/4Ba','6-5':'6B/5Ba'};
