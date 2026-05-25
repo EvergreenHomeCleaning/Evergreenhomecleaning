@@ -657,7 +657,6 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           </div>
         </div>
         <div style="background:#1a3a2a;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;">
-          <div style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px;">Typical Time Estimates</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
             <div style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Typical Time Estimates</div>
             <div style="border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:10px;">
@@ -913,7 +912,6 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           <div class="modal-prepare-item"><span>✓</span>Ensure access to running water & electricity</div>
         </div>
         </div>
-        <div class="modal-prepare-note">⚠️ Areas blocked by personal items cannot be cleaned and will not count as missed work.</div>
       </div>
       <div class="modal-field"><label>Full Name *</label><input type="text" id="bookName" placeholder="John Smith"></div>
       <div class="modal-field"><label>Phone *</label><input type="tel" id="bookPhone" placeholder="(253) 555-0123"></div>
@@ -931,6 +929,20 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
             <option>1</option><option>2</option><option>3</option><option>4+</option>
           </select>
         </div>
+      </div>
+      <div class="modal-field"><label>Preferred Hours</label>
+        <select id="bookHours" class="calc-select">
+          <option value="">Not sure — let the team decide</option>
+          <option>2.5 hrs</option>
+          <option>3 hrs</option>
+          <option>3.5 hrs</option>
+          <option>4 hrs</option>
+          <option>4.5 hrs</option>
+          <option>5 hrs</option>
+          <option>5.5 hrs</option>
+          <option>6 hrs</option>
+          <option>Custom — I'll discuss with the team</option>
+        </select>
       </div>
       <div class="modal-field"><label>Preferred Date *</label><input type="date" id="bookDate"></div>
       <div class="modal-field"><label>Preferred Time</label>
@@ -961,136 +973,104 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <button class="terms-close" onclick="closeTerms()">✕</button>
     <h3>Terms & Conditions of Service</h3>
     <p><em>Evergreen Home Cleaning LLC</em></p>
-    <p>These Terms and Conditions ("Agreement") govern all residential cleaning services provided by Evergreen Home Cleaning LLC ("Company," "we," "us") to you ("Client," "you"). By booking, scheduling, or receiving our services—whether by phone, text, email, website form, messaging app, or any other communication method—you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+    <p>These Terms and Conditions govern all residential cleaning services provided by Evergreen Home Cleaning LLC ("Company," "we," "us") to you ("Client"). By booking or receiving our services, you agree to be bound by these Terms.</p>
 
     <h4>1. Services Provided</h4>
-    <p>Evergreen Home Cleaning LLC provides residential cleaning services in Pierce County and South King County, Washington. Our service types include:</p>
-    <p><strong>Standard Cleaning</strong> — Regular maintenance cleaning. Includes vacuuming and mopping all floors, full bathroom sanitization (toilet, sink, shower, tub), kitchen countertops and stovetop surface, dusting all accessible surfaces and furniture, wiping microwave exterior, cleaning mirrors, and emptying trash bins.</p>
-    <p><strong>Deep Cleaning</strong> — Everything in Standard, plus: removing soap scum and hard water stains, heavy-duty stovetop and burner cleaning, wiping exterior of all kitchen cabinets, deep cleaning microwave interior, and vacuuming/mopping under accessible furniture. Note: baseboard wiping is not included by default and is available as a paid add-on.</p>
-    <p><strong>Move-In / Move-Out Cleaning</strong> — Everything in Deep Cleaning, plus: detailed cleaning inside all kitchen and bathroom cabinets and drawers, wall spot cleaning (visible marks and fingerprints), and a full top-to-bottom reset of the empty property. Interior cabinet cleaning is included by default. Baseboard wiping is available as a paid add-on. Full wall washing or excessive stains may be subject to additional charges.</p>
-    <p><strong>Airbnb / Short-Term Rental Turnover</strong> — Optimized cleaning between guest stays. Includes full room cleaning, linen exchange, dishwasher loading, window smudge removal, spot baseboard cleaning, oven & fridge wipe-down, and trash removal to outdoor bins. Starting from $85.</p>
-    <p>The following are <strong>not included</strong> in any service type unless explicitly added as a paid add-on: moving personal belongings or boxes, cleaning surfaces or floors blocked by personal items, removing heavy set-in stains from walls/doors/carpets, window cleaning, baseboard wiping, laundry, dishes, organizing, cleaning under or behind heavy furniture, and exterior areas (garage, patio, balcony).</p>
+    <p>Evergreen Home Cleaning LLC provides residential cleaning services in Pierce County and South King County, Washington. Service types include Standard Clean, Deep Clean, Move-In/Move-Out, and Airbnb Turnover. Full details of what is included in each service are provided at the time of booking.</p>
+    <p>The following are <strong>not included</strong> in any service unless explicitly agreed in advance: moving heavy furniture, cleaning areas blocked by personal items, removing heavy set-in stains, exterior areas (garage, patio, balcony), and any biohazard or hazmat materials.</p>
 
-    <h4>2. Add-On Services</h4>
-    <p>Additional services such as oven cleaning, refrigerator cleaning, laundry, interior window washing, baseboard detailing, interior cabinet cleaning, and basement cleaning are available at additional cost. All add-on pricing will be quoted prior to service.</p>
+    <h4>2. Pricing & Payment</h4>
+    <p>Our rate is <strong>$40/hr per cleaner</strong>. Every job requires a minimum of 2 cleaners and a minimum of 2.5 hours, making the minimum charge <strong>$200</strong>. For larger homes, additional cleaners may be assigned by mutual agreement.</p>
+    <p>The Client may book a fixed number of hours (e.g. 3 hours, 4.5 hours). In this case, the team will clean as much as possible within the agreed time, starting with the highest-priority areas. <strong>We do not guarantee full completion of all areas if the booked time is insufficient.</strong> Any work not completed within the booked hours is not considered missed work. If the Client wishes to extend the session on the day of service, additional time will be charged at the same hourly rate, subject to team availability.</p>
+    <p>Payment is due immediately upon completion of service. <strong>Accepted methods: Cash or Zelle only.</strong> We do not accept credit or debit cards.</p>
 
-    <h4>3. Booking & Scheduling</h4>
-    <p>Services are booked by mutual agreement on date, time, scope, and price. A booking is confirmed once the Client receives written confirmation (via text, email, or messaging app) from the Company.</p>
+    <h4>3. Recurring Service Discounts</h4>
+    <p>Clients who book on a recurring schedule receive the following discounts on Standard Clean services: Weekly — 15% off; Biweekly — 10% off; Monthly — 5% off. Discounts apply after the first completed service. If the recurring schedule is cancelled or interrupted, the discount no longer applies to future bookings.</p>
 
-    <h4>4. Client's Duty to Disclose</h4>
-    <p>The Client must disclose the following prior to the first service: (a) the true and accurate condition of the property; (b) the number and type of pets on the premises; (c) any ongoing construction, renovation, or repair work; (d) the presence of any recording devices inside the property; (e) any hazardous materials, chemicals, or unsafe conditions; (f) any special instructions regarding fragile, high-value, or sentimental items. Failure to disclose may result in additional charges, service refusal, or release of the Company from any related liability.</p>
+    <h4>4. Booking & Confirmation</h4>
+    <p>A booking is confirmed once the Client receives written confirmation (via text, email, or messaging app) from the Company. The Company reserves the right to decline any booking request.</p>
 
-    <h4>5. Pricing & Payment Terms</h4>
-    <p>Payment is due immediately upon completion of service. For recurring clients, payment is due within 24 hours of service completion. Accepted payment methods: Cash, Zelle, or Debit Card. <strong>We do not accept credit cards.</strong></p>
+    <h4>5. Cancellation Policy</h4>
+    <p>(a) <strong>24+ hours notice</strong> — free cancellation or rescheduling, no charge.<br>
+    (b) <strong>Less than 24 hours notice</strong> — flat $50.00 cancellation fee.<br>
+    (c) <strong>No-Show / Lockout</strong> — if the team arrives and cannot access the property for any reason attributable to the Client, the full minimum charge of $200.00 applies.</p>
 
-    <h4>6. Card on File & Deposits</h4>
-    <p>The Company reserves the right to require a credit or debit card on file or a deposit prior to service. Any outstanding fees, penalties, surcharges, or unpaid balances authorized under this Agreement may be charged to the card on file. The Client authorizes such charges by providing their payment information.</p>
+    <h4>6. Client's Duty to Disclose</h4>
+    <p>Prior to service, the Client must disclose: (a) the true condition of the property; (b) the presence and number of pets; (c) any fragile, high-value, or loosely attached items; (d) any ongoing construction or renovation; (e) any hazardous materials or unsafe conditions; (f) any recording devices on the premises. Failure to disclose may result in additional charges or refusal of service.</p>
 
-    <h4>7. No Refunds Policy</h4>
-    <p>All sales are final. Evergreen Home Cleaning LLC does not offer full or partial refunds for services rendered. Our policy is to resolve any dissatisfaction through a complimentary re-clean, not a monetary refund.</p>
+    <h4>7. Property Preparation</h4>
+    <p>To allow us to do our best work, the Client agrees to: remove fragile and valuable items from areas to be cleaned; notify us of any loosely attached fixtures or delicate surfaces; move heavy furniture if those areas are to be cleaned (we do not move heavy furniture); secure pets in a separate room or outside; provide parking within 100 feet of the entrance; ensure home access at the scheduled time; and ensure access to running water and electricity.</p>
+    <p>Areas that are blocked or inaccessible at the time of service will not be cleaned and will not count as missed work.</p>
 
-    <h4>8. Late Payment Penalties</h4>
-    <p>A flat late fee of $50.00 will be assessed on any overdue payment beginning the day after payment is due. An additional fee of $10.00 per day will accrue for each day the balance remains unpaid, up to a maximum of $150.00 in total late fees per invoice. For recurring clients, any agreed rate adjustments are forfeited if the schedule is not maintained or payments are late.</p>
+    <h4>8. Inspection & Satisfaction Guarantee</h4>
+    <p>If the Client is present at the time of service completion, they must inspect the work before the team departs. Any concerns must be raised at that time. If the Client is not present, the service is deemed accepted upon the team's departure.</p>
+    <p>If the Client was not present and is dissatisfied, they must notify the Company within <strong>24 hours</strong> with photo evidence. The Company will schedule a re-clean of the identified areas at no additional charge. No monetary refunds are issued — satisfaction is resolved through a re-clean only.</p>
 
-    <h4>9. Recurring Service Discounts</h4>
-    <p>Recurring discounts (weekly, biweekly, or monthly) apply only after the completion of at least four (4) consecutive scheduled services. If the Client cancels the recurring schedule before completing four services, the discount will be retroactively revoked and the difference will be invoiced.</p>
+    <h4>9. Damage & Liability</h4>
+    <p>The Company is licensed and insured. Any damage claim must be reported in writing with photo evidence within <strong>24 hours</strong> of service completion. Claims submitted after 24 hours will not be honored. The Company's liability is limited to the cost of repair or replacement at fair market value, not to exceed the total price paid for that service. The Company is not responsible for pre-existing damage, unsecured or undisclosed fragile items, or damage caused by defective appliances or infrastructure. In no event shall the Company be liable for indirect, incidental, or consequential damages.</p>
 
-    <h4>10. Inspection Upon Completion</h4>
-    <p>If the Client is present at the time of service completion, the Client must inspect the completed work before the cleaning team departs. If no concerns are raised at that time, the service is considered fully completed and accepted. If the Client is not present, the service is deemed accepted upon the team's departure.</p>
+    <h4>10. Waiver of Claims</h4>
+    <p>All quality and satisfaction concerns must be reported within <strong>24 hours</strong> of service completion with photo evidence. All damage claims must be reported within <strong>24 hours</strong> of service completion with photo evidence. Any legal action must be filed within <strong>90 days</strong> of the service date. Failure to report within these timeframes constitutes full acceptance of the service and waiver of all related claims.</p>
 
-    <h4>11. Satisfaction Guarantee (Re-Clean)</h4>
-    <p>If the Client was not present at the time of service completion and is dissatisfied with any area cleaned, the Client must notify the Company within 24 hours with photo evidence. The Company will dispatch a team to re-clean the identified area(s) at no additional charge. If the Client was present and did not raise concerns prior to the team's departure, the service is considered accepted per Section 10.</p>
+    <h4>11. Bad Faith Claims & Disputes</h4>
+    <p>Since payment is accepted by Cash or Zelle only, chargebacks are not applicable. Any bad-faith, false, or unsubstantiated claim filed against the Company will result in a $150.00 administrative fee plus all legal costs incurred by the Company. All disputes must first be submitted to the Company in writing before any legal action is taken.</p>
 
-    <h4>12. Waiver of Claims</h4>
-    <p>If the Client declines a re-clean, fails to report issues within the timeframe specified in Section 11, or fails to provide photo evidence, the service is considered fully accepted, finalized, and non-refundable. The Client waives any and all claims related to that service.</p>
+    <h4>12. Dispute Resolution & Legal Action</h4>
+    <p>All disputes must first be attempted in good faith directly with the Company. If unresolved, parties agree to mediation in Pierce County, WA before pursuing legal action. All legal claims must be filed within <strong>90 days</strong> of the service date. Claims of $10,000 or less shall be brought exclusively in Small Claims Court, Pierce County, WA. The prevailing party is entitled to recover reasonable attorney's fees and court costs. Both parties waive the right to a jury trial.</p>
 
-    <h4>13. Chargebacks & Bank Disputes</h4>
-    <p>The Client agrees not to initiate a credit card chargeback or bank dispute before allowing the Company a reasonable opportunity to resolve the issue through a re-clean. Any fraudulent, bad-faith, or premature disputes will incur a $50.00 administrative fee in addition to the original service cost.</p>
+    <h4>13. Burden of Proof</h4>
+    <p>The Client bears the burden of proving any damage or quality claim with written documentation and timestamped photo evidence taken within 24 hours of service completion.</p>
 
-    <h4>14. Cancellation Policy</h4>
-    <p>Cancellations and rescheduling require at least 24 hours advance notice and are always free of charge. The following fees apply: (a) <strong>Late Cancellation</strong> (less than 24 hours notice): a flat $50.00 fee will be charged; (b) <strong>Same-Day Cancellation</strong>: a flat $100.00 fee will be charged; (c) <strong>No-Show / Lockout</strong> (team arrives and cannot access the property for any reason attributable to the Client): a flat $200.00 fee (full minimum visit charge) will be charged.</p>
+    <h4>14. Late Payment</h4>
+    <p>A late fee of $15.00 per day applies to any unpaid balance beginning the day after payment is due, up to a maximum of $150.00 per invoice. Unpaid balances may be referred to collections. The Client agrees to pay all reasonable costs of collection including attorney's fees.</p>
 
-    <h4>15. Lockout & No-Access Policy</h4>
-    <p>If the cleaning team arrives and cannot access the property due to any reason attributable to the Client (no key, wrong code, locked gate, unresponsive Client), the Full Service Price (or a minimum $50.00 fee, whichever is greater) will be charged.</p>
+    <h4>15. Property Condition Surcharge</h4>
+    <p>If the property is found to be in significantly worse condition than described at booking (excessive filth, party aftermath, undisclosed pet damage), a surcharge of 25% of the quoted price (minimum $80.00) may be applied. The Client will be notified before any additional charges are assessed.</p>
 
-    <h4>16. Property Condition & Surcharges</h4>
-    <p>If the property is found to be in significantly worse condition than described (excessive filth, party aftermath, undisclosed pet damage), a Heavy Condition Surcharge of 25% of the quoted price (or minimum $80.00, whichever is greater) will be applied. The Client will be notified via photo documentation before additional charges are assessed.</p>
+    <h4>16. Scope Changes On-Site</h4>
+    <p>Any additional work requested during the service beyond the original agreed scope will be quoted verbally and must be confirmed by the Client before work begins. Verbal confirmation constitutes agreement to pay the additional charges.</p>
 
-    <h4>17. On-Site Scope Changes</h4>
-    <p>Any additional work requested on-site beyond the original agreed scope will be quoted verbally and confirmed by the Client before work begins. Verbal confirmation constitutes agreement to pay the additional charges.</p>
+    <h4>17. Pet Policy</h4>
+    <p>Pets must be secured during the service. The Client assumes full responsibility for any injury to the cleaning team caused by pets, and for any additional cleaning time required due to pet-related messes.</p>
 
-    <h4>18. Trash & Waste Removal</h4>
-    <p>Standard service includes placing trash in outdoor bins. If bins are full, missing, or trash must be hauled away, a $40.00 Hauling Fee applies.</p>
+    <h4>18. Non-Solicitation</h4>
+    <p>The Client agrees not to directly hire or contract any team member of the Company for 12 months following the last service. Violation results in liquidated damages of $2,500.00 payable to the Company.</p>
 
-    <h4>19. Damage & Liability</h4>
-    <p>The Company is licensed and insured. Liability is strictly limited to the lesser of (a) the cost of repair or replacement at fair market value, or (b) the total price paid for the specific service. The Company is not responsible for pre-existing damage, unsecured items, undisclosed fragile items, or damage caused by defective appliances or infrastructure. In no event shall the Company be liable for any indirect, incidental, special, consequential, or punitive damages.</p>
+    <h4>19. Photography</h4>
+    <p>The Company may take before-and-after photos for quality assurance and marketing purposes. No personally identifiable information will be included. The Client may opt out by notifying the Company in writing prior to service.</p>
 
-    <h4>20. Damage Reporting</h4>
-    <p>Any claim of damage must be reported in writing with photo evidence within 24 hours of service completion. Claims submitted after this period will not be honored.</p>
+    <h4>20. Parking</h4>
+    <p>The Client must provide free, legal, and accessible parking within 100 feet of the entrance. Any parking fines or towing fees due to inadequate parking will be charged to the Client.</p>
 
-    <h4>21. Pet Liability Waiver</h4>
-    <p>If pets are present during service, the Client assumes full responsibility for: (a) any injury to the cleaning team caused by pets; (b) any damage caused by pets during cleaning activities; (c) any additional cleaning required due to pet-related messes. The Company reserves the right to refuse service if pets are aggressive or pose a safety risk.</p>
+    <h4>21. Safety & Biohazards</h4>
+    <p>The Company does not handle human or animal waste beyond normal toilet cleaning, mold, needles, illegal substances, or any materials requiring hazmat procedures. Service may be refused without penalty in unsafe conditions.</p>
 
-    <h4>22. Indemnification</h4>
-    <p>The Client agrees to indemnify, defend, and hold harmless the Company from any claims, damages, losses, costs, and expenses arising from: (a) the Client's failure to disclose material information per Section 4; (b) unsafe conditions on the property; (c) injuries to the cleaning team not caused by the Company's negligence; (d) any third-party claims arising from the Client's misuse of the Company's services.</p>
+    <h4>22. Recording Devices</h4>
+    <p>Washington State is a two-party consent state (RCW 9.73.030). The Client must disclose any audio or video recording devices inside the property prior to service. The Company reserves the right to refuse service if devices are not disclosed.</p>
 
-    <h4>23. Force Majeure</h4>
-    <p>The Company shall not be liable for any delay, cancellation, or failure to perform due to causes beyond its reasonable control, including severe weather, natural disasters, vehicle accidents, illness, road closures, government orders, pandemics, or other acts of God.</p>
+    <h4>23. Right to Refuse Service</h4>
+    <p>The Company reserves the right to refuse, suspend, or discontinue service at any time for disrespectful behavior, repeated late payments, unsafe conditions, or any violation of these Terms.</p>
 
-    <h4>24. Recording Devices & Privacy</h4>
-    <p>The Client must disclose any audio or video recording devices inside the property prior to the first service. Washington State is a two-party consent state (RCW 9.73.030); recording audio of the cleaning team without informed consent is illegal. The Company reserves the right to refuse service if recording devices are not disclosed.</p>
+    <h4>24. Force Majeure</h4>
+    <p>The Company is not liable for delays or cancellations due to causes beyond its reasonable control, including severe weather, illness, vehicle accidents, road closures, or other events outside the Company's control.</p>
 
-    <h4>25. Non-Solicitation of Employees</h4>
-    <p>The Client agrees not to directly hire, solicit, or contract with any employee, subcontractor, or team member of the Company for 12 months following the last service. Violation will result in liquidated damages of $2,500.00 payable to the Company.</p>
-
-    <h4>26. Photography & Marketing</h4>
-    <p>The Company may take before-and-after photographs for quality assurance, training, and marketing. No personally identifiable information will be included. The Client may opt out by notifying the Company in writing.</p>
-
-    <h4>27. Access & Key Policy</h4>
-    <p>The Company will take reasonable precautions to secure keys, access codes, or entry credentials. All credentials are kept confidential. The Company is not responsible for lost keys provided by the Client. If the Client changes locks or codes, updated access must be provided before the next service.</p>
-
-    <h4>28. Safety & Biohazards</h4>
-    <p>The Company does not handle: human or animal waste (beyond normal toilet cleaning), mold, needles or sharps, illegal substances, or materials requiring hazmat procedures. The Company reserves the right to refuse service in unsafe conditions without penalty.</p>
-
-    <h4>29. Parking Responsibility</h4>
-    <p>The Client must ensure free, legal, and accessible parking for the cleaning team. Any parking tickets, towing fees, or related expenses due to inadequate parking will be charged to the Client.</p>
-
-    <h4>30. Right to Refuse Service</h4>
-    <p>The Company reserves the right to refuse, suspend, or discontinue service at any time, including for disrespectful or threatening behavior, repeated late payments, unsafe conditions, or any violation of these Terms.</p>
-
-    <h4>31. Independent Contractor Status</h4>
+    <h4>25. Independent Contractor</h4>
     <p>Evergreen Home Cleaning LLC operates as an independent contractor, not as an employee or agent of the Client.</p>
 
-    <h4>32. Limitation of Liability (Aggregate)</h4>
-    <p>The Company's total aggregate liability shall not exceed the total amount paid by the Client during the 90-day period immediately preceding the event giving rise to the claim.</p>
+    <h4>26. Dispute Resolution</h4>
+    <p>Parties agree to first attempt good-faith resolution. If unresolved, disputes will be handled through mediation in Pierce County, WA. Disputes of $500.00 or less may be brought directly in small claims court.</p>
 
-    <h4>33. Collections & Unpaid Balances</h4>
-    <p>Any unpaid balance may be referred to a third-party collections agency. The Client agrees to pay all reasonable costs of collection, including attorney's fees and court costs.</p>
-
-    <h4>34. Dispute Resolution</h4>
-    <p>Parties agree to first attempt good-faith negotiation. If unresolved within 15 business days, parties agree to mediation in Pierce County, WA, with costs shared equally. If mediation fails, legal remedies may be pursued in Pierce County courts. Disputes of $500.00 or less may be brought directly in small claims court without prior mediation.</p>
-
-    <h4>35. No Waiver</h4>
-    <p>The failure of the Company to enforce any provision at any time shall not constitute a waiver of such provision or the right to enforce it later.</p>
-
-    <h4>36. Governing Law</h4>
+    <h4>27. Governing Law</h4>
     <p>This Agreement is governed by Washington State law. Exclusive jurisdiction: Pierce County, Washington.</p>
 
-    <h4>37. Severability</h4>
-    <p>If any provision is found invalid or unenforceable, the remaining provisions continue in full force and effect.</p>
+    <h4>28. Amendments</h4>
+    <p>The Company reserves the right to update these Terms at any time. Continued use of services constitutes acceptance of the updated Terms.</p>
 
-    <h4>38. Entire Agreement</h4>
-    <p>This Agreement constitutes the entire understanding between the parties and supersedes all prior agreements, whether written or oral.</p>
+    <p style="margin-top:24px;font-size:.8rem;color:var(--text-light);">Last updated: May 2025 · Evergreen Home Cleaning LLC · Bonney Lake, WA · (253) 237-6135</p>
+  </div>
+</div>
 
-    <h4>39. Amendments</h4>
-    <p>The Company reserves the right to update these Terms at any time. Continued use of services constitutes acceptance of revised Terms.</p>
-
-    <h4>40. Electronic Acceptance</h4>
-    <p>By booking services through any electronic means—including text, email, website form, JotForm, or messaging app—the Client acknowledges that such communication constitutes a valid and binding acceptance of these Terms, equivalent to a handwritten signature.</p>
-
-    <p><strong>Contact:</strong> Evergreen Home Cleaning LLC · (253) 237-6135 · evergreenhomecleaning.org</p>
-
-    <button class="terms-accept-btn" onclick="acceptTerms()">I Accept — Close</button>
+<button class="terms-accept-btn" onclick="acceptTerms()">I Accept — Close</button>
   </div>
 </div>
 
@@ -1099,11 +1079,11 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 function toggleAddon(el){setTimeout(()=>{el.classList.toggle('active',el.querySelector('input').checked)},10)}
 
 
-function openBooking(){let s=`<div class="modal-summary-line"><span>💰 Rate</span><span>$40/hr per cleaner · min 2</span></div><div class="modal-summary-line"><span>⏱️ Minimum</span><span>2.5 hrs · from $200</span></div><div class="modal-summary-line"><span>💳 Payment</span><span>Cash or Zelle after service</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();tm.setDate(tm.getDate()+1);document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
+function openBooking(){let s=`<div class="modal-summary-line"><span>💰 Rate</span><span>$40/hr per cleaner · min 2</span></div><div class="modal-summary-line"><span>⏱️ Minimum</span><span>2.5 hrs · from $200</span></div><div class="modal-summary-line"><span>💳 Payment</span><span>Cash or Zelle after service</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBooking()});
 
-async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim(),bd=document.getElementById('bookBedrooms').value,bth=document.getElementById('bookBathrooms').value;if(!nm||!ph||!dt||!ad||!bd||!bth){alert('Please fill in Name, Phone, Bedrooms, Bathrooms, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n💰 Rate: $40/hr per cleaner · min 2 cleaners\n🛏️ Bedrooms: ${bd} · 🚿 Bathrooms: ${bth}\n\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
+async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim(),bd=document.getElementById('bookBedrooms').value,bth=document.getElementById('bookBathrooms').value,hrs=document.getElementById('bookHours').value;if(!nm||!ph||!dt||!ad||!bd||!bth){alert('Please fill in Name, Phone, Bedrooms, Bathrooms, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n💰 Rate: $40/hr per cleaner · min 2 cleaners\n🛏️ Bedrooms: ${bd} · 🚿 Bathrooms: ${bth}\n⏱️ Preferred Hours: ${hrs||'Not specified'}\n\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
 
 
 let termsAccepted=false;
