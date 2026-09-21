@@ -1463,20 +1463,23 @@ function updateLiveTotal(){
   var hoursRaw = document.getElementById('bookHours').value;
   var rate = teamSize === '3' ? 105 : 70;
   var hours = parseFloat(hoursRaw);
+  var addonMinutes = bookWindowsCount*3 + bookBlindsCount*5;
+  var addonHours = addonMinutes/60;
+  var addonNote = addonMinutes > 0 ? ` + ${addonMinutes} min windows/blinds` : '';
   var breakdownEl = document.getElementById('liveTotalBreakdown');
   var amountEl = document.getElementById('liveTotalAmount');
   if(!hoursRaw || isNaN(hours)){
     hours = 2; // fallback to minimum for the estimate display
-    var total = rate * hours;
+    var total = Math.round(rate * (hours + addonHours));
     if(firstTimeClient) total = Math.max(0, total - 20);
     amountEl.textContent = total;
-    breakdownEl.innerHTML = `$${rate}/hr × ${hours} hrs min.${firstTimeClient ? ' − $20 first-time discount' : ''}<br><span style="opacity:.8;">(exact hours confirmed with the team)</span>`;
+    breakdownEl.innerHTML = `$${rate}/hr × ${hours} hrs min.${addonNote}${firstTimeClient ? ' − $20 first-time discount' : ''}<br><span style="opacity:.8;">(exact hours confirmed with the team)</span>`;
     return;
   }
-  var total = rate * hours;
+  var total = Math.round(rate * (hours + addonHours));
   if(firstTimeClient) total = Math.max(0, total - 20);
   amountEl.textContent = total;
-  breakdownEl.innerHTML = `$${rate}/hr × ${hours} hrs${firstTimeClient ? ' − $20 first-time discount' : ''}`;
+  breakdownEl.innerHTML = `$${rate}/hr × ${hours} hrs${addonNote}${firstTimeClient ? ' − $20 first-time discount' : ''}`;
 }
 function stepBookAddon(which, delta){
   if(which === 'windows'){
@@ -1487,6 +1490,7 @@ function stepBookAddon(which, delta){
     document.getElementById('bookBlindsCount').textContent = bookBlindsCount;
   }
   updateBookAddonNote();
+  updateLiveTotal();
 }
 function updateBookAddonNote(){
   var minutes = bookWindowsCount*3 + bookBlindsCount*5;
@@ -1505,7 +1509,7 @@ function openBooking(){let s=`<div class="modal-summary-line"><span>💰 Rate</s
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBooking()});
 
-async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim(),bd=document.getElementById('bookBedrooms').value,bth=document.getElementById('bookBathrooms').value,hrs=document.getElementById('bookHours').value,tsz=document.getElementById('bookTeamSize').value;if(!nm||!ph||!dt||!ad||!bd||!bth){alert('Please fill in Name, Phone, Bedrooms, Bathrooms, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}const teamLabel=tsz==='3'?'3 cleaners ($105/hr)':'2 cleaners ($70/hr)';const rate=tsz==='3'?105:70;const estHours=hrs?parseFloat(hrs):2;let estTotal=rate*estHours;if(firstTimeClient)estTotal=Math.max(0,estTotal-20);let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n💰 Rate: $35/hr per cleaner\n👥 Team Size: ${teamLabel}\n🛏️ Bedrooms: ${bd} · 🚿 Bathrooms: ${bth}\n⏱️ Preferred Hours: ${hrs||'Not specified (min. 2 hrs)'}\n`;if(firstTimeClient)m+=`🎉 First-time client discount: −$20\n`;m+=`💵 Estimated Total: $${estTotal}${!hrs?' (based on 2 hr minimum — final hours confirmed with team)':''}\n`;if(bookWindowsCount>0||bookBlindsCount>0){m+=`🪟 Windows: ${bookWindowsCount} · 🎚️ Blinds: ${bookBlindsCount} (≈+${bookWindowsCount*3+bookBlindsCount*5} min)\n`}m+=`\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
+async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim(),bd=document.getElementById('bookBedrooms').value,bth=document.getElementById('bookBathrooms').value,hrs=document.getElementById('bookHours').value,tsz=document.getElementById('bookTeamSize').value;if(!nm||!ph||!dt||!ad||!bd||!bth){alert('Please fill in Name, Phone, Bedrooms, Bathrooms, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}const teamLabel=tsz==='3'?'3 cleaners ($105/hr)':'2 cleaners ($70/hr)';const rate=tsz==='3'?105:70;const estHours=hrs?parseFloat(hrs):2;const addonMin=bookWindowsCount*3+bookBlindsCount*5;let estTotal=Math.round(rate*(estHours+addonMin/60));if(firstTimeClient)estTotal=Math.max(0,estTotal-20);let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n💰 Rate: $35/hr per cleaner\n👥 Team Size: ${teamLabel}\n🛏️ Bedrooms: ${bd} · 🚿 Bathrooms: ${bth}\n⏱️ Preferred Hours: ${hrs||'Not specified (min. 2 hrs)'}\n`;if(firstTimeClient)m+=`🎉 First-time client discount: −$20\n`;if(bookWindowsCount>0||bookBlindsCount>0){m+=`🪟 Windows: ${bookWindowsCount} · 🎚️ Blinds: ${bookBlindsCount} (≈+${addonMin} min)\n`}m+=`💵 Estimated Total: $${estTotal}${!hrs?' (based on 2 hr minimum — final hours confirmed with team)':''}\n`;m+=`\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
 
 
 let termsAccepted=false;
