@@ -16,9 +16,10 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--green-dark:#1a3a2a;--green-mid:#2d5e3f;--green-light:#3d7a52;--green-pale:#e8f5ec;--green-accent:#4eca6a;--cream:#faf9f6;--warm:#f5f0e8;--gold:#c9a54e;--gold-light:#f0e2b8;--text-dark:#1a1a1a;--text-mid:#4a4a4a;--text-light:#7a7a7a;--white:#fff;--shadow-sm:0 2px 8px rgba(0,0,0,.06);--shadow-md:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 12px 48px rgba(0,0,0,.12);--radius:16px;--radius-sm:10px}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden;width:100%;max-width:100%;touch-action:pan-y}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text-dark);background:var(--cream);overflow-x:hidden;width:100%;max-width:100%;position:relative;touch-action:pan-y;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+img,svg,video{max-width:100%;height:auto}
 
 /* BANNER */
 .top-banner{position:fixed;top:0;left:0;right:0;z-index:110;background:linear-gradient(90deg,#1a3a2a,#2d5e3f,#c9a54e,#2d5e3f,#1a3a2a);background-size:200% 100%;animation:bannerShimmer 4s ease infinite;color:var(--white);text-align:center;padding:11px 40px 11px 16px;font-size:.85rem;font-weight:600;cursor:pointer;-webkit-tap-highlight-color:transparent;overflow:hidden}
@@ -152,6 +153,12 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .svc-acc.open .svc-acc-arrow{transform:rotate(180deg)}
 .svc-acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;padding:0 24px}
 .svc-acc.open .svc-acc-body{max-height:1000px;padding:0 24px 20px}
+.dark-acc{background:#1a3a2a;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden}
+.dark-acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px;background:none;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:700;color:rgba(255,255,255,.85);text-align:left;-webkit-tap-highlight-color:transparent}
+.dark-acc-arrow{font-size:.75rem;color:#4eca6a;transition:transform .3s;flex-shrink:0}
+.dark-acc.open .dark-acc-arrow{transform:rotate(180deg)}
+.dark-acc-body{max-height:0;overflow:hidden;transition:max-height .5s ease;padding:0 20px}
+.dark-acc.open .dark-acc-body{max-height:3000px;padding:0 20px 20px}
 .svc-priority{font-size:.85rem;color:var(--green-mid);font-weight:600;margin-bottom:14px;padding:7px 12px;background:var(--green-pale);border-radius:var(--radius-sm);display:inline-block}
 .svc-row{display:grid;grid-template-columns:140px 1fr;gap:10px;padding:7px 0;font-size:.87rem;color:var(--text-mid);line-height:1.6;border-bottom:1px solid rgba(0,0,0,.05)}
 .svc-row:last-of-type{border-bottom:none}
@@ -204,7 +211,9 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 
 /* SUMMARY */
 .calc-summary{position:sticky;top:96px;background:var(--green-dark);border-radius:var(--radius);padding:36px;color:var(--white)}
-.calc-summary-title{margin-bottom:24px;opacity:.7;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:.8rem}
+.calc-summary-title{margin-bottom:24px;opacity:.85;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:.8rem;color:var(--white)}
+.calc-summary .calc-label{color:var(--white)}
+.calc-summary .calc-condition-desc{color:rgba(0,0,0,.55)}
 .calc-price-display{text-align:center;margin-bottom:28px}
 .calc-total-price{font-family:'DM Serif Display',serif;font-size:3.5rem;line-height:1}
 .calc-price-note{font-size:.85rem;opacity:.6;margin-top:8px}
@@ -278,6 +287,20 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .why-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
 .why-icon{width:48px;height:48px;border-radius:12px;background:rgba(78,202,106,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px}
 .why-card h3{font-size:1.15rem;margin-bottom:10px}.why-card p{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.7}
+
+.recurring-discounts{padding:80px 0;background:var(--green-dark);color:var(--white)}
+.recurring-discounts .section-tag{background:rgba(255,255,255,.1);color:var(--green-accent)}
+.recurring-discounts .section-header h2{color:var(--white)}.recurring-discounts .section-header p{color:rgba(255,255,255,.6)}
+.recurring-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px}
+.recurring-card{position:relative;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:36px 28px;text-align:center;transition:all .3s}
+.recurring-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
+.recurring-card-featured{background:rgba(78,202,106,.1);border:1px solid rgba(78,202,106,.35)}
+.recurring-card-featured:hover{background:rgba(78,202,106,.16)}
+.recurring-badge{display:inline-block;background:var(--green-accent);color:var(--white);font-weight:700;font-size:.85rem;padding:6px 16px;border-radius:50px;margin-bottom:16px}
+.recurring-icon{font-size:2rem;margin-bottom:10px}
+.recurring-card h3{font-size:1.2rem;margin-bottom:8px}
+.recurring-card p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6}
+.recurring-note{text-align:center;font-size:.78rem;color:rgba(255,255,255,.45);font-style:italic;margin-top:28px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6}
 
 /* CTA */
 .cta{padding:100px 0;background:var(--cream)}
@@ -444,7 +467,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 .fade-in{opacity:0;transform:translateY(24px);transition:all .7s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
 
 @media(max-width:1024px){.why-grid{grid-template-columns:repeat(2,1fr)}.calc-wrapper{grid-template-columns:1fr}.calc-summary{position:static}.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:768px){.hero-grid{grid-template-columns:1fr;text-align:center;padding:80px 0 60px;gap:40px}.hero-desc{margin-left:auto;margin-right:auto}.hero-btns{justify-content:center}.hero-trust-mini{justify-content:center}.hero-visual{max-width:420px;margin:0 auto}.hero-float-badge{top:-10px;right:0}.hero-float-card{display:none}.nav-links{display:none}.mobile-menu-btn{display:block}.services-grid{grid-template-columns:1fr}.reviews-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.trust-items{gap:0}.trust-item{padding:14px 16px;font-size:.8rem}.cta-box{padding:40px 24px}.calc-form{padding:24px}.calc-service-btns{grid-template-columns:1fr}.calc-freq-btns{grid-template-columns:repeat(2,1fr)}.calc-addons-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;text-align:center}.modal{padding:24px 16px;margin:8px;max-width:calc(100vw - 16px)}}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr;text-align:center;padding:80px 0 60px;gap:40px}.hero-desc{margin-left:auto;margin-right:auto}.hero-btns{justify-content:center}.hero-trust-mini{justify-content:center}.hero-visual{max-width:420px;margin:0 auto}.hero-float-badge{top:-10px;right:0}.hero-float-card{display:none}.nav-links{display:none}.mobile-menu-btn{display:block}.services-grid{grid-template-columns:1fr}.reviews-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.recurring-grid{grid-template-columns:1fr}.trust-items{gap:0}.trust-item{padding:14px 16px;font-size:.8rem}.cta-box{padding:40px 24px}.calc-form{padding:24px}.calc-service-btns{grid-template-columns:1fr}.calc-freq-btns{grid-template-columns:repeat(2,1fr)}.calc-addons-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;text-align:center}.modal{padding:24px 16px;margin:8px;max-width:calc(100vw - 16px)}}
 .mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:var(--white);padding:24px;box-shadow:var(--shadow-lg);z-index:99;flex-direction:column;gap:16px}
 .mobile-nav.open{display:flex}.mobile-nav a{text-decoration:none;color:var(--text-dark);font-size:1rem;font-weight:500;padding:8px 0}
 </style>
@@ -452,8 +475,8 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 <body class="banner-visible">
 
 <!-- TOP BANNER -->
-<div class="top-banner" id="topBanner" onclick="goTo('referral')">
-  <span class="top-banner-text">🎁 Refer a friend — get <span class="gold">10% off</span> your next cleaning!</span>
+<div class="top-banner" id="topBanner" onclick="openBooking()">
+  <span class="top-banner-text">🎉 Get <span class="gold">$20 OFF</span> your first home cleaning!</span>
   <button class="top-banner-close" onclick="event.stopPropagation();closeBanner()">✕</button>
 </div>
 
@@ -481,7 +504,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <div class="hero-trust-mini">
       <div class="hero-trust-mini-item"><span>✓</span> Licensed & Insured</div>
       <div class="hero-trust-mini-item"><span>✓</span> Owner-Led Team</div>
-      <div class="hero-trust-mini-item"><span>✓</span> $40/hr per cleaner · From $200</div>
+      <div class="hero-trust-mini-item"><span>✓</span> $35/hr per cleaner · From $140</div>
     </div>
   </div>
   <div class="hero-visual">
@@ -519,7 +542,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   <div class="trust-item"><span class="trust-icon">👥</span> Owner-Led Team</div>
   <div class="trust-item"><span class="trust-icon">🏡</span> Residential Only</div>
   <div class="trust-item"><span class="trust-icon">⭐</span> 5-Star Reviews</div>
-  <div class="trust-item"><span class="trust-icon">💰</span> $40/hr per cleaner · Min 2 cleaners · From $200</div>
+  <div class="trust-item"><span class="trust-icon">💰</span> $35/hr per cleaner · Min 2 cleaners · From $140</div>
 </div></div></section>
 
 
@@ -534,9 +557,9 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       </button>
       <div class="svc-acc-body">
         <div class="svc-priority">Priority: kitchen → bathrooms → bedrooms → living areas</div>
-        <div class="svc-row"><span class="svc-label">Kitchen:</span><span>cabinet fronts, countertops & backsplash, sink & faucet, exterior of all appliances (stove, fridge, microwave, range hood), window sills, baseboards, door handles, light switches, trash bin, floor (vacuum + mop)</span></div>
-        <div class="svc-row"><span class="svc-label">Bathrooms:</span><span>toilet (inside, outside, back), tub/shower & glass doors, sink & faucet, mirrors, cabinet fronts, baseboards, window sills, light switches, door handles, trash bin, floor</span></div>
-        <div class="svc-row"><span class="svc-label">Bedrooms & Living Areas:</span><span>all surfaces & furniture, mirrors, nightstands, window sills, baseboards, light switches, door handles, trash bins, floor (vacuum + mop)</span></div>
+        <div class="svc-row"><span class="svc-label">Kitchen:</span><span>cabinet fronts, countertops & backsplash, sink & faucet, exterior of all appliances (stove, fridge, microwave, range hood), baseboards, door handles, light switches, trash bin, floor (vacuum + mop)</span></div>
+        <div class="svc-row"><span class="svc-label">Bathrooms:</span><span>toilet (inside, outside, back), tub/shower & glass doors, sink & faucet, mirrors, cabinet fronts, baseboards, light switches, door handles, trash bin, floor</span></div>
+        <div class="svc-row"><span class="svc-label">Bedrooms & Living Areas:</span><span>all surfaces & furniture, mirrors, nightstands, baseboards, light switches, door handles, trash bins, floor (vacuum + mop)</span></div>
         <div class="svc-note">Any extra tasks? Just let us know — covered by the hourly rate.</div>
       </div>
     </div>
@@ -559,10 +582,10 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <span>📦 Move-In / Move-Out</span><span class="svc-acc-arrow">▼</span>
       </button>
       <div class="svc-acc-body">
-        <div class="svc-priority">Everything in Deep Clean, PLUS:</div>
-        <div class="svc-row"><span class="svc-label">Kitchen:</span><span>interior of all cabinets & drawers, interior of oven, interior of refrigerator</span></div>
-        <div class="svc-row"><span class="svc-label">Bathrooms:</span><span>interior of all cabinets, marks on walls & tiles cleaned</span></div>
-        <div class="svc-row"><span class="svc-label">All Rooms:</span><span>interior of closets & storage, marks on walls & baseboards, window frames & sills (all windows), detailed damp wipe-down of baseboards throughout</span></div>
+        <div class="svc-priority">Designed to help you get your full security deposit back</div>
+        <div class="svc-row"><span class="svc-label">Kitchen:</span><span>interior of all cabinets & drawers, interior of oven, interior of refrigerator, exterior of appliances, countertops, sink, baseboards</span></div>
+        <div class="svc-row"><span class="svc-label">Bathrooms:</span><span>interior of cabinets, detailed scrub of tub/shower, toilet, sink, mirrors, tiles and walls spot-cleaned</span></div>
+        <div class="svc-row"><span class="svc-label">All Rooms & General:</span><span>interior of closets & storage, thorough wipe-down of baseboards, doors, and frames, marks on walls cleaned, floors vacuumed & mopped throughout to ensure the property passes landlord inspection</span></div>
       </div>
     </div>
 
@@ -637,74 +660,150 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   <div class="calc-wrapper">
     <div class="calc-form fade-in">
       <h3 class="calc-form-title">How Our Pricing Works</h3>
-      <p class="calc-form-sub">$40/hr per cleaner · minimum 2 cleaners · minimum 2.5 hrs</p>
+      <p class="calc-form-sub">$35/hr per cleaner · base team of 2 ($70/hr) · minimum 2 hours</p>
       <!-- Pricing breakdown cards -->
       <div style="display:grid;gap:16px;margin-top:8px;">
         <div style="background:#1a3a2a;border:1px solid rgba(78,202,106,.25);border-radius:16px;padding:24px;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
-            <div style="font-size:1.5rem;font-weight:700;color:#fff;">$40<span style="font-size:.9rem;font-weight:500;color:rgba(255,255,255,.6);"> / hr per cleaner</span></div>
-            <div style="background:rgba(78,202,106,.15);border:1px solid rgba(78,202,106,.3);padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;color:#4eca6a;">Min 2 cleaners</div>
+            <div style="font-size:1.5rem;font-weight:700;color:#fff;">$35<span style="font-size:.9rem;font-weight:500;color:rgba(255,255,255,.6);"> / hr per cleaner</span></div>
+            <div style="background:rgba(78,202,106,.15);border:1px solid rgba(78,202,106,.3);padding:6px 14px;border-radius:50px;font-size:.8rem;font-weight:600;color:#4eca6a;">Base team of 2</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
             <div style="background:rgba(255,255,255,.08);border-radius:12px;padding:16px;text-align:center;">
-              <div style="font-size:1.2rem;font-weight:700;color:#fff;">$40/hr</div>
-              <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:4px;">Per cleaner · min 2</div>
+              <div style="font-size:1.2rem;font-weight:700;color:#fff;">$70/hr</div>
+              <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:4px;">2-cleaner team</div>
             </div>
             <div style="background:rgba(78,202,106,.12);border:1px solid rgba(78,202,106,.2);border-radius:12px;padding:16px;text-align:center;">
-              <div style="font-size:1.2rem;font-weight:700;color:#4eca6a;">$200 min</div>
-              <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:4px;">Minimum (2.5 hrs)</div>
+              <div style="font-size:1.2rem;font-weight:700;color:#4eca6a;">2 hrs min.</div>
+              <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:4px;">Minimum visit</div>
             </div>
           </div>
         </div>
+
+        <!-- Add 3rd cleaner explainer -->
         <div style="background:#1a3a2a;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;">
-        <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Typical Time Estimates</div>
-            <div style="border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:10px;">
-              <div style="font-size:.88rem;color:rgba(255,255,255,.8);font-weight:600;margin-bottom:6px;">✨ Standard</div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;"><span style="color:rgba(255,255,255,.55);">1–2 bed</span><span style="color:#fff;background:rgba(255,255,255,.08);padding:2px 10px;border-radius:20px;">~2.5–3.5 hrs</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-top:4px;"><span style="color:rgba(255,255,255,.55);">3–4 bed</span><span style="color:#fff;background:rgba(255,255,255,.08);padding:2px 10px;border-radius:20px;">~3.5–5 hrs</span></div>
-            </div>
-            <div style="border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:10px;">
-              <div style="font-size:.88rem;color:rgba(255,255,255,.8);font-weight:600;margin-bottom:6px;">🧹 Deep Clean</div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;"><span style="color:rgba(255,255,255,.55);">1–2 bed</span><span style="color:#fff;background:rgba(255,255,255,.08);padding:2px 10px;border-radius:20px;">~3.5–5 hrs</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-top:4px;"><span style="color:rgba(255,255,255,.55);">3–4 bed</span><span style="color:#fff;background:rgba(255,255,255,.08);padding:2px 10px;border-radius:20px;">~5–7 hrs</span></div>
-            </div>
-            <div style="border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:10px;">
-              <div style="font-size:.88rem;color:rgba(255,255,255,.8);font-weight:600;margin-bottom:6px;">📦 Move-Out</div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;"><span style="color:rgba(255,255,255,.55);">1–2 bed</span><span style="color:#fff;background:rgba(255,255,255,.08);padding:2px 10px;border-radius:20px;">~3–4 hrs</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-top:4px;"><span style="color:rgba(255,255,255,.55);">3–4 bed</span><span style="color:#fff;background:rgba(255,255,255,.08);padding:2px 10px;border-radius:20px;">~4–6 hrs</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:.82rem;margin-top:4px;"><span style="color:rgba(255,255,255,.55);">5+ bed</span><span style="color:#4eca6a;background:rgba(78,202,106,.1);padding:2px 10px;border-radius:20px;">custom quote</span></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.88rem;">
-              <span style="color:rgba(255,255,255,.8);font-weight:600;">🏠 Airbnb Turnover</span>
-              <span style="color:#4eca6a;font-weight:700;background:rgba(78,202,106,.1);padding:3px 10px;border-radius:20px;">custom quote</span>
-            </div>
+          <div style="font-size:.88rem;color:rgba(255,255,255,.85);font-weight:600;margin-bottom:6px;">➕ Need a third pair of hands?</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6;">For larger or heavily soiled homes, you can add a 3rd cleaner — that's +$35/hr ($105/hr total for a 3-person team) — and the job gets done noticeably faster. Toggle this option right in the calculator on the right.</div>
+        </div>
+
+        <div class="dark-acc" id="timesAcc">
+          <button class="dark-acc-btn" onclick="toggleDarkAcc(this)">
+            <span>⏱️ Estimated Cleaning Times (2-cleaner team)</span><span class="dark-acc-arrow">▼</span>
+          </button>
+          <div class="dark-acc-body">
+
+          <div style="font-size:.9rem;color:rgba(255,255,255,.85);font-weight:700;margin-bottom:8px;">🧹 Standard Cleaning</div>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:18px;">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,.15);">
+              <th style="text-align:left;padding:4px 6px 6px 0;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Home Size</th>
+              <th style="text-align:left;padding:4px 6px 6px;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Rooms/Baths</th>
+              <th style="text-align:right;padding:4px 0 6px 6px;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Est. Time</th>
+            </tr></thead>
+            <tbody style="font-size:.8rem;color:rgba(255,255,255,.75);">
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">Up to 1,000 sq ft</td><td style="padding:6px;">1 bed / 1 bath</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~2–3 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">1,000–1,500 sq ft</td><td style="padding:6px;">2 beds / 1–2 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~3–5 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">1,500–2,000 sq ft</td><td style="padding:6px;">3 beds / 2 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~5–7 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">2,000–2,500 sq ft</td><td style="padding:6px;">4 beds / 2–3 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~7–9 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">2,500–3,000 sq ft</td><td style="padding:6px;">4–5 beds / 3 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~9–11 hrs</td></tr>
+              <tr><td style="padding:6px 6px 6px 0;">3,000–4,000 sq ft</td><td style="padding:6px;">5 beds / 3–4 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~11–15 hrs</td></tr>
+            </tbody>
+          </table>
+
+          <div style="font-size:.9rem;color:rgba(255,255,255,.85);font-weight:700;margin-bottom:8px;">✨ Deep Cleaning</div>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:18px;">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,.15);">
+              <th style="text-align:left;padding:4px 6px 6px 0;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Home Size</th>
+              <th style="text-align:left;padding:4px 6px 6px;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Rooms/Baths</th>
+              <th style="text-align:right;padding:4px 0 6px 6px;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Est. Time</th>
+            </tr></thead>
+            <tbody style="font-size:.8rem;color:rgba(255,255,255,.75);">
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">Up to 1,000 sq ft</td><td style="padding:6px;">1 bed / 1 bath</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~4–6 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">1,000–1,500 sq ft</td><td style="padding:6px;">2 beds / 1–2 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~6–9 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">1,500–2,000 sq ft</td><td style="padding:6px;">3 beds / 2 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~9–12 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">2,000–2,500 sq ft</td><td style="padding:6px;">4 beds / 2–3 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~12–15 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">2,500–3,000 sq ft</td><td style="padding:6px;">4–5 beds / 3 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~15–19 hrs</td></tr>
+              <tr><td style="padding:6px 6px 6px 0;">3,000–4,000 sq ft</td><td style="padding:6px;">5 beds / 3–4 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~19–25 hrs</td></tr>
+            </tbody>
+          </table>
+
+          <div style="font-size:.9rem;color:rgba(255,255,255,.85);font-weight:700;margin-bottom:8px;">🚚 Move-In / Move-Out Cleaning</div>
+          <table style="width:100%;border-collapse:collapse;">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,.15);">
+              <th style="text-align:left;padding:4px 6px 6px 0;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Home Size</th>
+              <th style="text-align:left;padding:4px 6px 6px;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Rooms/Baths</th>
+              <th style="text-align:right;padding:4px 0 6px 6px;font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;">Est. Time</th>
+            </tr></thead>
+            <tbody style="font-size:.8rem;color:rgba(255,255,255,.75);">
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">Up to 1,000 sq ft</td><td style="padding:6px;">1 bed / 1 bath</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~5–7 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">1,000–1,500 sq ft</td><td style="padding:6px;">2 beds / 1–2 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~7–11 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">1,500–2,000 sq ft</td><td style="padding:6px;">3 beds / 2 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~11–15 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">2,000–2,500 sq ft</td><td style="padding:6px;">4 beds / 2–3 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~15–19 hrs</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,.06);"><td style="padding:6px 6px 6px 0;">2,500–3,000 sq ft</td><td style="padding:6px;">4–5 beds / 3 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~19–24 hrs</td></tr>
+              <tr><td style="padding:6px 6px 6px 0;">3,000–4,000 sq ft</td><td style="padding:6px;">5 beds / 3–4 baths</td><td style="padding:6px 0 6px 6px;text-align:right;color:#fff;font-weight:600;">~24–32 hrs</td></tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6;">⚠️ <strong style="color:rgba(255,255,255,.55);">Important Note:</strong> These times are estimated and based on a standard 2-cleaner team. Actual time may vary depending on the home's condition, layout, stairs, and specific tasks. For larger jobs where estimated time exceeds 6 hours, we automatically bring a 3rd cleaner to ensure maximum efficiency and faster completion. All figures shown are approximate.</div>
           </div>
-          <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.5;">⚠️ Times vary based on home size and condition. Heavily soiled homes may require additional time.</div>
+        </div>
+
+        <!-- Flexibility rule -->
+        <div style="background:#1a3a2a;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;">
+          <div style="font-size:.88rem;color:rgba(255,255,255,.85);font-weight:600;margin-bottom:6px;">⏱️ If time runs short</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6;">The team always completes as much as possible within the booked time — starting with the kitchen and bathrooms. If the home turns out to be dirtier than expected and time isn't enough, the team lead will discuss extending the visit on-site, with any additional time billed at the same hourly rate.</div>
         </div>
       </div>
     </div>
     <div class="calc-summary fade-in">
-      <div class="calc-summary-title">Get a Free Estimate</div>
-      <div style="text-align:center;margin-bottom:20px;">
-        <div style="font-size:2.5rem;font-weight:700;color:#fff;line-height:1;">$40<span style="font-size:1rem;font-weight:500;color:rgba(255,255,255,.5);">/hr per cleaner</span></div>
-        <div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-top:6px;">min 2 cleaners · min 2.5 hrs · from $200</div>
+      <div class="calc-summary-title">Estimate Your Price</div>
+
+      <div style="text-align:center;margin:8px 0 24px;">
+        <div style="font-size:2.5rem;font-weight:700;color:#fff;line-height:1;">$70<span style="font-size:1rem;font-weight:500;color:rgba(255,255,255,.5);">/hr</span></div>
+        <div style="font-size:.85rem;color:rgba(255,255,255,.5);margin-top:6px;">base team of 2 cleaners · $35/hr each</div>
       </div>
       <div style="background:rgba(255,255,255,.06);border-radius:12px;padding:16px;margin-bottom:16px;">
         <div style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:1px;">What's Included</div>
         <div style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.9;">
-          ✓ 2 professional cleaners<br>
+          ✓ 2 professional cleaners (3rd available on request)<br>
           ✓ All cleaning supplies & equipment<br>
           ✓ Priority areas first (kitchen → bathrooms)<br>
           ✓ Final walkthrough with you<br>
           ✓ Licensed & insured
         </div>
       </div>
+      <div style="font-size:.78rem;color:rgba(255,255,255,.45);text-align:center;margin-bottom:16px;">2 hr minimum (from $140) · team size & hours confirmed when you book</div>
+      <a href="javascript:void(0)" onclick="goTo('beforearrive')" style="display:flex;align-items:center;justify-content:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--white);text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:10px 16px;margin-bottom:16px;transition:background .2s;background:rgba(255,255,255,.06);">📋 Read "Before We Arrive" Guidelines →</a>
       <button class="calc-book-btn" onclick="openBooking()">Book a Free Estimate →</button>
       <div class="calc-phone"><a href="tel:+12532376135">or call (253) 237-6135</a></div>
       <div class="calc-payment-note">💳 Cash or Zelle only<br><span>Payment after service · No cards accepted</span></div>
     </div>
   </div>
+</div></section>
+
+<!-- RECURRING DISCOUNTS -->
+<section class="recurring-discounts" id="recurring"><div class="container">
+  <div class="section-header fade-in"><div class="section-tag">Save More</div><h2>Recurring Cleaning Discounts</h2><p>The more often we clean, the more you save</p></div>
+  <div class="recurring-grid fade-in">
+    <div class="recurring-card">
+      <div class="recurring-badge">15% OFF</div>
+      <div class="recurring-icon">🗓️</div>
+      <h3>Weekly</h3>
+      <p>Cleaned every week — our biggest savings for busy households.</p>
+    </div>
+    <div class="recurring-card recurring-card-featured">
+      <div class="recurring-badge">10% OFF</div>
+      <div class="recurring-icon">🗓️</div>
+      <h3>Bi-Weekly</h3>
+      <p>Cleaned every 2 weeks — our most popular recurring plan.</p>
+    </div>
+    <div class="recurring-card">
+      <div class="recurring-badge">5% OFF</div>
+      <div class="recurring-icon">🗓️</div>
+      <h3>Monthly</h3>
+      <p>Cleaned once a month — a light discount for occasional upkeep.</p>
+    </div>
+  </div>
+  <p class="recurring-note">*Note: The recurring discount applies starting from the second cleaning, as the first visit is a standard/initial clean that requires more time and detail.</p>
 </div></section>
 
 <section class="reviews" id="reviews"><div class="container">
@@ -720,10 +819,10 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 <section class="faq" id="faq"><div class="container">
   <div class="section-header fade-in"><div class="section-tag">FAQ</div><h2>Frequently Asked Questions</h2><p>Everything you need to know before booking</p></div>
   <div class="faq-list">
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your quality guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We stand behind every cleaning we perform. Before our team leaves your home, we always perform a <strong>final walkthrough with you</strong>. This is your opportunity to point out any concerns — we will address them on the spot at no extra cost. <strong>Important:</strong> once our team has left the property and the walkthrough has been completed, we cannot return for free re-cleans. All concerns must be raised during the walkthrough.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your quality guarantee?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Because we work on an hourly basis ($35/hr per cleaner, minimum 2 cleaners, minimum 2 hours) and focus on priority areas first — kitchen and bathrooms — we always perform a <strong>final walkthrough together</strong> before our team leaves your home. This is your chance to point out anything you'd like touched up, and we'll fix it on the spot at no extra charge. <strong>Important:</strong> once the walkthrough is complete and our team has left the property, that visit's time has already been used, so we're unable to offer a free return visit. Any concerns must be raised during the walkthrough.</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How does hourly pricing work exactly?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">
-      <strong>Simple: $40/hr per cleaner. We always send at least 2 cleaners — more for larger homes. Team rate starts at $80/hr with a minimum of 2.5 hours ($200 minimum).</strong>
+      <strong>Simple: $35/hr per cleaner. We always send at least 2 cleaners — team rate starts at $70/hr, with a minimum of 2 hours ($140 minimum). For larger or heavily soiled homes, you can add a 3rd cleaner for +$35/hr ($105/hr total) to speed things up.</strong>
 
       <p style="margin:14px 0 4px;font-weight:600;color:#1a3a2a;">How it works:</p>
       <ul style="margin:0 0 12px;padding-left:18px;font-size:.9rem;line-height:1.8;">
@@ -756,31 +855,47 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <li>Thick sticky grease on stovetop and cabinet exteriors</li>
         <li>Microwave heavily soiled with dried food inside</li>
         <li>Sticky or heavily soiled floors</li>
-        <li>Heavy dirt and grime throughout the property</li>
+        <li>Heavy dirt and grime throughout the home</li>
       </ul>
 
       <p style="margin:0;font-size:.88rem;color:#7a7a7a;">If Heavy Condition is confirmed on-site after walkthrough, we will notify you before starting work. You can then confirm or cancel — no work begins without your approval.</p>
     </div></div></div>
 
-
-
-
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do you bring your own supplies and equipment?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes! We bring all cleaning supplies and professional equipment. The only thing we ask clients to provide is <strong>trash bags for bin replacement</strong>. If you have specific products you'd prefer us to use, just let us know in advance.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Are you licensed and insured?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Absolutely. Evergreen Home Cleaning is a fully licensed LLC in Washington state and carries liability insurance. Your home and belongings are protected while we work.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Are you licensed and insured?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Absolutely. Evergreen Home Cleaning is a fully licensed LLC in Washington state and carries liability insurance. Your home is protected while we work.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Who will be cleaning my home?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">At least 2 cleaners, led by the owner personally on every job. No random crews or subcontractors — just a trusted, consistent team.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Who will be cleaning my home?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">2–3 cleaners (depending on the size of the home), led by the owner personally on every job. No random crews or subcontractors — just a trusted, consistent team.</div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What areas do you serve?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We're based in Bonney Lake, WA and serve the greater Pierce County and South King County areas, including Puyallup, Lake Tapps, Sumner, Auburn, Federal Way, Covington, Maple Valley, and surrounding communities.</div></div></div>
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What areas do you serve?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">
+      <p style="margin-bottom:12px;">We're based in Bonney Lake, WA and proudly serve the following areas:</p>
+      <ul style="margin:0 0 4px;padding-left:20px;line-height:1.8;">
+        <li><strong>Primary Hubs:</strong> Bonney Lake, Lake Tapps, Sumner, Buckley</li>
+        <li><strong>Surrounding Communities:</strong> Puyallup, Auburn, Federal Way, Covington, Maple Valley</li>
+        <li><strong>Regional Coverage:</strong> Greater Pierce County & South King County</li>
+      </ul>
+    </div></div></div>
 
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your cancellation policy?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Cancellations with <strong>24+ hours notice</strong> are always free. <strong>Late cancellation (less than 24 hours):</strong> $50 fee. <strong>Same-day cancellation:</strong> $100 fee. <strong>No-show, lockout, or refusal of entry:</strong> $200 fee (full minimum visit charge).</div></div></div>
-
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What is your cancellation policy?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Cancellations with <strong>24+ hours notice</strong> are always free. <strong>Late cancellation (less than 24 hours):</strong> $50 fee. <strong>Same-day cancellation:</strong> $100 fee. <strong>No-show, lockout, or refusal of entry:</strong> $140 fee (full minimum visit charge).</div></div></div>
 
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>When is payment due?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Payment is due <strong>after the cleaning is complete</strong> — right at the end of the session, before our team leaves. We accept <strong>Cash or Zelle only</strong> (no cards). Zelle: evergreenhomecleaning@gmail.com</div></div></div>
+
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do I need to be home during the cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">No, it's not required. Many clients simply leave a key or door code. The important thing is that we have access to the home. If access is not possible on the day of cleaning, or if the client refuses entry after the team has arrived — a <strong>100% cancellation fee</strong> applies.</div></div></div>
+
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>Do you clean homes with pets?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes! We love animals. We do ask that pets be placed in a separate room or outside the cleaning area during the visit — for their safety and our efficiency. Homes with heavy pet hair simply need a bit more time, which is covered by the hourly rate.</div></div></div>
-    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How do I prepare for a cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">To help us do our best work, please: pick up personal items, clothing, and toys from the floor; ensure access to all rooms; prepare payment (Cash or Zelle only); have trash bags available for bin replacement; and if you have pets — place them in a separate area.</div></div></div>
+
+    <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How do I prepare for a cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">
+      <p style="margin-bottom:12px;">To help our team work as efficiently and quickly as possible (since we work on an hourly basis, starting with the hardest areas like kitchens and bathrooms), we kindly ask you to:</p>
+      <ul style="margin:0;padding-left:20px;line-height:1.8;">
+        <li><strong>Secure valuable items:</strong> Pick up only valuable, expensive, fragile, or unstable items (you don't need to pick up regular items from the floors/surfaces)</li>
+        <li><strong>Provide trash bags:</strong> Have them ready for bin replacement</li>
+        <li><strong>Secure pets:</strong> Place pets in a separate, safe room or area during the visit</li>
+        <li><strong>Prepare payment:</strong> Have cash or Zelle ready for payment immediately after the final walkthrough</li>
+      </ul>
+    </div></div></div>
+
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>What if something gets damaged during the cleaning?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We are insured and take responsibility for damage caused by our work. Any damage must be reported <strong>within 24 hours</strong> of the cleaning — claims submitted after that cannot be considered. Items that were already damaged or unstable before our arrival are not our responsibility.</div></div></div>
+
     <div class="faq-item fade-in" onclick="toggleFaq(this)"><div class="faq-q"><h4>How far in advance should I book?</h4><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We recommend booking <strong>2–3 days in advance</strong>. For urgent requests, reach out directly and we'll do our best to find a time that works.</div></div></div>
   </div>
 </div></section>
@@ -803,6 +918,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <p class="info-section-desc">A little preparation helps us do a better job — and ensures every area gets the attention it deserves.</p>
     <div class="checklist-grid">
       <div class="checklist-item"><span class="checklist-icon">✓</span>Remove fragile & valuable items from areas to be cleaned</div>
+      <div class="checklist-item"><span class="checklist-icon">✓</span>Don't stress about everyday clutter, dishes, or toys — light tidying is included, and we're happy to help keep things organized within your booked time</div>
       <div class="checklist-item"><span class="checklist-icon">✓</span>Let us know about any loosely attached fixtures or delicate surfaces</div>
       <div class="checklist-item"><span class="checklist-icon">✓</span>Move heavy furniture if you'd like those areas cleaned — we do not move heavy furniture</div>
       <div class="checklist-item"><span class="checklist-icon">✓</span>Secure pets in a separate room or outside</div>
@@ -810,7 +926,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       <div class="checklist-item"><span class="checklist-icon">✓</span>Ensure home is accessible at the scheduled time</div>
       <div class="checklist-item"><span class="checklist-icon">✓</span>Ensure access to running water & electricity</div>
     </div>
-    <div class="info-note">📌 Note: Areas blocked by personal items cannot be cleaned and will not count as missed work.</div>
+    <div class="info-note">💛 Relax — no need to deep-clean before we arrive! Just tuck away anything valuable, fragile, or irreplaceable so it stays safe. Everything else, we'll happily work around or tidy up as part of your visit.</div>
   </div>
 </div></section>
 
@@ -824,7 +940,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
       <div class="fee-row fee-ok"><div class="fee-label">✅ Reschedule (24+ hours notice)</div><div class="fee-amount fee-free">Free</div></div>
       <div class="fee-row fee-warn"><div class="fee-label">⚠️ Late Cancellation (less than 24 hours)</div><div class="fee-amount">$50 fee</div></div>
       <div class="fee-row fee-orange"><div class="fee-label">🔴 Same-Day Cancellation</div><div class="fee-amount">$100 fee</div></div>
-      <div class="fee-row fee-red"><div class="fee-label">❌ No-Show / Lockout</div><div class="fee-amount">$200 fee</div></div>
+      <div class="fee-row fee-red"><div class="fee-label">❌ No-Show / Lockout</div><div class="fee-amount">$140 fee</div></div>
     </div>
   </div>
 </div></section>
@@ -834,9 +950,9 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
   <div class="why-grid">
     <div class="why-card fade-in"><div class="why-icon">👤</div><h3>Owner-Operated</h3><p>The owner personally handles every cleaning. Consistent quality every visit.</p></div>
     <div class="why-card fade-in"><div class="why-icon">🛡️</div><h3>Licensed & Insured</h3><p>Fully licensed LLC with liability insurance. Your home is protected.</p></div>
-    <div class="why-card fade-in"><div class="why-icon">💰</div><h3>Transparent Pricing</h3><p>$40/hr per cleaner, minimum 2 cleaners. No hidden fees, no surprise charges.</p></div>
+    <div class="why-card fade-in"><div class="why-icon">💰</div><h3>Transparent Pricing</h3><p>$35/hr per cleaner, minimum 2 cleaners. No hidden fees, no surprise charges.</p></div>
     <div class="why-card fade-in"><div class="why-icon">📋</div><h3>Detailed Checklists</h3><p>Comprehensive checklist every time so nothing gets missed.</p></div>
-    <div class="why-card fade-in"><div class="why-icon">🔄</div><h3>Save Up to 15%</h3><p>Weekly −15%, Bi-weekly −10%, Monthly −5% on Standard cleaning.</p></div>
+    <div class="why-card fade-in"><div class="why-icon">🔄</div><h3>Save Up to 15%</h3><p>Weekly −15%, Bi-weekly −10%, Monthly −5% on Standard cleaning.</p><p style="font-size:.72rem;color:var(--text-light);margin-top:6px;font-style:italic;">*Applies starting your 2nd visit — your first cleaning is priced as a Standard Clean.</p></div>
     <div class="why-card fade-in"><div class="why-icon">📍</div><h3>Local to You</h3><p>Based in Bonney Lake, serving Pierce County & South King County.</p></div>
   </div>
 </div></section>
@@ -904,6 +1020,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
         <div class="modal-prepare-list">
         <div class="modal-prepare-list">
           <div class="modal-prepare-item"><span>✓</span>Remove fragile & valuable items from areas to be cleaned</div>
+          <div class="modal-prepare-item"><span>✓</span>Don't stress about everyday clutter, dishes, or toys — light tidying is included</div>
           <div class="modal-prepare-item"><span>✓</span>Let us know about any loosely attached fixtures or delicate surfaces</div>
           <div class="modal-prepare-item"><span>✓</span>Move heavy furniture if you'd like those areas cleaned — we do not move heavy furniture</div>
           <div class="modal-prepare-item"><span>✓</span>Secure pets in a separate room or outside</div>
@@ -930,19 +1047,69 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
           </select>
         </div>
       </div>
-      <div class="modal-field"><label>Preferred Hours</label>
-        <select id="bookHours" class="calc-select">
-          <option value="">Not sure — let the team decide</option>
-          <option>2.5 hrs</option>
-          <option>3 hrs</option>
-          <option>3.5 hrs</option>
-          <option>4 hrs</option>
-          <option>4.5 hrs</option>
-          <option>5 hrs</option>
-          <option>5.5 hrs</option>
-          <option>6 hrs</option>
-          <option>Custom — I'll discuss with the team</option>
+      <div class="modal-field"><label>Team Size</label>
+        <select id="bookTeamSize" class="calc-select" onchange="updateLiveTotal()">
+          <option value="2">2 cleaners — standard ($70/hr)</option>
+          <option value="3">3 cleaners — large / heavily soiled homes ($105/hr)</option>
         </select>
+      </div>
+      <div class="modal-field"><label>Preferred Hours (min. 2)</label>
+        <select id="bookHours" class="calc-select" onchange="updateLiveTotal()">
+          <option value="">Not sure — let the team decide</option>
+          <option value="2">2 hrs (minimum)</option>
+          <option value="2.5">2.5 hrs</option>
+          <option value="3">3 hrs</option>
+          <option value="3.5">3.5 hrs</option>
+          <option value="4">4 hrs</option>
+          <option value="4.5">4.5 hrs</option>
+          <option value="5">5 hrs</option>
+          <option value="5.5">5.5 hrs</option>
+          <option value="6">6 hrs</option>
+          <option value="">Custom — I'll discuss with the team</option>
+        </select>
+      </div>
+      <div class="modal-field">
+        <div class="calc-condition" id="firstTimeToggle" onclick="toggleFirstTime()">
+          <div class="calc-condition-left">
+            <div>
+              <div class="calc-condition-label">🎉 First-time client</div>
+              <div class="calc-condition-desc">New clients save $20 off this visit</div>
+            </div>
+          </div>
+          <div class="calc-toggle"></div>
+        </div>
+      </div>
+      <div id="liveTotalBox" style="background:var(--green-dark);border-radius:14px;padding:18px 20px;margin-bottom:20px;text-align:center;">
+        <div style="font-size:.72rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:4px;">Estimated Total</div>
+        <div style="font-size:2.1rem;font-weight:700;color:#fff;line-height:1;">$<span id="liveTotalAmount">140</span></div>
+        <div id="liveTotalBreakdown" style="font-size:.78rem;color:rgba(255,255,255,.55);margin-top:6px;">$70/hr × 2 hrs</div>
+      </div>
+      <div class="modal-field"><label>Add-ons (optional)</label>
+        <div style="background:var(--green-pale);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <div>
+              <div style="font-size:.9rem;color:var(--text-dark);font-weight:600;">🪟 Windows</div>
+              <div style="font-size:.75rem;color:var(--text-light);">interior glass · ~3 min each</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button type="button" onclick="stepBookAddon('windows',-1)" style="width:30px;height:30px;border-radius:8px;border:1px solid #d8d8d8;background:#fff;color:var(--text-dark);font-size:1.1rem;cursor:pointer;">−</button>
+              <span id="bookWindowsCount" style="min-width:22px;text-align:center;color:var(--text-dark);font-weight:700;">0</span>
+              <button type="button" onclick="stepBookAddon('windows',1)" style="width:30px;height:30px;border-radius:8px;border:1px solid #d8d8d8;background:#fff;color:var(--text-dark);font-size:1.1rem;cursor:pointer;">+</button>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <div>
+              <div style="font-size:.9rem;color:var(--text-dark);font-weight:600;">🎚️ Blinds</div>
+              <div style="font-size:.75rem;color:var(--text-light);">slat-by-slat wipe · ~5 min each</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <button type="button" onclick="stepBookAddon('blinds',-1)" style="width:30px;height:30px;border-radius:8px;border:1px solid #d8d8d8;background:#fff;color:var(--text-dark);font-size:1.1rem;cursor:pointer;">−</button>
+              <span id="bookBlindsCount" style="min-width:22px;text-align:center;color:var(--text-dark);font-weight:700;">0</span>
+              <button type="button" onclick="stepBookAddon('blinds',1)" style="width:30px;height:30px;border-radius:8px;border:1px solid #d8d8d8;background:#fff;color:var(--text-dark);font-size:1.1rem;cursor:pointer;">+</button>
+            </div>
+          </div>
+          <div id="bookAddonNote" style="font-size:.78rem;color:var(--green-dark);font-weight:600;display:none;">⏱️ Approx. +<span id="bookAddonMinutes">0</span> extra minutes for the team</div>
+        </div>
       </div>
       <div class="modal-field"><label>Preferred Date *</label><input type="date" id="bookDate"></div>
       <div class="modal-field"><label>Preferred Time</label>
@@ -980,7 +1147,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <p>The following are <strong>not included</strong> in any service unless explicitly agreed in advance: moving heavy furniture, cleaning areas blocked by personal items, removing heavy set-in stains, exterior areas (garage, patio, balcony), and any biohazard or hazmat materials.</p>
 
     <h4>2. Pricing & Payment</h4>
-    <p>Our rate is <strong>$40/hr per cleaner</strong>. Every job requires a minimum of 2 cleaners and a minimum of 2.5 hours, making the minimum charge <strong>$200</strong>. For larger homes, additional cleaners may be assigned by mutual agreement.</p>
+    <p>Our rate is <strong>$35/hr per cleaner</strong>. Every job requires a minimum of 2 cleaners ($70/hr as a team) and a minimum of 2 hours, making the minimum charge <strong>$140</strong>. For larger or heavily soiled homes, the Client may add a 3rd cleaner for an additional $35/hr ($105/hr total for a 3-person team) to speed up the job. Additional cleaners beyond that may be assigned by mutual agreement.</p>
     <p>The Client may book a fixed number of hours (e.g. 3 hours, 4.5 hours). In this case, the team will clean as much as possible within the agreed time, starting with the highest-priority areas. <strong>We do not guarantee full completion of all areas if the booked time is insufficient.</strong> Any work not completed within the booked hours is not considered missed work. If the Client wishes to extend the session on the day of service, additional time will be charged at the same hourly rate, subject to team availability.</p>
     <p>Payment is due immediately upon completion of service. <strong>Accepted methods: Cash or Zelle only.</strong> We do not accept credit or debit cards.</p>
 
@@ -993,7 +1160,7 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
     <h4>5. Cancellation Policy</h4>
     <p>(a) <strong>24+ hours notice</strong> — free cancellation or rescheduling, no charge.<br>
     (b) <strong>Less than 24 hours notice</strong> — flat $50.00 cancellation fee.<br>
-    (c) <strong>No-Show / Lockout</strong> — if the team arrives and cannot access the property for any reason attributable to the Client, the full minimum charge of $200.00 applies.</p>
+    (c) <strong>No-Show / Lockout</strong> — if the team arrives and cannot access the property for any reason attributable to the Client, the full minimum charge of $140.00 applies.</p>
 
     <h4>6. Client's Duty to Disclose</h4>
     <p>Prior to service, the Client must disclose: (a) the true condition of the property; (b) the presence and number of pets; (c) any fragile, high-value, or loosely attached items; (d) any ongoing construction or renovation; (e) any hazardous materials or unsafe conditions; (f) any recording devices on the premises. Failure to disclose may result in additional charges or refusal of service.</p>
@@ -1280,15 +1447,65 @@ footer{background:var(--green-dark);color:rgba(255,255,255,.5);padding:48px 0 32
 </div>
 
 <script>
-// Hourly pricing model — no calculator JS needed
+// (Static pricing summary in calculator — no interactive inputs, see calc-summary block)
+
+// Booking modal — Windows/Blinds add-on time estimator
+var bookWindowsCount = 0;
+var bookBlindsCount = 0;
+var firstTimeClient = false;
+function toggleFirstTime(){
+  firstTimeClient = !firstTimeClient;
+  document.getElementById('firstTimeToggle').classList.toggle('active', firstTimeClient);
+  updateLiveTotal();
+}
+function updateLiveTotal(){
+  var teamSize = document.getElementById('bookTeamSize').value;
+  var hoursRaw = document.getElementById('bookHours').value;
+  var rate = teamSize === '3' ? 105 : 70;
+  var hours = parseFloat(hoursRaw);
+  var breakdownEl = document.getElementById('liveTotalBreakdown');
+  var amountEl = document.getElementById('liveTotalAmount');
+  if(!hoursRaw || isNaN(hours)){
+    hours = 2; // fallback to minimum for the estimate display
+    var total = rate * hours;
+    if(firstTimeClient) total = Math.max(0, total - 20);
+    amountEl.textContent = total;
+    breakdownEl.innerHTML = `$${rate}/hr × ${hours} hrs min.${firstTimeClient ? ' − $20 first-time discount' : ''}<br><span style="opacity:.8;">(exact hours confirmed with the team)</span>`;
+    return;
+  }
+  var total = rate * hours;
+  if(firstTimeClient) total = Math.max(0, total - 20);
+  amountEl.textContent = total;
+  breakdownEl.innerHTML = `$${rate}/hr × ${hours} hrs${firstTimeClient ? ' − $20 first-time discount' : ''}`;
+}
+function stepBookAddon(which, delta){
+  if(which === 'windows'){
+    bookWindowsCount = Math.max(0, Math.min(50, bookWindowsCount + delta));
+    document.getElementById('bookWindowsCount').textContent = bookWindowsCount;
+  } else {
+    bookBlindsCount = Math.max(0, Math.min(50, bookBlindsCount + delta));
+    document.getElementById('bookBlindsCount').textContent = bookBlindsCount;
+  }
+  updateBookAddonNote();
+}
+function updateBookAddonNote(){
+  var minutes = bookWindowsCount*3 + bookBlindsCount*5;
+  var note = document.getElementById('bookAddonNote');
+  if(minutes > 0){
+    document.getElementById('bookAddonMinutes').textContent = minutes;
+    note.style.display = 'block';
+  } else {
+    note.style.display = 'none';
+  }
+}
 function toggleAddon(el){setTimeout(()=>{el.classList.toggle('active',el.querySelector('input').checked)},10)}
 
 
-function openBooking(){let s=`<div class="modal-summary-line"><span>💰 Rate</span><span>$40/hr per cleaner · min 2</span></div><div class="modal-summary-line"><span>⏱️ Minimum</span><span>2.5 hrs · from $200</span></div><div class="modal-summary-line"><span>💳 Payment</span><span>Cash or Zelle after service</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
+function openBooking(){let s=`<div class="modal-summary-line"><span>💰 Rate</span><span>$35/hr per cleaner · min 2 ($70/hr)</span></div><div class="modal-summary-line"><span>⏱️ Minimum</span><span>2 hrs · from $140</span></div><div class="modal-summary-line"><span>➕ 3rd cleaner</span><span>+$35/hr (optional)</span></div><div class="modal-summary-line"><span>💳 Payment</span><span>Cash or Zelle after service</span></div>`;document.getElementById('modalSummary').innerHTML=s;const tm=new Date();document.getElementById('bookDate').min=tm.toISOString().split('T')[0];document.getElementById('bookingForm').style.display='';document.getElementById('bookingSuccess').classList.remove('show');termsAccepted=false;document.getElementById('termsCheck').classList.remove('active');bookWindowsCount=0;bookBlindsCount=0;document.getElementById('bookWindowsCount').textContent='0';document.getElementById('bookBlindsCount').textContent='0';document.getElementById('bookAddonNote').style.display='none';firstTimeClient=false;document.getElementById('firstTimeToggle').classList.remove('active');document.getElementById('bookTeamSize').value='2';document.getElementById('bookHours').value='';updateLiveTotal();document.getElementById('bookingModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeBooking(){document.getElementById('bookingModal').classList.remove('open');document.body.style.overflow=''}
 document.getElementById('bookingModal').addEventListener('click',function(e){if(e.target===this)closeBooking()});
 
-async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim(),bd=document.getElementById('bookBedrooms').value,bth=document.getElementById('bookBathrooms').value,hrs=document.getElementById('bookHours').value;if(!nm||!ph||!dt||!ad||!bd||!bth){alert('Please fill in Name, Phone, Bedrooms, Bathrooms, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n💰 Rate: $40/hr per cleaner · min 2 cleaners\n🛏️ Bedrooms: ${bd} · 🚿 Bathrooms: ${bth}\n⏱️ Preferred Hours: ${hrs||'Not specified'}\n\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
+async function submitBooking(){const nm=document.getElementById('bookName').value.trim(),ph=document.getElementById('bookPhone').value.trim(),em=document.getElementById('bookEmail').value.trim(),dt=document.getElementById('bookDate').value,tm=document.getElementById('bookTime').value,ad=document.getElementById('bookAddress').value.trim(),nt=document.getElementById('bookNotes').value.trim(),bd=document.getElementById('bookBedrooms').value,bth=document.getElementById('bookBathrooms').value,hrs=document.getElementById('bookHours').value,tsz=document.getElementById('bookTeamSize').value;if(!nm||!ph||!dt||!ad||!bd||!bth){alert('Please fill in Name, Phone, Bedrooms, Bathrooms, Date, and Address.');return}if(!termsAccepted){alert('Please read and accept the Terms & Conditions.');return}const teamLabel=tsz==='3'?'3 cleaners ($105/hr)':'2 cleaners ($70/hr)';const rate=tsz==='3'?105:70;const estHours=hrs?parseFloat(hrs):2;let estTotal=rate*estHours;if(firstTimeClient)estTotal=Math.max(0,estTotal-20);let m=`🏡 NEW BOOKING REQUEST\n\n👤 Name: ${nm}\n📞 Phone: ${ph}\n`;if(em)m+=`📧 Email: ${em}\n`;m+=`\n💰 Rate: $35/hr per cleaner\n👥 Team Size: ${teamLabel}\n🛏️ Bedrooms: ${bd} · 🚿 Bathrooms: ${bth}\n⏱️ Preferred Hours: ${hrs||'Not specified (min. 2 hrs)'}\n`;if(firstTimeClient)m+=`🎉 First-time client discount: −$20\n`;m+=`💵 Estimated Total: $${estTotal}${!hrs?' (based on 2 hr minimum — final hours confirmed with team)':''}\n`;if(bookWindowsCount>0||bookBlindsCount>0){m+=`🪟 Windows: ${bookWindowsCount} · 🎚️ Blinds: ${bookBlindsCount} (≈+${bookWindowsCount*3+bookBlindsCount*5} min)\n`}m+=`\n📅 Date: ${dt}\n⏰ Time: ${tm}\n`;if(ad)m+=`📍 Address: ${ad}\n`;if(nt)m+=`📝 Notes: ${nt}\n`;m+=`\n✅ Terms & Conditions: ACCEPTED`;const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch(`https://api.telegram.org/bot8517872518:AAEiSsclYhW-tUf8meWsNTMBXCipmUZIE70/sendMessage`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:'389164149',text:m})});document.getElementById('bookingForm').style.display='none';document.getElementById('bookingSuccess').classList.add('show')}catch(e){alert('Could not send online. Please call (253) 237-6135.');btn.disabled=false;btn.textContent='Confirm Booking Request'}}
 
 
 let termsAccepted=false;
@@ -1302,6 +1519,7 @@ function closePrivacy(){document.getElementById('privacyModal').classList.remove
 document.getElementById('privacyModal').addEventListener('click',function(e){if(e.target===this)closePrivacy()});
 function closeBanner(){document.getElementById('topBanner').style.display='none';document.body.classList.remove('banner-visible')}
 function toggleAcc(btn){const acc=btn.closest('.svc-acc');acc.classList.toggle('open')}
+function toggleDarkAcc(btn){const acc=btn.closest('.dark-acc');acc.classList.toggle('open')}
 function toggleService(el){el.classList.toggle('open')}
 function toggleFaq(el){const wasOpen=el.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!wasOpen)el.classList.add('open')}
 function copyPhone(){navigator.clipboard.writeText('(253) 237-6135').then(()=>{showToast('📞 Phone number copied!')}).catch(()=>{showToast('📞 (253) 237-6135')})}
